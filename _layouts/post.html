@@ -1,0 +1,37 @@
+---
+layout: default
+slug: post
+base_url: "../../../../"
+comments: true
+---
+
+{% assign author = site.authors[page.author] %}
+
+<!-- Title and Author -->
+<div class="posttitle">
+  <h2>{{ page.title }}</h2>
+</div>
+
+<div class="post-meta">
+  <p>{{ page.date | date: "%A, %B %d, %Y" }}&nbsp;&nbsp;/&nbsp;&nbsp;By: <a href="#author">{{ author.display_name }}</a></p>
+  <!--&nbsp;&nbsp;/&nbsp;&nbsp;<a href="{{ post.url }}#disqus_thread"></a>-->
+</div>
+
+<!-- Content -->
+<div class="posts">
+  {{ content }}
+  <br>
+  <p class="text-muted words">Copyright&copy; 2013 {{ author.display_name }}, Words: {{ page.content | number_of_words }}</p>
+</div>
+
+<!-- Sharing is Caring -->
+{% include after_post_sharing.html %}
+
+<!-- Author Section -->
+<!-- {% include after_post_author.html %} -->
+
+<!-- Mailing List Signup Section -->
+{% include after_post_list_signup.html %}
+
+<!-- Previous / Next -->
+{% include after_post_navigation.html %}

@@ -1,0 +1,15 @@
+      <hr class="soften">
+      <div class="prev_next clearfix hidden-xs">
+        {% if page.next.url %}
+          <div class="pull-left">
+            <p>Previous Post</p>
+            <a href="{{page.next.url}}" title="next Post: {{page.next.title}}"><i class="icon-chevron-sign-left"></i> {{page.next.title}}</a>
+          </div>
+        {% endif %}
+        {% if page.previous.url %}
+          <div class="pull-right clearfix">
+            <p class="text-right">Next Post</p>
+            <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">{{page.previous.title}} <i class="icon-chevron-sign-right"></i></a>
+          </div>
+        {% endif %}
+      </div>

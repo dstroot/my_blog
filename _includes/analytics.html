@@ -1,0 +1,96 @@
+
+    <!-- Analytics and Scripts
+    ================================================== -->
+    <!-- Disqus Comments -->{% if site.disqus_id %}
+    <script type="text/javascript">
+      var disqus_shortname = '{{ site.disqus_id }}';
+        {% if page.comments == true %}
+          {% comment %}
+            `page.comments` can be only be set to true on pages/posts, so we embed the comments here.
+          {% endcomment %}
+          // var disqus_developer = 1;
+          var disqus_identifier = '{{ site.url }}{{ page.url }}';
+          var disqus_url = '{{ site.url }}{{ page.url }}';
+          var disqus_script = 'embed.js';
+        {% else %}
+          {% comment %} As `page.comments` is empty, we must be on the index page. {% endcomment %}
+          var disqus_script = 'count.js';
+        {% endif %}
+      (function () {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }());
+    </script>
+    {% endif %}
+    <!-- Google Plus One -->{% if site.google_plus_one %}
+    <script type="text/javascript">
+      (function() {
+        var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+        script.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+      })();
+    </script>
+    {% endif %}
+    <!-- Facebook -->{% if site.facebook_like %}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    {% endif %}
+    <!-- Twitter -->{% if site.twitter_follow_button or site.twitter_tweet_button %}
+    <script type="text/javascript">
+      (function(){
+        var twitterWidgets = document.createElement('script');
+        twitterWidgets.type = 'text/javascript';
+        twitterWidgets.async = true;
+        twitterWidgets.src = '//platform.twitter.com/widgets.js';
+        document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+      })();
+    </script>
+    {% endif %}
+    <!-- Gauges (http://gaug.es/) -->{% if site.gauges_id %}
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '{{ site.gauges_id }}');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+    {% endif %}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script>
+      $('#sidebar').affix({
+        offset: {
+          // top: determines how far to scroll before applying .affixed class
+          top: function () {
+            var offsetTop      = $('#sidebar').offset().top           // How far are we from top in total?
+            var navOuterHeight = $('.navbar').outerHeight(true) || 0  // If the navbar is fixed account for it
+            var bodyPaddingTop = parseInt($(document.body).css("padding-top"), 10) || 0  // or use body padding
+            return (this.top = offsetTop - bodyPaddingTop)
+          }
+        , bottom: function () {
+            var footerOuterHeight = $('footer').outerHeight(true) || 0
+            return (this.bottom = footerOuterHeight + 100)
+          }
+        }
+      })
+    </script>
+
+
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<!--
+==========================================================================
+ ____                         ____    __                         __
+/\  _`\                      /\  _`\ /\ \__                     /\ \__
+\ \ \/\ \     __      ___    \ \,\L\_\ \ ,_\  _ __   ___     ___\ \ ,_\
+ \ \ \ \ \  /'__`\  /' _ `\   \/_\__ \\ \ \/ /\`'__\/ __`\  / __`\ \ \/
+  \ \ \_\ \/\ \L\.\_/\ \/\ \    /\ \L\ \ \ \_\ \ \//\ \L\ \/\ \L\ \ \ \_
+   \ \____/\ \__/.\_\ \_\ \_\   \ `\____\ \__\\ \_\\ \____/\ \____/\ \__\
+    \/___/  \/__/\/_/\/_/\/_/    \/_____/\/__/ \/_/ \/___/  \/___/  \/__/
+
+==========================================================================
+  If you are peeping my code I hope you find something interesting! ;)
+  @danstroot
+==========================================================================
+-->
+<html lang="en-US">
+  <head>
+{% include head.html %}
+  </head>
+  <body>
+{% include navbar.html %}
+{% include page_header.html %}
+    <!-- Main
+    ================================================== -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+{% include sidebar.html %}
+        </div>
+        <div class="col-lg-9" role="main">
+{{ content }}
+        </div>
+      </div>
+    </div>
+{% include comments.html %}
+{% include footer.html %}
+{% include analytics.html %}
+  </body>
+</html>

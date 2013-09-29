@@ -1,0 +1,32 @@
+{
+    "name": "Dan Stroot"
+  , "description": "Dan Stroot's Personal Blog"
+  , "version": "0.0.1"
+  , "keywords": ["Dan Stroot", "blog"]
+  , "homepage": "http://danstroot.com/"
+  , "author": "Dan Stroot"
+  , "readme": "README.md"
+  , "scripts": { "test": "grunt test" }
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/dstroot/my_blog"
+  }
+  , "licenses": [
+    {
+        "type": "MIT"
+      , "url": "http://choosealicense.com/licenses/mit/"
+    }
+  ]
+  , "devDependencies": {
+      "grunt": "~0.4.1"
+    , "grunt-contrib-clean": "~0.5.0"
+    , "grunt-contrib-concat": "~0.3.0"
+    , "grunt-contrib-htmlmin": "~0.1.3"
+    , "grunt-contrib-jshint": "~0.6.4"
+    , "grunt-contrib-uglify": "~0.2.4"
+    , "grunt-contrib-watch": "~0.5.3"
+    , "grunt-html-validation": "~0.1.5"
+    , "grunt-jekyll": "~0.3.9"
+    , "grunt-recess": "~0.4.0"
+  }
+}

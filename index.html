@@ -1,0 +1,65 @@
+---
+layout:      default
+title:       Blog
+lead:        "Ordinary? Not a chance."
+description: "Dan Stroot Personal Blog"
+slug:        blog
+base_url:    "./"
+---
+
+<ul class="post-index">
+  {% for post in paginator.posts %}
+    {% assign author = site.authors[post.author] %}
+    <li>
+
+      <!-- Post Title -->
+      <div class="posttitle">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      </div>
+
+      <!-- Post Metadata -->
+      <div class="post-meta">
+        <p><span class="hide-on-phone">{{ post.date | date: "%A, %B %d, %Y" }}&nbsp;&nbsp;/&nbsp;&nbsp;</span>By: {{ author.display_name }}&nbsp;&nbsp;/&nbsp;&nbsp;<a href="{{ post.url }}#disqus_thread"></a></p>
+      </div>
+
+      <!-- Post Content -->
+      <div class="posts">
+        {% capture excerpt %}{{ post.content | split: '<!-- more -->' | first }}{% endcapture %}
+        {{ excerpt }}
+      </div>
+
+      <!-- Read More -->
+      {% if post.content != excerpt %}
+        <a class="btn btn-warning" href="{{ post.url }}">Please Read More <i class="icon-chevron-right"></i></a>
+      {% endif %}
+
+      <hr class="soften">
+
+    </li>
+  {% endfor %}
+</ul>
+
+<!-- Pagination links -->
+<div class="prev_next clearfix">
+  {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+      <div class="pull-left">
+        <p>More</p>
+        <a href="/"><i class="icon-chevron-sign-left"></i> Newer Posts</a>
+      </div>
+      {% else %}
+      <div class="pull-left">
+        <p>More</p>
+        <a href="{{ paginator.previous_page_path }}"><i class="icon-chevron-sign-left"></i> Newer Posts</a>
+      </div>
+      {% endif %}
+  {% else %}
+  {% endif %}
+  {% if paginator.next_page %}
+    <div class="pull-right clearfix">
+      <p class="text-right">More</p>
+      <a href="{{ paginator.next_page_path }}">Older Posts <i class="icon-chevron-sign-right"></i></a>
+    </div>
+  {% else %}
+  {% endif %}
+</div>

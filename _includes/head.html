@@ -1,0 +1,101 @@
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{{ site.author }}">
+    {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+    <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+    <title>{% if page.title %}{{ page.title }} &middot; {% endif %}{{ site.name }}</title>
+    {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+    <!-- https://support.google.com/webmasters/answer/139394?hl=en -->
+    <link rel="canonical" href="{{ canonical }}">
+
+    <!-- RSS Feeds
+    ================================================== -->
+    <link rel="alternate" type="application/rss+xml" title="Feed" href="/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml" />
+
+    <!-- Fonts
+    ================================================== -->
+
+    <!-- Styles
+    ================================================== -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="{{ page.base_url }}assets/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/docs.css" />   <!-- Lets override Bootstrap -->
+    <link rel="stylesheet" href="/assets/css/syntax.css" /> <!-- Syntax highlighting CSS -->
+
+    <!-- Favicon
+    ================================================== -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ page.base_url }}assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ page.base_url }}assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ page.base_url }}assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="{{ page.base_url }}assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="{{ page.base_url }}assets/ico/favicon.png">
+
+    <!-- Scripts
+    ================================================== -->
+    <!--
+     * jQuery 2.0 leaves behind the older Internet Explorer 6, 7, and 8 browsers
+     * HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    -->
+    <!--[if lt IE 9]>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="{{ page.base_url }}assets/js/html5shiv.js"></script>
+      <script src="{{ page.base_url }}assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <!--<![endif]-->
+
+    <!-- Once we have jQuery we can async load other scripts using jQuery -->
+    <script>
+      $(document).ready(function() {
+        // Load Boostrap
+        // $.getScript("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/js/bootstrap.min.js")
+        // $.getScript("{{ page.base_url }}assets/js/bootstrap.min.js")
+        // .done(function(script, textStatus) {
+        //   console.log("Bootstrap loaded.");
+        // })
+        // .fail(function(jqxhr, settings, exception) {
+        //   console.log("Bootstrap load failed.");
+        // });
+        // Load ui.totop.js
+        $.getScript("/assets/js/totop/jquery.ui.totop.js")
+        .done(function(script, textStatus) {
+          console.log("ToTop loaded.");
+          $().UItoTop({
+            scrollSpeed: 250,
+            easingType: 'swing'   //swing or linear
+          });
+        })
+        .fail(function(jqxhr, settings, exception) {
+          console.log("ToTop load failed.");
+        });
+        // Load application
+        // $.getScript("{{ root_url }}/assets/js/application.js")
+        // .done(function(script, textStatus) {
+        //   console.log("Application loaded.");
+        // })
+        // .fail(function(jqxhr, settings, exception) {
+        //   console.log("Application load failed.");
+        // });
+      });
+    </script>
+
+    {% if site.google_analytics_id %}
+    <!-- Put in head. Google Analytics (http://google.com/analytics) -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{ site.google_analytics_id }}']);
+      _gaq.push(['_setDomainName', '{{ site.url }}']); // Use if multiple sub-domains
+      _gaq.push(['_setAllowLinker', true]);            // Use if multiple TLDs
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    {% endif %}

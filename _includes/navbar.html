@@ -1,0 +1,31 @@
+
+    <!-- Navigation Bar
+    ================================================== -->
+    <header class="navbar navbar-inverse navbar-static-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand"><i class="icon-tasks"></i> {{ site.name }}</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li{% if page.slug == "blog" %} class="active"{% endif %}>
+              <a href="/">Blog</a>
+            </li>
+            <li{% if page.slug == "archives" %} class="active"{% endif %}>
+              <a href="/archives/index.html">Archives</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right hidden-xs">
+            <li>
+              <a href="/atom.xml"><i class="icon-rss"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
