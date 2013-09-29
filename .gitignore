@@ -22,6 +22,10 @@ assets/js/bootstrap.*
 validation-status.json
 validation-report.json
 
+# NPM Log
+#######################
+npm-debug.log
+
 # Numerous always-ignore extensions
 #######################
 *.diff
