@@ -1,7 +1,6 @@
-## About this blog
+## About this blog [![devDependency Status](https://david-dm.org/dstroot/my_blog/dev-status.png)](https://david-dm.org/dstroot/my_blog#info=devDependencies)
 
 The most important aspects are:
-
 1. It is based on the static site generation tool [Jekyll](http://jekyllrb.com/).
  > My preference would be a nodejs equivalent tool since you have
  > to install Ruby/Ruby Gems to use Jekyll but _sigh_ oh well...
@@ -18,6 +17,7 @@ The most important aspects are:
     * @font-family-sans-serif:  "Proxima Nova", Helvetica, Arial, sans-serif;  // was Helvetica Neue
     * @font-size-base:          18px;  // was 14px
   * Turn off stuff in bootstrap.less:
+
 ```
 // Core variables and mixins
 @import "variables.less";
@@ -69,6 +69,7 @@ The most important aspects are:
 @import "utilities.less";
 @import "responsive-utilities.less";
 ```
+
 2. Run `grunt`.  This does a lot of work:
    * Processes the .js
        * Runs [jshint](http://www.jshint.com/) on the .js source files
