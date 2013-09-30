@@ -1,7 +1,6 @@
-
     <!-- Analytics and Scripts
     ================================================== -->
-    <!-- Disqus Comments -->{% if site.disqus_id %}
+    {% if site.disqus_id %}<!-- Disqus Comments -->
     <script type="text/javascript">
       var disqus_shortname = '{{ site.disqus_id }}';
         {% if page.comments == true %}
@@ -23,7 +22,7 @@
       }());
     </script>
     {% endif %}
-    <!-- Google Plus One -->{% if site.google_plus_one %}
+    {% if site.google_plus_one %}<!-- Google Plus One -->
     <script type="text/javascript">
       (function() {
         var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
@@ -32,7 +31,7 @@
       })();
     </script>
     {% endif %}
-    <!-- Facebook -->{% if site.facebook_like %}
+    {% if site.facebook_like %}<!-- Facebook -->
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -42,7 +41,7 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     {% endif %}
-    <!-- Twitter -->{% if site.twitter_follow_button or site.twitter_tweet_button %}
+    {% if site.twitter_follow_button or site.twitter_tweet_button %}<!-- Twitter -->
     <script type="text/javascript">
       (function(){
         var twitterWidgets = document.createElement('script');
@@ -53,7 +52,7 @@
       })();
     </script>
     {% endif %}
-    <!-- Gauges (http://gaug.es/) -->{% if site.gauges_id %}
+    {% if site.gauges_id %}<!-- Gauges (http://gaug.es/) -->
     <script type="text/javascript">
       var _gauges = _gauges || [];
       (function() {
@@ -72,25 +71,43 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- Once we have jQuery we can async load other scripts using jQuery -->
     <script>
-      $('#sidebar').affix({
-        offset: {
-          // top: determines how far to scroll before applying .affixed class
-          top: function () {
-            var offsetTop      = $('#sidebar').offset().top           // How far are we from top in total?
-            var navOuterHeight = $('.navbar').outerHeight(true) || 0  // If the navbar is fixed account for it
-            var bodyPaddingTop = parseInt($(document.body).css("padding-top"), 10) || 0  // or use body padding
-            return (this.top = offsetTop - bodyPaddingTop)
-          }
-        , bottom: function () {
-            var footerOuterHeight = $('footer').outerHeight(true) || 0
-            return (this.bottom = footerOuterHeight + 100)
-          }
-        }
-      })
+      $(document).ready(function() {
+        // Load Boostrap
+        $.getScript("/assets/js/bootstrap.min.js")
+        .done(function(script, textStatus) {
+          console.log("Bootstrap loaded.");
+          // lets use affix bootstrap component to affix sidebar
+          $('#sidebar').affix({
+            offset: {
+              // top: determines how far to scroll before applying .affixed class
+              top: function () {
+                var offsetTop      = $('#sidebar').offset().top                              // How far are we from top in total?
+                var bodyPaddingTop = parseInt($(document.body).css("padding-top"), 10) || 0  // Account for body padding
+                return (this.top = offsetTop - bodyPaddingTop)
+              }
+            , bottom: function () {
+                var footerOuterHeight = $('footer').outerHeight(true) || 0                   // Account for footer
+                return (this.bottom = footerOuterHeight + 100)
+              }
+            }
+          })
+        })
+        .fail(function(jqxhr, settings, exception) {
+          console.log("Bootstrap load failed.");
+        });
+        // Load ui.totop.js
+        $.getScript("/assets/js/totop/jquery.ui.totop.js")
+        .done(function(script, textStatus) {
+          console.log("ToTop loaded.");
+          $().UItoTop({
+            scrollSpeed: 250,
+            easingType: 'swing'   //swing or linear
+          });
+        })
+        .fail(function(jqxhr, settings, exception) {
+          console.log("ToTop load failed.");
+        });
+      });
     </script>
-
-
-
-

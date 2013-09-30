@@ -2,22 +2,5 @@
     ================================================== -->
     <footer role="contentinfo">
       <h5 class="hidden-sm">Made in California</h5>
-      <ul class="footer-links">
-        {% if site.twitter_id %}
-        <li>
-            <a href="http://twitter.com/#!/{{ twitter_id }}" target="_blank"><i class="icon-twitter"></i>&nbsp;&nbsp;Twitter</a>
-        </li>
-        <li>&middot;</li>
-        {% endif %}
-        {% if site.facebook_id %}
-        <li>
-            <a href="https://www.facebook.com/{{ facebook_id }}" target="_blank"><i class="icon-facebook"></i>&nbsp;&nbsp;Facebook</a>
-        </li>
-        <li>&middot;</li>
-        {% endif %}
-        <li>
-            <a href="/contact"><i class="icon-envelope-alt"></i>&nbsp;&nbsp;Contact Us</a>
-        </li>
-      </ul>
       <p>Copyright &copy; {{ site.time | date: "%Y" }} {{ site.name }}. All Rights Reserved.</p>
     </footer>
