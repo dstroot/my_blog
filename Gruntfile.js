@@ -210,8 +210,8 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-css', ['recess']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
-  //grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);
+  //grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);
