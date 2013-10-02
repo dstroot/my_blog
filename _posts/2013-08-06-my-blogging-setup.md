@@ -9,10 +9,8 @@ categories:
 tags:
 ---
 
-# My blogging
-
 Blogs need a core concept that will engage your audience.  Placing a post how to install Python on Windows, along with a picture of your favorite band and an assessment of Apple's business strategy all in the same place means you probably won't appeal to anyone in particular.  However a blog called "Ant Farm" that has *every* post focused on raising healthy and happy ants - well that will build an audience for sure.  So if you have, or want, seperate audiences you will need seperate blogs.
-
+<!-- more -->
 ## My Audiences
 1. *Personal:* personal thoughts, pictures, etc.  (Is this even necessary in the Facebook era?)
 2. *WanderingCIO:* Blog about more strategic thoughts and ideas regarding managing technology
@@ -30,44 +28,44 @@ Blogs need a core concept that will engage your audience.  Placing a post how to
 
 [Dropbox][2]. This is where I will store my raw posts as well as my blog image files. This way they are accessible across all platforms and devices.
 
-> **PROTIP:** 
+> **PROTIP:**
 > You can serve your blog images directly from Dropbox no matter where your posts
 > actually end up being published (and the links don't change). The caveat is
-> they must be in your Dropbox "public" folder somewhere.  I created a "blog-images" 
-> sub-folder and just drop the images there.  Then you just right click the file on 
-> Dropbox and select "copy public link".  Dropbox even has a URL shortening service 
-> so they can also give you a shortened link. 
+> they must be in your Dropbox "public" folder somewhere.  I created a "blog-images"
+> sub-folder and just drop the images there.  Then you just right click the file on
+> Dropbox and select "copy public link".  Dropbox even has a URL shortening service
+> so they can also give you a shortened link.
 
 <!-- more -->
 
 ### Blogging Engines
 
-1. Wordpress.  The grandaddy.  The OG.  Tons of addins, plugins and whatnot.  
+1. Wordpress.  The grandaddy.  The OG.  Tons of addins, plugins and whatnot.
 2. Tumblr.  Can use [markdown][1] as a post format.  Pretty much full control over your theme as long as you know HTML and CSS.
 3. Roll your own, use a static blog engine. Static blog engines turn markdown files into a useable blog. Jekyll might be the most widely used engine out there. Octopress is a framework based on Jekyll. Octopress comes with HTML templates, CSS, Javascript and a default configuration/theme that you can start to use right away.
-4. [Scriptogr.am][3] and [Calepin.co/][4] are two online services using markdown and dropbox to host your blog.  Neither is very polished yet.  Scriptogr.am is far more developed but I can't seem to delete my test account.  
+4. [Scriptogr.am][3] and [Calepin.co/][4] are two online services using markdown and dropbox to host your blog.  Neither is very polished yet.  Scriptogr.am is far more developed but I can't seem to delete my test account.
 
 ### Hosting
 1. Github (free)
 2. Heroku (free)
 3. Amazon S3 and optionally CloudFront (cheap)
-4. 
+4.
 
 ### More About Tumblr
 
 #### Tumblr Themes
 Github is great resource: https://github.com/search?q=tumblr&ref=cmdform&type=Repositories
-Docs: 
+Docs:
 * http://www.tumblr.com/docs/en/custom_themes
 
 Commercial:
-* Provenance Theme is my favorite  http://provenance-theme.tumblr.com/ 
+* Provenance Theme is my favorite  http://provenance-theme.tumblr.com/
 
-### More About Wordpress 
+### More About Wordpress
 
 #### Themes
-[Studiopress][3] Genesis Framework is recommended by [Yoast][4].  
-I like these themes: 
+[Studiopress][3] Genesis Framework is recommended by [Yoast][4].
+I like these themes:
 * http://my.studiopress.com/themes/minimum/
 * http://demo.appfinite.com/epik/hello-world/
 

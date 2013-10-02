@@ -139,6 +139,7 @@ a {
   font-size: 22px;
   /*color: #636567;*/
 }
+
 #sidebar a:hover {
   color: black;
   text-decoration: none;
@@ -296,18 +297,6 @@ a.btn-warning:hover {
 }
 
 
-
-
-/* Forms
--------------------------------------------------- */
-.form-inline select,
-.form-inline input[type="text"],
-.form-inline input[type="email"],
-.form-inline input[type="password"] {
-  width: 250px;
-}
-
-
 /* http://stackoverflow.com/questions/5070751/anchor-links-and-margins
 --------------------------------------------------- */
 a.top {
@@ -377,6 +366,14 @@ width: 0;
 }
 
 
+/* Forms (email signup)
+-------------------------------------------------- */
+.form-inline select,
+.form-inline input[type="text"],
+.form-inline input[type="email"],
+.form-inline input[type="password"] {
+  width: 250px;
+}
 
 
 /*
@@ -455,7 +452,7 @@ ul.post-index {
   /*font-family: "Proxima Nova Light", sans-serif;*/
   /*font-size: 26px;*/
   /*font-size: 1.625em;*/
-  color: #636567;   /* Karma Color  #4a4b4d  */
+  /*color: #636567; */  /* Karma Color  #4a4b4d  */
 /*  margin-top: 30px;
   margin-bottom: 30px;*/
   /* display: block;
@@ -466,7 +463,7 @@ ul.post-index {
 .posts h2 {
   /*font-family: "Proxima Nova Light", sans-serif;*/
   /*font-size: 26px; */ /* Karma Size 1.625em */
-  color: #636567;   /* Karma Color */
+  /*color: #636567;*/   /* Karma Color */
 /*  margin-top: 30px;
   margin-bottom: 30px;*/
   /* display: block;
@@ -477,7 +474,7 @@ ul.post-index {
 .posts h3 {
   /*font-family: "Proxima Nova Light", sans-serif;*/
   /*font-size: 22px;*/
-  color: #636567;   /* Karma Color */
+  /*color: #636567; */  /* Karma Color */
 /*  margin-top: 30px;
   margin-bottom: 30px;*/
   /* display: block;
@@ -488,7 +485,7 @@ ul.post-index {
 .posts h4 {
   /*font-family: "Proxima Nova Light", sans-serif;*/
   /*font-size: 20px;*/
-  color: #636567;   /* Karma Color */
+  /*color: #636567;*/   /* Karma Color */
 /*  margin-top: 30px;
   margin-bottom: 30px;*/
   /* display: block;
@@ -499,7 +496,7 @@ ul.post-index {
 .posttitle a {
   /*font-family: "Proxima Nova", sans-serif;*/
 /*  font-size: 26px;*/
-  color: #4a4b4d;   /* Karma Color */
+  /*color: #4a4b4d;*/   /* Karma Color */
   /*color: #636567;*/   /*Karma Color lighter */
   letter-spacing: 1px;
   text-decoration: none;
@@ -508,15 +505,15 @@ ul.post-index {
 .posttitle h2 {
   /*font-family: "Proxima Nova", sans-serif;*/
 /*  font-size: 26px;*/
-  color: #4a4b4d;   /* Karma Color Dark */
+  /*color: #4a4b4d;*/   /* Karma Color Dark */
   /*color: #636567;*/   /*Karma Color lighter */
   letter-spacing: 1px;
 }
 
 .posts {
   /*font-family: "Proxima Nova Light", sans-serif;*/ /* was light */
-  font-size: 18px;
-  color: #4a4b4d;   /* Karma Color Dark */
+  /*font-size: 18px;*/
+  /*color: #4a4b4d; */  /* Karma Color Dark */
   /*color: #636567; */  /*Karma Color lighter */
   display: block;
   margin-top: 30px;
@@ -528,7 +525,7 @@ ul.post-index {
 /* from the link style on http://www.briangardner.com/ */
 .posts a {
   border-bottom: 1px dotted #333;
-  color: #333;
+  /*color: #333;*/
   text-decoration: none;
   font-weight: bolder;
 }
@@ -634,7 +631,7 @@ p.words {
 }
 
 /*
-Disqus Comments Section      [complete]
+Disqus Comments Section              [complete]
 ------------------------------------------------*/
 
 #disqus_thread {
