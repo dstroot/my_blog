@@ -210,9 +210,11 @@ a {
 }
 
 #blog-archives h1 {
-  color:#222;
+/*  color:#222;
   margin-bottom:.3em;
-  font-size:1.5em;
+  font-size:1.5em;*/
+  margin-top: 10.5px;
+  margin-bottom: 10.5px;
 }
 
 #blog-archives h2 {
@@ -241,6 +243,7 @@ a {
 #blog-archives .entry-content {
   display:none;
 }
+
 #blog-archives time{
   font-size: 18px;
   line-height:1.2em;
@@ -254,6 +257,10 @@ a {
 #blog-archives time .month {
   text-transform:uppercase;
 }
+
+#blog-archives .year {
+    display:none;
+  }
 
 #blog-archives p {
   margin-bottom:1em;
@@ -270,6 +277,40 @@ a {
 #blog-archives a:hover {
   /*color:#0181eb;*/
 }
+
+@media screen and (min-width: 550px) {
+  #blog-archives article {
+    margin-left:5em;
+  }
+  #blog-archives h2 {
+    margin-bottom:.3em;
+    font-size: 38px;
+    font-weight:normal;
+    display:inline-block;
+    position:relative;
+    top:-1px;
+    float:left;
+  }
+  #blog-archives h2:first-child {
+    /*padding-top:.75em;*/
+    /*padding-top: 14px;*/
+  }
+  #blog-archives time {
+    position:absolute;
+    text-align:right;
+    left: 9px;
+    /*left:0em;*/
+    top:40px;
+  }
+  #blog-archives article {
+    padding-left:4.5em;
+/*    padding-bottom:.7em;*/
+  }
+  #blog-archives a.category {
+    line-height:1.1em
+  }
+}
+
 
 /* Blog Images
 -------------------------------------------------- */
@@ -744,7 +785,7 @@ footer p {
   .posts {
     /*font-size: 16px;*/
   }
-  .posttitle h2 {
+  .posttitle h1 {
     font-size: 22px;
   }
   .posttitle a {
@@ -759,40 +800,7 @@ footer p {
 
 }
 
-
 @media screen and (min-width: 550px) {
-  #blog-archives article {
-    margin-left:5em;
-  }
-  #blog-archives h2 {
-    margin-bottom:.3em;
-    font-weight:normal;
-    display:inline-block;
-    position:relative;
-    top:-1px;
-    float:left;
-  }
-  #blog-archives h2:first-child {
-    /*padding-top:.75em;*/
-    padding-top: 10px;
-  }
-  #blog-archives time {
-    position:absolute;
-    text-align:right;
-    left: 9px;
-    /*left:0em;*/
-    top:50px;
-  }
-  #blog-archives .year {
-    display:none;
-  }
-  #blog-archives article {
-    padding-left:4.5em;
-    padding-bottom:.7em;
-  }
-  #blog-archives a.category {
-    line-height:1.1em
-  }
   .prev_next {
     margin-bottom: 75px;  /* 30px with footer 75px w/o footer */
   }

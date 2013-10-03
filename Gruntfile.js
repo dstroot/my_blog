@@ -154,15 +154,15 @@ module.exports = function(grunt) {
     //
     // -----------------------------------
 
-    htmlmin: {                                     // Task
-      dist: {                                      // Target
-        options: {                                 // Target options
+    htmlmin: {                          // Task
+      dist: {                           // Target
+        options: {                      // Target options
           removeComments: true,
           collapseWhitespace: true
         },
         files: [{
           expand : true,
-          cwd    : '_site/',  //cwd: All src matches are relative to (but don't include) this path.
+          cwd    : '_site/',            //cwd: All src matches are relative to (but don't include) this path.
           src    : '**/*.html',
           dest   : '_site/'
         }]
