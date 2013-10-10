@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2013-07-30 10:00:00 −08:00"
+date: "2013-07-30 12:00:00 −08:00"
 title: "Great Web Product Images > PlaceIt"
 author: dan
 published: true
