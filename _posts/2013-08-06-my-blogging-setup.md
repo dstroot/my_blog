@@ -1,7 +1,7 @@
 ---
 name: "2013-08-06-my-blogging-setup.md"
 layout: post
-date: "2013-08-06 10:00:00 −08:00"
+date: "2013-08-06 11:00:00 −08:00"
 title: "My Blogging Setup"
 author: dan
 published: true

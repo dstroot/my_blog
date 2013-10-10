@@ -4,7 +4,6 @@ permalink: /atom.xml
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-
   <title><![CDATA[{{ site.title }}]]></title>
   <link href="{{ site.url }}/atom.xml" rel="self"/>
   <link href="{{ site.url }}/"/>
@@ -15,7 +14,6 @@ permalink: /atom.xml
     {% if site.authors.dan.email %}<email><![CDATA[{{ site.authors.dan.email }}]]></email>{% endif %}
   </author>
   <generator uri="http://danstroot.com/">Dan_Stroot</generator>
-
   {% for post in site.posts limit: 20 %}
   <entry>
     <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
