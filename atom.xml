@@ -11,18 +11,18 @@ permalink: /atom.xml
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ site.url }}/</id>
   <author>
-    <name><![CDATA[{{ site.author | strip_html }}]]></name>
-    {% if site.email %}<email><![CDATA[{{ site.email }}]]></email>{% endif %}
+    <name><![CDATA[{{ site.authors.dan.display_name | strip_html }}]]></name>
+    {% if site.authors.dan.email %}<email><![CDATA[{{ site.authors.dan.email }}]]></email>{% endif %}
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="http://danstroot.com/">Dan_Stroot</generator>
 
   {% for post in site.posts limit: 20 %}
   <entry>
     <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
     <link href="{{ site.url }}{{ post.url }}"/>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
-    <id>{{ site.url }}{{ post.id }}</id>
-    <content type="html"><![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]></content>
+    <id>{{ site.url }}{{ post.id }}</id>{% capture excerpt %}{{ post.content | split: '<!-- more -->' | first }}{% endcapture %}
+    <content type="html"><![CDATA[{{ excerpt | expand_urls: site.url | cdata_escape }}{% if post.content != excerpt %}</p><br><a href="{{ site.url }}{{ post.url }}">Please Read More</a>{% endif %}]]></content>
   </entry>
   {% endfor %}
 </feed>

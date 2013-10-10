@@ -15,6 +15,7 @@ module.exports = function(grunt) {
               '*/\n',
     jqueryCheck: 'if (!jQuery) { throw new Error(\"<%= pkg.name %> requires jQuery\") }\n\n',
 
+
     // -----------------------------------
     //
     // TASK: clean  [Remove old files]
@@ -28,6 +29,7 @@ module.exports = function(grunt) {
        , 'assets/js/<%= pkg.name %>.min.js'
       ]
     },
+
 
     // -----------------------------------
     //
@@ -76,11 +78,15 @@ module.exports = function(grunt) {
     //
     // -----------------------------------
     concat: {
-      options: {
+      options: {        // Task-level options may go here, overriding task defaults.
         banner: '<%= banner %><%= jqueryCheck %>',
         stripBanners: false
       },
       js: {
+        options: {      // "js" target options may go here, overriding task-level options.
+          banner: '<%= banner %><%= jqueryCheck %>',
+          stripBanners: false
+        },
         src: [
           'bootstrap/js/transition.js',
           'bootstrap/js/alert.js',
@@ -94,21 +100,24 @@ module.exports = function(grunt) {
           //'bootstrap/js/scrollspy.js',
           //'bootstrap/js/tab.js',
           'bootstrap/js/affix.js'
-          //'assets/js/application.js'
+          //'assets/js/totop/jquery.ui.totop.js'
         ],
         dest: 'assets/js/<%= pkg.name %>.js'
       },
-      // This is where we can concantenate all the CSS but it is currently
-      // also picking up the .js banner and jQuery check.  Doh!
       css: {
+        options: {     // "css" target options may go here, overriding task-level options.
+          banner: '/* <%= pkg.name %>.css v<%= pkg.version %> */\n',
+          stripBanners: true
+        },
         src: [
-        //   'assets/bootstrap.css',
-        //   'assets/css/docs.css',
-        //   'assets/css/syntax.css'
+          'assets/css/<%= pkg.name %>.css',                    // Main CSS file built from main.less
+          'assets/css/syntax.css'                              // Code syntax highlighting
+          //'assets/fonts/ss-social-circle/ss-social-circle.css' // Social Icons
         ],
-        dest: 'assets/css/<%= pkg.name %>.main.css'
+        dest: 'assets/css/<%= pkg.name %>.css'
       }
     },
+
 
     // -----------------------------------
     //
@@ -133,10 +142,11 @@ module.exports = function(grunt) {
     // -----------------------------------
     cssmin: {
       css:{
-        src: 'assets/css/concat.css',
-        dest: 'assets/css/concat.min.css'
+        src: 'assets/css/<%= pkg.name %>.css',
+        dest: 'assets/css/<%= pkg.name %>.min.css'
       }
     },
+
 
     // -----------------------------------
     //
@@ -151,16 +161,23 @@ module.exports = function(grunt) {
         //src: ['bootstrap/less/bootstrap.less'],
         src: ['less/main.less'],
         dest: 'assets/css/<%= pkg.name %>.css'
-      },
-      min: {
-        options: {
-          compress: true
-        },
-        //src: ['bootstrap/less/bootstrap.less'],
-        src: ['less/main.less'],
-        dest: 'assets/css/<%= pkg.name %>.min.css'
+      // },
+      // Since we are adding additional css snippets with
+      // the concat stap after recess compiles the less
+      // code we will then use  cssmin to minify the final
+      // result.  Hence no need to create a minified version
+      // here.
+      // ------------
+      // min: {
+      //   options: {
+      //     compress: true
+      //   },
+      //   //src: ['bootstrap/less/bootstrap.less'],
+      //   src: ['less/main.less'],
+      //   dest: 'assets/css/<%= pkg.name %>.min.css'
       }
     },
+
 
     // -----------------------------------
     //
@@ -170,6 +187,7 @@ module.exports = function(grunt) {
     jekyll: {
       docs: {}
     },
+
 
     // -----------------------------------
     //
@@ -185,6 +203,7 @@ module.exports = function(grunt) {
         src: ["_site/**/*.html"]
       }
     },
+
 
     // -----------------------------------
     //
@@ -205,6 +224,7 @@ module.exports = function(grunt) {
         }]
       }
     },
+
 
     // -----------------------------------
     //
@@ -238,16 +258,16 @@ module.exports = function(grunt) {
   // Docs HTML validation task
   grunt.registerTask('validate-docs', ['jekyll', 'validation']);
 
+  // Lint the .js and test for HTML5 validity
   grunt.registerTask('test', ['jshint', 'validate-docs']);
 
   // JS distribution task.
-  grunt.registerTask('dist-js', ['concat', 'uglify']);
+  grunt.registerTask('dist-js', ['concat:js', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['recess']);
+  grunt.registerTask('dist-css', ['recess', 'concat:css', 'cssmin']);
 
   // Full distribution task.
-  //grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);
 
   // Default task.

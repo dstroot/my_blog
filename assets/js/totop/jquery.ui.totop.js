@@ -15,7 +15,7 @@
                 containerID: 'toTop',
                 containerHoverID: 'toTopHover',
                 scrollSpeed: 1200,
-                easingType: 'linear'  // swing or linear
+                easingType: 'linear'  // swing or linear - you need jquery.easing.1.3.js to use swing
             },
             settings = $.extend(defaults, options),
             containerIDhash = '#' + settings.containerID,

@@ -17,16 +17,16 @@
 @font-size-h3:            ceil(@font-size-base * 1.25);
 @font-size-h4:            ceil(@font-size-base * 1.15);
 
-@brand-primary:           #0F687D;
+@brand-primary:           #4a4b4d;  //background: #FFB511
 @link-color:              @text-color;
 @link-hover-color:        darken(@link-color, 15%);
 
 
 // Now add our own unique styles
 // --------------------------------------------------
-@accent-color:            #0F687D; //#D7990C;  //#e78900;  background: #078E9F  background: #D7990C
+@accent-color:            #4a4b4d; //#D7990C;  //#e78900;  background: #078E9F  background: #D7990C
 @accent-color-light:      lighten(@accent-color, 15%);
-@accent-color-lightest:   lighten(@accent-color, 55%);
+@accent-color-lightest:   lighten(@accent-color, 68%); //#F8F8F8
 @accent-color-dark:       darken(@accent-color, 15%);
 @accent-color-darkest:    darken(@accent-color, 40%);
 
@@ -117,7 +117,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  border-bottom: 1px dotted @gray-dark;  // from the link style on http://www.briangardner.com/
+  border-bottom: 1px dotted @text-color;  // from the link style on http://www.briangardner.com/
 }
 
 
@@ -318,7 +318,7 @@ width: 0;
     font-size: 16px;
   }
   .prev_next a {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -326,7 +326,7 @@ width: 0;
 // Disqus Comments Section                 [complete]
 // --------------------------------------------------
 #disqus_thread {
-  background-color: @gray-lighter; //#D3E2EB; //#D7990C; //@accent-color-lightest; //#f7f5f2;
+  background-color: @accent-color-lightest; //#D3E2EB; //#D7990C; //@accent-color-lightest; //#f7f5f2;
   padding: 40px;
 }
 
@@ -391,6 +391,9 @@ footer p {
 }
 #sidebar .social a {
   font-size: 36px;
+}
+#sidebar .social a:hover {
+  text-decoration: none;
 }
 // Undo the affixed behavior in mobile views
 #sidebar.affix {
