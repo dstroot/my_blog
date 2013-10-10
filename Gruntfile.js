@@ -102,9 +102,9 @@ module.exports = function(grunt) {
       // also picking up the .js banner and jQuery check.  Doh!
       css: {
         src: [
-          'assets/bootstrap.css',
-          'assets/css/docs.css',
-          'assets/css/syntax.css'
+        //   'assets/bootstrap.css',
+        //   'assets/css/docs.css',
+        //   'assets/css/syntax.css'
         ],
         dest: 'assets/css/<%= pkg.name %>.main.css'
       }
