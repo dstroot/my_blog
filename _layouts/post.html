@@ -7,17 +7,18 @@ comments: true
 
 {% assign author = site.authors[page.author] %}
 
-<!-- Title and Author -->
+<!-- Post Title -->
 <div class="posttitle">
   <h1>{{ page.title }}</h1>
 </div>
 
+<!-- Post Meta Data -->
 <div class="post-meta">
   <p>{{ page.date | date: "%A, %B %d, %Y" }}&nbsp;&nbsp;/&nbsp;&nbsp;By: <a href="#author">{{ author.display_name }}</a></p>
   <!--&nbsp;&nbsp;/&nbsp;&nbsp;<a href="{{ post.url }}#disqus_thread"></a>-->
 </div>
 
-<!-- Content -->
+<!-- Post Content -->
 <div class="posts">
   {{ content }}
   <br>

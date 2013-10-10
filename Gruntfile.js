@@ -20,7 +20,6 @@ module.exports = function(grunt) {
     // TASK: clean  [Remove old files]
     //
     // -----------------------------------
-
     clean: {
       dist: [
          'assets/css/<%= pkg.name %>.css'
@@ -35,7 +34,6 @@ module.exports = function(grunt) {
     // TASK: jshint  [Validate .js]
     //
     // -----------------------------------
-
     jshint: {
       // define the files to lint
       files: ['gruntfile.js', 'bootstrap/js/*.js'],   //'assets/**/*.js'
@@ -52,18 +50,37 @@ module.exports = function(grunt) {
       }
     },
 
+
     // -----------------------------------
+    // Notes:
     //
-    // TASK: concat  [Concatenate .js]
+    // We have several options regarding how we process CSS
+    // Ideally, our end goal is one, minified, CSS file.
+    // If we have only LESS source code then we are in good shape
+    // because we can just use Recess to compile and minify the CSS.
+    // However we may also have some CSS snippets that we don't need/
+    // want to convert to less (such as the syntax.css file).
+    // Therefore we have more steps but more flexibility:
+    //
+    // 1. Compile LESS to a CSS file [recess]
+    // 2. Concatenate all CSS files together [concat]
+    // 3. Minify the CSS
     //
     // -----------------------------------
 
+
+
+    // -----------------------------------
+    //
+    // TASK: concat  [Concatenate .js and .css]
+    //
+    // -----------------------------------
     concat: {
       options: {
         banner: '<%= banner %><%= jqueryCheck %>',
         stripBanners: false
       },
-      bootstrap: {
+      js: {
         src: [
           'bootstrap/js/transition.js',
           'bootstrap/js/alert.js',
@@ -80,22 +97,44 @@ module.exports = function(grunt) {
           //'assets/js/application.js'
         ],
         dest: 'assets/js/<%= pkg.name %>.js'
+      },
+      // This is where we can concantenate all the CSS but it is currently
+      // also picking up the .js banner and jQuery check.  Doh!
+      css: {
+        src: [
+          'assets/bootstrap.css',
+          'assets/css/docs.css',
+          'assets/css/syntax.css'
+        ],
+        dest: 'assets/css/<%= pkg.name %>.main.css'
       }
     },
 
     // -----------------------------------
     //
-    // TASK: uglify  [Minify .js]
+    // TASK: uglify           [Minify .js]
     //
     // -----------------------------------
-
     uglify: {
       options: {
         banner: '<%= banner %>'
       },
-      bootstrap: {
-        src: ['<%= concat.bootstrap.dest %>'],
+      js: {
+        src: ['<%= concat.js.dest %>'],
         dest: 'assets/js/<%= pkg.name %>.min.js'
+      }
+    },
+
+
+    // -----------------------------------
+    //
+    // TASK: cssmin          [Minify .css]
+    //
+    // -----------------------------------
+    cssmin: {
+      css:{
+        src: 'assets/css/concat.css',
+        dest: 'assets/css/concat.min.css'
       }
     },
 
@@ -104,40 +143,39 @@ module.exports = function(grunt) {
     // TASK: recess  [Compile/minify LESS/CSS]
     //
     // -----------------------------------
-
     recess: {
       options: {
         compile: true
       },
       bootstrap: {
-        src: ['bootstrap/less/bootstrap.less'],
+        //src: ['bootstrap/less/bootstrap.less'],
+        src: ['less/main.less'],
         dest: 'assets/css/<%= pkg.name %>.css'
       },
       min: {
         options: {
           compress: true
         },
-        src: ['bootstrap/less/bootstrap.less'],
+        //src: ['bootstrap/less/bootstrap.less'],
+        src: ['less/main.less'],
         dest: 'assets/css/<%= pkg.name %>.min.css'
       }
     },
 
     // -----------------------------------
     //
-    // TASK: jekyll  [Build the html]
+    // TASK: jekyll       [Build the html]
     //
     // -----------------------------------
-
     jekyll: {
       docs: {}
     },
 
     // -----------------------------------
     //
-    // TASK: validation  [Validate the html]
+    // TASK: validation[Validate the html]
     //
     // -----------------------------------
-
     validation: {
       options: {
         reset: true,
@@ -150,10 +188,9 @@ module.exports = function(grunt) {
 
     // -----------------------------------
     //
-    // TASK: htmlmin  [Minify the HTML]
+    // TASK: htmlmin     [Minify the HTML]
     //
     // -----------------------------------
-
     htmlmin: {                          // Task
       dist: {                           // Target
         options: {                      // Target options
@@ -174,7 +211,6 @@ module.exports = function(grunt) {
     // TASK: watch  [Rebuild the CSS as needed]
     //
     // -----------------------------------
-
     watch: {
       recess: {
         files: 'bootstrap/less/*.less',
@@ -194,6 +230,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-html-validation');
+  grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-recess');
 
