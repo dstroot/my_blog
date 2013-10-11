@@ -1,15 +1,37 @@
       <hr class="soften">
-      <div class="prev_next clearfix hidden-xs">
-        {% if page.next.url %}
-          <div class="pull-left">
-            <p>Previous Post</p>
-            <a href="{{page.next.url}}" title="next Post: {{page.next.title}}"><i class="icon-chevron-sign-left"></i> {{page.next.title}}</a>
+
+      <div class="row">
+
+        <div class="prev_next clearfix hidden-xs">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            {% if page.next.url %}
+              <div class="pull-left">
+                <p>Previous Post</p>
+                <table>
+                  <tr>
+                    <td><i class="icon-chevron-sign-left"></i></td>
+                    <td><a href="{{page.next.url}}" title="next Post: {{page.next.title}}">{{page.next.title}}</a></td>
+                  </tr>
+                </table>
+              </div>
+            {% endif %}
           </div>
-        {% endif %}
-        {% if page.previous.url %}
-          <div class="pull-right clearfix">
-            <p class="text-right">Next Post</p>
-            <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">{{page.previous.title}} <i class="icon-chevron-sign-right"></i></a>
+
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            {% if page.previous.url %}
+              <div class="pull-right clearfix">
+                <p class="text-right">Next Post</p>
+                <div class="text-right">
+                  <table>
+                    <tr>
+                      <td><a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">{{page.previous.title}}</a></td>
+                      <td><i class="icon-chevron-sign-right"></i></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            {% endif %}
           </div>
-        {% endif %}
+        </div>
+
       </div>

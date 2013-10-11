@@ -17,16 +17,16 @@
 @font-size-h3:            ceil(@font-size-base * 1.25);
 @font-size-h4:            ceil(@font-size-base * 1.15);
 
-@brand-primary:           #4a4b4d;  //background: #FFB511
+@brand-primary:           #4a525a;  //#4a4b4d;  //background: #FFB511
 @link-color:              @text-color;
 @link-hover-color:        darken(@link-color, 15%);
 
 
 // Now add our own unique styles
 // --------------------------------------------------
-@accent-color:            #4a4b4d; //#D7990C;  //#e78900;  background: #078E9F  background: #D7990C
+@accent-color:            #4a525a; //#4a4b4d; //#D7990C;  //#e78900;  background: #078E9F  background: #D7990C  //#4a525a
 @accent-color-light:      lighten(@accent-color, 15%);
-@accent-color-lightest:   lighten(@accent-color, 68%); //#F8F8F8
+@accent-color-lightest:   lighten(@accent-color, 63%); //#F8F8F8
 @accent-color-dark:       darken(@accent-color, 15%);
 @accent-color-darkest:    darken(@accent-color, 40%);
 
@@ -302,8 +302,14 @@ width: 0;
   margin-bottom: 50px;
 }
 .prev_next a {
-  font-size: 20px;
+  font-size: 18px;
   color: @accent-color;
+}
+.prev_next td {
+  vertical-align: top;
+  padding: 4px;
+  font-size: 26px;
+  line-height: 1;
 }
 .prev_next p {
   color: @gray-light;
@@ -390,10 +396,10 @@ footer p {
   font-size: 22px;
 }
 #sidebar .social a {
-  font-size: 26px;  // was 36
+  font-size: 50px;  // was 36
 }
 #sidebar .social a:hover {
-  text-decoration: none;
+  border-bottom: none;
 }
 // Undo the affixed behavior in mobile views
 #sidebar.affix {
