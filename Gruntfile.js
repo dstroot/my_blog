@@ -38,7 +38,7 @@ module.exports = function(grunt) {
     // -----------------------------------
     jshint: {
       // define the files to lint
-      files: ['gruntfile.js', 'bootstrap/js/*.js'],   //'assets/**/*.js'
+      files: ['gruntfile.js', 'bootstrap/js/*.js', 'assets/js/totop/*.js'],   //'assets/**/*.js'
       // configure JSHint (documented at http://www.jshint.com/docs/)
       options: {
         // override JSHint defaults
@@ -111,8 +111,9 @@ module.exports = function(grunt) {
         },
         src: [
           'assets/css/<%= pkg.name %>.css',                    // Main CSS file built from main.less
-          'assets/css/syntax.css'                              // Code syntax highlighting
-          //'assets/fonts/ss-social-circle/ss-social-circle.css' // Social Icons
+          'assets/fonts/font-awesome/css/font-awesome.min.css',// Font Awesome
+          'assets/css/syntax.css',                              // Code syntax highlighting
+          'assets/fonts/ss-social-circle/ss-social-circle.css' // Social Icons
         ],
         dest: 'assets/css/<%= pkg.name %>.css'
       }
@@ -159,7 +160,7 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         //src: ['bootstrap/less/bootstrap.less'],
-        src: ['less/main.less'],
+        src: ['less/<%= pkg.name %>.less'],
         dest: 'assets/css/<%= pkg.name %>.css'
       // },
       // Since we are adding additional css snippets with
@@ -233,10 +234,11 @@ module.exports = function(grunt) {
     // -----------------------------------
     watch: {
       recess: {
-        files: 'bootstrap/less/*.less',
+        files: ['less/<%= pkg.name %>.less', 'bootstrap/less/*.less'],
         tasks: ['recess']
       }
     }
+
 
   });
 
@@ -272,5 +274,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);
+
 
 };

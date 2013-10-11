@@ -12,10 +12,10 @@ _site
 node_modules
 bootstrap
 
-# Ignore compiled bootstrap assets
+# Ignore compiled assets
 #######################
-assets/css/bootstrap.*
-assets/js/bootstrap.*
+assets/css/myblog.*
+assets/js/myblog.*
 
 # grunt-html-validation
 #######################

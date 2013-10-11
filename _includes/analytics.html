@@ -99,22 +99,13 @@
           console.log("Bootstrap load failed.");
         });
 
-        // Load easing.1.3.js
-        $.getScript("/assets/js/totop/jquery.easing.1.3.js")
-        .done(function(script, textStatus) {
-          console.log("Easing loaded.");
-        })
-        .fail(function(jqxhr, settings, exception) {
-          console.log("Easing load failed.");
-        });
-
         // Load ui.totop.js
         $.getScript("/assets/js/totop/jquery.ui.totop.js")
         .done(function(script, textStatus) {
           console.log("ToTop loaded.");
           $().UItoTop({
             scrollSpeed: 250,
-            easingType: 'swing'   //swing or linear, swing needs easing above
+            easingType: 'swing'   //swing or linear
           });
         })
         .fail(function(jqxhr, settings, exception) {

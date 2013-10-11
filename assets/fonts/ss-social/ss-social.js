@@ -15,10 +15,15 @@ if (/(MSIE [7-9]\.|Opera.*Version\/(10\.[5-9]|(11|12)\.)|Chrome\/([1-9]|10)\.|Ve
   if (typeof ss_icons !== 'object' || typeof ss_icons !== 'object') {
     var ss_icons = ss_set;
     var ss_keywords = [];
-    for (var i in ss_set) { ss_keywords.push(i); };
+    for (var i in ss_set) {
+      ss_keywords.push(i)
+    }
   } else {
-    for (var i in ss_set) { ss_icons[i] = ss_set[i]; ss_keywords.push(i); }
-  };
+    for (var i in ss_set) {
+      ss_icons[i] = ss_set[i];
+      ss_keywords.push(i);
+    }
+  }
 
   if (typeof ss_legacy !== 'function') {
 
@@ -34,7 +39,7 @@ if (/(MSIE [7-9]\.|Opera.*Version\/(10\.[5-9]|(11|12)\.)|Chrome\/([1-9]|10)\.|Ve
           ss_legacy(node[i]);
         }
         return;
-      };
+      }
 
       if (node.value) {
         node.value = ss_liga(node.value);
@@ -75,4 +80,4 @@ if (/(MSIE [7-9]\.|Opera.*Version\/(10\.[5-9]|(11|12)\.)|Chrome\/([1-9]|10)\.|Ve
 
   }
 
-};
+}

@@ -9,6 +9,20 @@ The most important aspects are:
  * Tweaks to the Boostrap source
 3. It uses [Grunt](http://gruntjs.com/) to manage the assets.  I went to the trouble of doing this so I could select exactly what parts of Bootstrap I wanted to use.  An easier and more direct route might be to use the [Bootstrap customizer](http://getbootstrap.com/customize/).
 
+## Setting up a site or blog (highlevel)
+* Obtain a domain
+  * Reserve Twitter name
+  * Reserve Facebook name
+  * Reserve Google+ name
+  * etc.
+* Setup [Google Apps](http://www.google.com/enterprise/apps/business/) hosting for email
+* Setup Mailchimp for newsletter signups
+* Setup Disqus for site comments
+* Setup Google Analytics
+* Move the domain DNS to AWS
+* Setup feedburner for rss/atom feed syndication (need to figure out how to get feed subscribers over to mailchimp...)
+
+
 ## Steps to build and deploy
 1. Run `npm install`
 2. Copy the latest Bootstrap .js and .less source into `bootstrap/js` and `bootstrap/less`.

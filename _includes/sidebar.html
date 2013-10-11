@@ -12,31 +12,33 @@
             <ul class="social list-inline hidden-xs hidden-sm">
               {% if site.twitter_id %}
               <li>
-                  <a href="http://twitter.com/#!/{{ site.twitter_id }}" target="_blank"><i class="ss-icon ss-social-circle ss-twitter"></i></a>
+                <a href="http://twitter.com/#!/{{ site.twitter_id }}" target="_blank"><i class="ss-icon ss-social-circle ss-twitter"></i></a>
               </li>
               {% endif %}
               {% if site.facebook_id %}
               <li>
-                  <a href="https://www.facebook.com/{{ site.facebook_id }}" target="_blank"><i class="ss-icon ss-social-circle ss-facebook"></i></a>
+                <a href="https://www.facebook.com/{{ site.facebook_id }}" target="_blank"><i class="ss-icon ss-social-circle ss-facebook"></i></a>
               </li>
               {% endif %}
               {% if site.linkedin_id %}
               <li>
-                  <a href="https://www.linkedin.com/in/{{ site.linkedin_id }}" target="_blank"><i class="ss-icon ss-social-circle ss-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/{{ site.linkedin_id }}" target="_blank"><i class="ss-icon ss-social-circle ss-linkedin"></i></a>
               </li>
               {% endif %}
               {% if site.google_plus_id %}
               <li>
-                  <a href="https://plus.google.com/u/0/{{ site.google_plus_id }}/posts" target="_blank"><i class="ss-icon ss-social-circle ss-googleplus"></i></a>
+                <a href="https://plus.google.com/u/0/{{ site.google_plus_id }}/posts" target="_blank"><i class="ss-icon ss-social-circle ss-googleplus"></i></a>
               </li>
               {% endif %}
-            </ul>
-            <ul class="social list-inline hidden-xs hidden-sm">
-              <li class="social-github">
-                <a href="https://github.com/dstroot" target="_blank"><i class="ss-icon ss-social-circle ss-octocat"></i></a>
+              {% if site.github_id %}
+              <li>
+                <a href="https://github.com/{{ site.github_id }}" target="_blank"><i class="ss-icon ss-social-circle ss-octocat"></i></a>
               </li>
-              <li class="social-rss">
-                <a href="http://feeds.feedburner.com/danstroot/fZJa" target="_blank"><i class="ss-icon ss-social-circle ss-rss"></i></a>
+              {% endif %}
+              {% if site.rss %}
+              <li>
+                <a href="{{ site.rss }}" target="_blank"><i class="ss-icon ss-social-circle ss-rss"></i></a>
               </li>
+              {% endif %}
             </ul>
           </div><!-- sidebar -->
