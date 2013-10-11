@@ -76,9 +76,9 @@
       $(document).ready(function() {
 
         // Load Boostrap
-        $.getScript("/assets/js/bootstrap.min.js")
+        $.getScript("/assets/js/{{ site.name }}.min.js")
         .done(function(script, textStatus) {
-          console.log("Bootstrap loaded.");
+          console.log("{{ site.name }} loaded.");
           // lets use affix bootstrap component to affix sidebar
           $('#sidebar').affix({
             offset: {
@@ -96,7 +96,7 @@
           })
         })
         .fail(function(jqxhr, settings, exception) {
-          console.log("Bootstrap load failed.");
+          console.log("{{ site.name }} load failed.");
         });
 
         // Load ui.totop.js

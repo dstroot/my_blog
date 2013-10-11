@@ -1,26 +1,41 @@
-## About this blog [![devDependency Status](https://david-dm.org/dstroot/my_blog/dev-status.png)](https://david-dm.org/dstroot/my_blog#info=devDependencies)
+## About this Blog [![devDependency Status](https://david-dm.org/dstroot/my_blog/dev-status.png)](https://david-dm.org/dstroot/my_blog#info=devDependencies)
 
-The most important aspects are:
-1. It is based on the static site generation tool [Jekyll](http://jekyllrb.com/).
- > My preference would be a nodejs equivalent tool since you have
- > to install Ruby/Ruby Gems to use Jekyll but _sigh_ oh well...
-2. It uses the [Bootstrap](http://getbootstrap.com/) front-end framework for layout and design.
- * You can copy the latest Bootstrap .js and .less source into `bootstrap/js` and `bootstrap/less`.  Grunt will compile everything for you (see below)
- * Tweaks to the Boostrap source
-3. It uses [Grunt](http://gruntjs.com/) to manage the assets.  I went to the trouble of doing this so I could select exactly what parts of Bootstrap I wanted to use.  An easier and more direct route might be to use the [Bootstrap customizer](http://getbootstrap.com/customize/).
+## Setting up a site or blog (high level)
 
-## Setting up a site or blog (highlevel)
+There is actually quite a few things to do even for a simple site:
 * Obtain a domain
   * Reserve Twitter name
   * Reserve Facebook name
   * Reserve Google+ name
   * etc.
+* Move the domain DNS to AWS
+* Setup hosting (I'm using AWS S3 and Cloudfront since this is a static site)
 * Setup [Google Apps](http://www.google.com/enterprise/apps/business/) hosting for email
 * Setup Mailchimp for newsletter signups
 * Setup Disqus for site comments
 * Setup Google Analytics
-* Move the domain DNS to AWS
-* Setup feedburner for rss/atom feed syndication (need to figure out how to get feed subscribers over to mailchimp...)
+* Setup feedburner for rss/atom feed syndication (still need to figure out how to get feed subscribers over to mailchimp so I have one email list...)
+* Setup NewRelic or Pingdom for uptime monitoring
+
+The most important aspects are:
+
+1. It is based on the static site generation tool [Jekyll](http://jekyllrb.com/).
+
+  > My preference would be a nodejs equivalent tool since you have
+  > to install Ruby/Ruby Gems to use Jekyll but _sigh_ oh well...
+
+2. It uses the [Bootstrap](http://getbootstrap.com/) front-end framework for layout and design.
+ * You can copy the latest Bootstrap .js and .less source into `bootstrap/js` and `bootstrap/less`.  Grunt will compile everything for you (see below)
+ * Tweaks to the Boostrap source
+3. It uses [Grunt](http://gruntjs.com/) to manage the assets.  I went to the trouble of doing this so I could select exactly what parts of Bootstrap I wanted to use.  An easier and more direct route might be to use the [Bootstrap customizer](http://getbootstrap.com/customize/).
+
+## Technical Dependencies
+
+* You need Nodejs installed mainly because we need to use NPM to install things.
+* You need Ruby and RubyGems so you can install Jekyll
+* You need Python and Pygments for code highlighting
+* You need Grunt installed
+
 
 
 ## Steps to build and deploy
