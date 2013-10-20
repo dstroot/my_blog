@@ -10,7 +10,7 @@ _site
 # Folders to ignore
 #######################
 node_modules
-bootstrap
+#bootstrap   # need to have in Git for Travis
 
 # Ignore compiled assets
 #######################
