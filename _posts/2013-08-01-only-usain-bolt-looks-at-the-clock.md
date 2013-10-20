@@ -23,6 +23,6 @@ Think about it for a moment. This isn't the recipe for leadership and innovation
 > **PROTIP:**
 > You can't define your metrics in terms of others. In other words "We want to be in the top quartile"
 > means you are just in the pack watching everyone else. Define your goals simply, directly, and on
-> your own terms: "Our margin will be 40%" or "We will bring in $1 Billion in net flows" and then watch **your*** scoreboard.
+> your own terms: "Our margin will be 40%" or "We will bring in $1 Billion in net flows" and then watch **your** scoreboard.
 
 If you really want to lead then you should only look at your target, the clock, your scoreboard because **everyone else is behind you.**
