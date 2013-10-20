@@ -1,14 +1,12 @@
 ---
-name: "2013-08-06-my-blogging-setup.md"
-layout: post
-date: "2013-08-06 11:00:00 −08:00"
 title: "My Blogging Setup"
+date: "2013-08-06 11:00:00 −08:00"
 author: dan
-published: true
+layout: post
+published: false
 categories:
 tags:
 ---
-
 Blogs need a core concept that will engage your audience.  Placing a post how to install Python on Windows, along with a picture of your favorite band and an assessment of Apple's business strategy all in the same place means you probably won't appeal to anyone in particular.  However a blog called "Ant Farm" that has *every* post focused on raising healthy and happy ants - well that will build an audience for sure.  So if you have, or want, seperate audiences you will need seperate blogs.
 <!-- more -->
 ## My Audiences

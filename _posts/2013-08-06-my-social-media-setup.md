@@ -1,21 +1,19 @@
 ---
-name: "2013-08-06-my-social-media-setup.md"
 layout: post
-date: "2013-08-06 10:00:00 −08:00"
 title: "My Social Media Setup"
+date: "2013-08-06 10:00:00 −08:00"
 author: dan
-published: true
+published: false
 categories:
 tags:
 ---
-
 Social media is overwhelming - we are inundated with email, text messages, tweets, facebook posts and who knows what else.  How to stay on top of it and share appropriately?
 <!-- more -->
 Feedly -> Buffer -> Everything (Twitter, Facebook, Linkedin)
 
 ## Weapons of Choice
 
-[Feedly][1]. I love reading.  I love blogs.  I can't visit all blogs, all the time.
+[Feedly][1]. I love reading.  I love blogs.  But I can't visit all blogs, all the time.
 * RSS was invented and it was glorious.
 * Google Reader was created and the heavens shone with light.
 * Reeder was built and my iPhone screamed with delight.  Now I can consume news all day, all night.
