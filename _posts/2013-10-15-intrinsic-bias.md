@@ -13,9 +13,9 @@ As a CIO in a large, publicly owned financial services company I held the respon
 
 Let me explain what I mean by "potential security risks".   Recently Ben Fried, Google's CIO, made a [remark about Dropbox](http://allthingsd.com/20131010/google-cio-ben-fried-on-how-google-works/):
 
->“The important thing to understand about Dropbox,” Fried said, “is
->that when your users use it in a corporate context, **your corporate
->data is being held in someone else’s data center.**”
+> “The important thing to understand about Dropbox,” Fried said, “is
+> that when your users use it in a corporate context, **your corporate
+> data is being held in someone else’s data center.**”
 >
 > _(Emphasis added)_
 <!-- more -->
