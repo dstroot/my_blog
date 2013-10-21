@@ -21,7 +21,7 @@ Let me explain what I mean by "potential security risks".   Recently Ben Fried, 
 <!-- more -->
 ### How Ironic
 
-Fried and Google now say that he misspoke. Fried says he meant that the real concern about Dropbox and other apps is [more around security](http://allthingsd.com/20131015/google-cio-ben-fried-clarifies-remarks-on-dropbox/):
+It's a problem just because your data is in someone else's data center?  That doesn't sound good for Google's business model. Fried and Google now say that he misspoke. Fried says he meant that the real concern about Dropbox is [more around security](http://allthingsd.com/20131015/google-cio-ben-fried-clarifies-remarks-on-dropbox/):
 
 >“Any third-party cloud providers that our employees use must pass
 >our thorough security review and agree under contract to maintain
