@@ -1,23 +1,6 @@
 ## About this Blog [![Build Status](https://secure.travis-ci.org/dstroot/my_blog.png)](http://travis-ci.org/dstroot/my_blog) [![devDependency Status](https://david-dm.org/dstroot/my_blog/dev-status.png)](https://david-dm.org/dstroot/my_blog#info=devDependencies)
 
-Check out [http://danstroot.com](http://danstroot.com).
-
-## Setting up a site or blog (high level)
-
-There is actually quite a few things to do even for a simple site:
-* Obtain a domain
-  * Reserve Twitter name
-  * Reserve Facebook name
-  * Reserve Google+ name
-  * etc.
-* Move the domain DNS to AWS
-* Setup hosting (I'm using AWS S3 and Cloudfront since this is a static site)
-* Setup [Google Apps](http://www.google.com/enterprise/apps/business/) hosting for email
-* Setup Mailchimp for newsletter signups
-* Setup Disqus for site comments
-* Setup Google Analytics
-* Setup feedburner for rss/atom feed syndication (still need to figure out how to get feed subscribers over to mailchimp so I have one email list...)
-* Setup NewRelic or Pingdom for uptime monitoring
+Check out [http://danstroot.com](http://danstroot.com)
 
 ### The most important aspects are:
 1. It is based on the static site generation tool [Jekyll](http://jekyllrb.com/).
@@ -99,6 +82,24 @@ There is actually quite a few things to do even for a simple site:
        * Minifies the resulting concatenated file using Uglifyjs.
     * Processes the [LESS](http://lesscss.org/) files to CSS
        * Minifies the resulting CSS file.
+5. Fire it up!  Run `jekyll serve` or `jekyll serve -w`
+
+## Setting up a site or blog (high level)
+
+There is actually quite a few things to do even for a simple site:
+* Obtain a domain
+  * Reserve Twitter name
+  * Reserve Facebook name
+  * Reserve Google+ name
+  * etc.
+* Move the domain DNS to AWS
+* Setup hosting (I'm using AWS S3 and Cloudfront since this is a static site)
+* Setup [Google Apps](http://www.google.com/enterprise/apps/business/) hosting for email
+* Setup Mailchimp for newsletter signups
+* Setup Disqus for site comments
+* Setup Google Analytics
+* Setup feedburner for rss/atom feed syndication (still need to figure out how to get feed subscribers over to mailchimp so I have one email list...)
+* Setup NewRelic or Pingdom for uptime monitoring
 
 ## License
 (The MIT License)
