@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="img-rounded img-responsive" alt="Product Image" src="https://dl.dropboxusercontent.com/u/300203/blog-images/breezi_placeit.png">
+<img class="img-rounded img-responsive" alt="Product Image" src="https://dl.dropboxusercontent.com/u/300203/blog-images/breezi_placeit2.png">
 
 Saw this today on [Hacker News][1].  Perfect timing as I was looking to create some images for this blog.  I think it works pretty well for about 30 seconds of effort.  Well done guys!
 
