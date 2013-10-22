@@ -11,14 +11,14 @@ tags:
 <div class="row">
   <div class="col-md-5">
     <img class="img-rounded img-responsive" alt="Steve Jobs" src="https://dl.dropboxusercontent.com/u/300203/blog-images/SteveJobsCloseUp.jpg">
-  </div><!-- column -->
+  </div>
   <div class="col-md-7">
     <blockquote>
       <p>I haven’t got any sort of odd chip on my shoulder about proving anything to myself or anybody else.  And remember, though the outside world looks at success from a numerical point of view, my yardstick might be quite different than that.  My yardstick may be how every computer that’s designed from here on out will have to be at least as good as a Macintosh.</p>
       <p>– <a href="http://www.newsweek.com/1985/09/30/jobs-talks-about-his-rise-and-fall.print.html">Steve Jobs, 1985</a></p>
     </blockquote>
-  </div><!-- column -->
-</div><!-- row -->
+  </div>
+</div>
 
 <!-- more -->
 
@@ -32,7 +32,7 @@ I decided to share my collection in raw form in the hopes they inspire you as we
 
 Market share and profitability are only outcomes. They are not Apple’s purpose; its mission is to achieve the "insanely great".  It is as if they are on an ongoing Grail quest. (As Professor Henry Jones said to Indiana: "The search for the Grail is the search for the Divine in all of us.")
 
-&#8212;&#8212;&#8212;&#8212;
+&#8212;&#8212;&#8212;
 
 As you probably know, there is a great deal of copy-catting in advertising and marketing. But here's the thing: when we present case studies of great marketing, we don't use Apple anymore because it is viewed as an outlier of such magnitude that many of us in the industry regard it as inimitable.
 
@@ -69,7 +69,7 @@ Jobs indoctrinates a culture of responsibility by hosting a series of weekly mee
 
 The accountability mindset extends down the ranks. At Apple there is never any confusion as to who is responsible for what. Internal Applespeak even has a name for it, the "DRI,"" or directly responsible individual.  Often the DRI's name will appear on an agenda for a meeting, so everybody knows who is responsible. "Any effective meeting at Apple will have an action list," says a former employee. "Next to each action item will be the DRI." A common phrase heard around Apple when someone is trying to learn the right contact on a project: "Who's the DRI on that?"
 
-_Lashinsky, Adam (2011). Inside Apple &#8212; From Steve Jobs down to the janitor: How America&#8217;s most successful &#8211; and most secretive &#8211; big company really works._
+_Lashinsky, Adam (2011). Inside Apple &#8212; From Steve Jobs down to the janitor: How America's most successful &#8211; and most secretive &#8211; big company really works._
 
 References:
 
