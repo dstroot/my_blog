@@ -407,11 +407,31 @@ footer p {
 }
 
 // Apply the affixed behavior in large views
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
 
   body {
     padding-top: 70px;  // Needed for fixed navbar or personal site
   }
+  // affix-top: The affix-top class should be inline to the page.
+  #sidebar.affix-top {
+    width: 230px;   // stop it from growing - anyone know how to fix this?
+  }
+  // affix: The affix class should be fixed to the page.
+  #sidebar.affix {
+    position: fixed;
+    top: 70px;      // same as body padding or outer navbar height
+    width: 230px;   // stop it from growing - anyone know how to fix this?
+  }
+  // affix bottom: The affix-bottom class should be positioned absolute.
+  #sidebar.affix-bottom {
+    position: absolute;
+    width: 230px;   // stop it from growing - anyone know how to fix this?
+  }
+
+}
+
+// Large desktops and up
+@media screen and (min-width: 1200px) {
   // affix-top: The affix-top class should be inline to the page.
   #sidebar.affix-top {
     width: 260px;   // stop it from growing - anyone know how to fix this?
