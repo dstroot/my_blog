@@ -191,6 +191,9 @@ ul.post-index {
   letter-spacing: 1px;
   text-decoration: none;
 }
+.posttitle h1 {
+  letter-spacing: 1px;
+}
 .posttitle h2 {
   letter-spacing: 1px;
 }
@@ -302,7 +305,7 @@ width: 0;
   margin-bottom: 50px;
 }
 .prev_next a {
-  font-size: 18px;
+  font-size: 20px;
   color: @accent-color;
 }
 .prev_next td {
@@ -410,7 +413,7 @@ footer p {
 @media screen and (min-width: 992px) {
 
   body {
-    padding-top: 70px;  // Needed for fixed navbar or personal site
+    padding-top: 30px;  // Needed for fixed navbar or personal site
   }
   // affix-top: The affix-top class should be inline to the page.
   #sidebar.affix-top {
@@ -419,7 +422,7 @@ footer p {
   // affix: The affix class should be fixed to the page.
   #sidebar.affix {
     position: fixed;
-    top: 70px;      // same as body padding or outer navbar height
+    top: 30px;      // same as body padding or outer navbar height
     width: 230px;   // stop it from growing - anyone know how to fix this?
   }
   // affix bottom: The affix-bottom class should be positioned absolute.
@@ -432,6 +435,9 @@ footer p {
 
 // Large desktops and up
 @media screen and (min-width: 1200px) {
+  body {
+    padding-top: 70px;  // Needed for fixed navbar or personal site
+  }
   // affix-top: The affix-top class should be inline to the page.
   #sidebar.affix-top {
     width: 260px;   // stop it from growing - anyone know how to fix this?
@@ -577,7 +583,7 @@ footer p {
 // Faded out hr                              [complete]
 // ----------------------------------------------------
 hr.soften {
-  margin: 65px 0px 65px 0px;  // top right bottom left
+  margin: 25px 0px 25px 0px;  // top right bottom left
   border: 0;
   height: 1px;
   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
@@ -595,6 +601,19 @@ hr.hr-sidebar {
   background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
 
+@media screen and (min-width: 992px) {
+  // tighten spacing
+  hr.soften {
+    margin: 55px 0px 55px 0px;  // top right bottom left
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  // tighten spacing
+  hr.soften {
+    margin: 65px 0px 65px 0px;  // top right bottom left
+  }
+}
 
 // Finally bring in syntax highlighting
 // -------------------------------------------------------
