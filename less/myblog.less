@@ -128,15 +128,10 @@ a:hover {
   // tighten footer on phones
   .footer {
     padding: 8px;
-  }
-  .prev_next a {
-    font-size: 20px;
+    margin-top: 30px;
   }
   .hide-on-phone {
     display: none;
-  }
-  .posts {
-    //font-size: 16px;
   }
   .posttitle h1 {
     font-size: 22px;
@@ -147,34 +142,25 @@ a:hover {
   .headed {
     margin-bottom: 15px;
   }
-  .prev_next {
-    margin-bottom: 75px;  // 30px with footer 75px w/o footer
-  }
 
 }
 
 @media screen and (min-width: 550px) {
-  .prev_next {
-    margin-bottom: 75px;  // 30px with footer 75px w/o footer
-  }
 
 }
 
 // Tablets and up
 @media screen and (min-width: 768px) {
 
-
 }
 
 // Tablets/desktops and up
 @media screen and (min-width: 992px) {
 
-
 }
 
 // Large desktops and up
 @media screen and (min-width: 1200px) {
-
 
 }
 
@@ -302,7 +288,7 @@ width: 0;
 // Post Navigation
 // --------------------------------------------------
 .prev_next {
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 }
 .prev_next a {
   font-size: 20px;
@@ -321,6 +307,22 @@ width: 0;
   margin: 0px;
   letter-spacing: 1px;
 }
+
+@media screen and (max-width: 480px) {
+  .prev_next a {
+    font-size: 20px;
+  }
+  .prev_next {
+    // margin-bottom: 75px;  // 30px with footer 75px w/o footer
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .prev_next {
+    // margin-bottom: 75px;  // 30px with footer 75px w/o footer
+  }
+}
+
 //Tablets and up
 @media screen and (min-width: 768px) {
   .prev_next p {
@@ -337,6 +339,7 @@ width: 0;
 #disqus_thread {
   background-color: @accent-color-lightest; //#D3E2EB; //#D7990C; //@accent-color-lightest; //#f7f5f2;
   padding: 40px;
+  margin-top: 50px;
 }
 
 
@@ -346,6 +349,7 @@ footer {
   background-color: @gray-darker;
   text-align: center;
   padding: 15px;
+  margin-top: 50px;
 }
 footer a {
   text-decoration: none;
@@ -379,6 +383,14 @@ footer p {
 }
 .footer-links li:first-child {
   padding-left: 0;
+}
+
+@media screen and (max-width: 480px) {
+  // tighten footer on phones
+  .footer {
+    padding: 8px;
+    margin-top: 30px;
+  }
 }
 
 
@@ -583,7 +595,7 @@ footer p {
 // Faded out hr                              [complete]
 // ----------------------------------------------------
 hr.soften {
-  margin: 25px 0px 25px 0px;  // top right bottom left
+  margin: 35px 0px 35px 0px;  // top right bottom left
   border: 0;
   height: 1px;
   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
