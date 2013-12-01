@@ -3,6 +3,7 @@ node_js:
   - 0.10
 before_script:
   - gem install jekyll
+  - gem install rdiscount
   - npm install -g grunt-cli
 env:
   global:
