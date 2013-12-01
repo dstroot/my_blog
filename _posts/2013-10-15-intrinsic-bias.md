@@ -44,6 +44,7 @@ It became clear that to succeed in the future the financial services industry wo
 The response to this need for trustworthy computing by many companies runs along the same view expressed by Google's Ben Fried, namely we can't have our data "out there" in someone else's datacenter, under someone else's control because it's too risky.
 
 There are some legitimate reasons for this view:
+
 * Concerns regarding legal discovery
 * Concerns regarding the ability to respond to regulators
 * Lack of clarity from the regulators
@@ -56,6 +57,7 @@ However at the end of the day these are issues that can be addressed if we reall
 This is where it gets interesting.  I have made the argument that I think using tools like Google Drive or Dropbox **responsibly** is actually likely to be **more secure** than managing our data ourselves.
 
 #### Why?
+
 * Data security and trust are at the heart of the business for companies like Google and Dropbox - therefore it is funded properly.
 * More transparency.  Many, many businesses are looking for holes or reasons not to use the service - in order to overcome this resistance the data security has to be really good, and well documented, and well audited.
 * It is tested daily by thousands of hackers.
@@ -69,6 +71,7 @@ But what will the headlines say? "Dropbox Security Breach" or "{Your Company Her
 I believe the public is more understanding because they use these services too.  If you had corporate data at Dropbox or Google and they were breached and you had to send notification to your clients you could explain that while you did your due diligence a security breach still occurred at one of your service providers.  Further, you will scrutinize their response and switch providers and/or bring the data back internally if necessary.
 
 I would also argue the economics of scale-based cloud services are even more compelling than people realize for large companies:
+
 * Less internal IT cost (the most obvious savings)
 * Less IT oversight cost (internal audit, risk, compliance, external audit, etc.)  These are significant costs in large, regulated organizations.
 * Less "prevention" cost - i.e. tools to prevent installation of Dropbox, audit or removal of the software, etc.
