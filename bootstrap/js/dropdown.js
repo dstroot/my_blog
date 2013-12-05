@@ -1,5 +1,5 @@
 /* ========================================================================
- * Bootstrap: dropdown.js v3.0.2
+ * Bootstrap: dropdown.js v3.0.3
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -26,7 +26,7 @@
   var backdrop = '.dropdown-backdrop'
   var toggle   = '[data-toggle=dropdown]'
   var Dropdown = function (element) {
-    var $el = $(element).on('click.bs.dropdown', this.toggle)
+    $(element).on('click.bs.dropdown', this.toggle)
   }
 
   Dropdown.prototype.toggle = function (e) {

@@ -11,12 +11,19 @@ cloudfront_distribution_config:
     quantity: 1
     items:
       CNAME: danstroot.com
-max_age: 120
+
+max_age:
+  "assets/*": <%= 60 * 60 * 24 %>
+  "*": <%= 60 * 60 * 1ß %>
+
 gzip: true
+
 concurrency_level: 100
+s3_reduced_redundancy: true
 
 # Below are examples of all the available configurations.
 # See README for more detailed info on each of them.
+# NOTE max_age is in seconds!
 
 # max_age:
 #   "assets/*": 6000
