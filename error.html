@@ -1,10 +1,11 @@
 ---
-layout:    default
-title:     404
-lead:      "Oh no! The document you requested couldn't be found."
-slug:      error
-base_url:  "../"
-permalink: error.html
+layout:              default
+title:               404
+lead:                "Oh no! The document you requested couldn't be found."
+slug:                error
+base_url:            "../"
+permalink:           error.html
+exclude_from_search: true
 ---
 
 <div class="container">
@@ -15,8 +16,9 @@ permalink: error.html
 </div>
 <h3>Here's some suggestions:</h3>
 <ul>
-  <li><p><a href="/">Return to our home page</a>, or</p></li>
-  <li><p>Search our site:</p>
+  <li><p><a href="/">Return to my home page</a>, or</p></li>
+  <li><p><a href="/search">Search my site</a>, or</p></li>
+  <li><p>Search on Google:</p>
     <form class="form-inline" action="http://google.com/search" method="get">
       <input class="form-control" type="hidden" name="q" value="site:{{ site.url | shorthand_url }}" />
       <input class="search form-control" type="text" name="q" placeholder="Search"/>

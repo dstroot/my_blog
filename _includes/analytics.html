@@ -114,3 +114,82 @@
 
       });
     </script>
+
+
+{% if page.title == "Search" %}
+<script>
+  $(document).ready(function() {
+
+    // Load lunr.js
+    $.getScript("//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.3.3/lunr.min.js")
+    .done(function(script, textStatus) {
+      console.log("Lunr loaded.");
+    })
+    .fail(function(jqxhr, settings, exception) {
+      console.log("Lunr load failed.");
+    });
+
+    // Load mustache.js
+    $.getScript("//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js")
+    .done(function(script, textStatus) {
+      console.log("Mustache loaded.");
+    })
+    .fail(function(jqxhr, settings, exception) {
+      console.log("Mustache load failed.");
+    });
+
+    // Load date.format.js
+    $.getScript("../assets/js/lunr/date.format.js")
+    .done(function(script, textStatus) {
+      console.log("date.format loaded.");
+    })
+    .fail(function(jqxhr, settings, exception) {
+      console.log("date.format load failed.");
+    });
+
+    // Load URI.js
+    $.getScript("../assets/js/lunr/URI.js")
+    .done(function(script, textStatus) {
+      console.log("URI loaded.");
+    })
+    .fail(function(jqxhr, settings, exception) {
+      console.log("URI load failed.");
+    });
+
+    // Load URI.js
+    $.getScript("../assets/js/lunr/jquery.lunr.search.js")
+    .done(function(script, textStatus) {
+      console.log("jquery.lunr.search loaded.");
+    })
+    .fail(function(jqxhr, settings, exception) {
+      console.log("jquery.lunr.search load failed.");
+    });
+
+  });
+</script>
+
+<script>
+      $(document).ready(function() {
+        // Have to use timeout to wait for everything to load ;(
+        setTimeout(
+          function()
+          {
+            $('#search-query').lunrSearch({
+              indexUrl: '/search.json',             // URL of the `search.json` index data for your site
+              results:  '#search-results',          // jQuery selector for the search results container
+              entries:  '.entries',                 // jQuery selector for the element to contain the results list, must be a child of the results element above.
+              template: '#search-results-template'  // jQuery selector for the Mustache.js template
+            });
+            $("#search-query").focus();
+          }, 500);
+
+      // $(function() {
+        // $('#search-query').lunrSearch({
+        //   indexUrl: '/search.json',             // URL of the `search.json` index data for your site
+        //   results:  '#search-results',          // jQuery selector for the search results container
+        //   entries:  '.entries',                 // jQuery selector for the element to contain the results list, must be a child of the results element above.
+        //   template: '#search-results-template'  // jQuery selector for the Mustache.js template
+        // });
+      });
+</script>
+{% endif %}

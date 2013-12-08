@@ -1,0 +1,66 @@
+---
+layout:             default
+title:              Search
+lead:               "Search my Blog"
+description:        "Search - Dan Stroot"
+slug:                search
+base_url:            "./"
+exclude_from_search: true
+---
+
+<div id="search">
+  <form action="/search" method="get" class="form-inline">
+    <input type="text" id="search-query" name="q" placeholder="Search" autocomplete="off" class="form-control inline-input">
+    <p><small>Just type something. Results will show after three letters are entered.</small></p>
+  </form>
+</div>
+
+<section id="search-results" style="display: none;">
+    <br>
+    <h1>Your Results:</h1>
+    <div class="entries"></div>
+</section>
+
+<!-- Mustashe Template
+     Note the use of {% raw %} and {% endraw %} to
+     ensure the Mustache tags are not stripped out
+     by Jekyll. -->
+{% raw %}
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+      <h1><a href="{{url}}">{{title}}</a></h1>
+    </article>
+  {{/entries}}
+</script>
+{% endraw %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

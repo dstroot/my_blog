@@ -82,3 +82,12 @@ google_plus_one_size: medium
 # Hidden: No visible button, just add author information to search results
 google_plus_id:      103150764314035491590
 google_plus_hidden:  false
+
+# ----------------------- #
+#   Search                #
+# ----------------------- #
+
+lunr_search:
+  excludes: [rss.xml, atom.xml, index.html, error.html, search.html, robots.txt]
+  stopwords: "stopwords.txt"
+  min_length: 3
