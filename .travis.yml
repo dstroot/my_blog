@@ -4,6 +4,8 @@ node_js:
 before_script:
   - gem install jekyll
   - gem install rdiscount
+  - gem install json
+  - gem install nokogiri
   - npm install -g grunt-cli
 env:
   global:
