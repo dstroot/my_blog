@@ -110,10 +110,10 @@ module.exports = function(grunt) {
           stripBanners: true
         },
         src: [
-          'assets/css/<%= pkg.name %>.css',                    // Main CSS file built from main.less
-          'assets/fonts/font-awesome/css/font-awesome.min.css',// Font Awesome
+          'assets/css/<%= pkg.name %>.css',                     // Main CSS file built from main.less
+          'assets/fonts/font-awesome/css/font-awesome.min.css', // Font Awesome
           'assets/css/syntax.css',                              // Code syntax highlighting
-          'assets/fonts/ss-social-circle/ss-social-circle.css' // Social Icons
+          'assets/fonts/ss-social-circle/ss-social-circle.css'  // Social Icons
         ],
         dest: 'assets/css/<%= pkg.name %>.css'
       }
@@ -164,7 +164,7 @@ module.exports = function(grunt) {
         dest: 'assets/css/<%= pkg.name %>.css'
       // },
       // Since we are adding additional css snippets with
-      // the concat stap after recess compiles the less
+      // the concat step after recess compiles the less
       // code we will then use  cssmin to minify the final
       // result.  Hence no need to create a minified version
       // here.
@@ -229,6 +229,23 @@ module.exports = function(grunt) {
 
     // -----------------------------------
     //
+    // TASK: imagemin    [Optimize Images]
+    //
+    // -----------------------------------
+    imagemin: {                          // Task
+      dynamic: {                         // Another target
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          cwd: '/Users/Dan/Dropbox/public/blog-images/',  // Src matches are relative to this path
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          dest: '/Users/Dan/Dropbox/public/blog-images/'  // Destination path prefix
+        }]
+      }
+    },
+
+
+    // -----------------------------------
+    //
     // TASK: watch  [Rebuild the CSS as needed]
     //
     // -----------------------------------
@@ -250,6 +267,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-html-validation');
   grunt.loadNpmTasks('grunt-css');
@@ -263,6 +281,9 @@ module.exports = function(grunt) {
   // Lint the .js and test for HTML5 validity
   grunt.registerTask('test', ['jshint', 'validate-docs']);
 
+  // Optimize all images
+  grunt.registerTask('opt-images', ['imagemin']);
+
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat:js', 'uglify']);
 
@@ -270,7 +291,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-css', ['recess', 'concat:css', 'cssmin']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin', 'imagemin']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);

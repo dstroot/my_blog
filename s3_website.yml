@@ -16,7 +16,13 @@ cloudfront_invalidate_root: true
 
 max_age:
   "assets/*": <%= 60 * 60 * 24 %>
-  "*": <%= 60 * 60 * 1 %>
+  "assets/css/*": <%= 60 * 60 * 24 %>
+  "assets/js/*": <%= 60 * 60 * 24 %>
+  "assets/fonts/s*": <%= 60 * 60 * 24 %>
+  "*": <%= 60 * 60 * 24 %>
+
+exclude_from_upload:
+  - .DS_Store
 
 gzip: true
 

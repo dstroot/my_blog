@@ -68,8 +68,20 @@
     </script>
     {% endif %}
 
-    <!-- Bootstrap core JavaScript
+    <!-- JavaScript
     ================================================== -->
+    <!-- Note: This was to defer loading of the CSS
+    Did not work because it does not overide inline CSS
+    Changed to just loading a minimal CSS file first
+    <script>
+      var l = document.createElement('link');
+      l.rel='stylesheet';
+      l.href='/assets/css/myblog.min.css';
+      l.media='defer';
+      l.addEventListener('load', function() { l.media=''; }, false);
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(l, s);
+    </script>
+    -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- Once we have jQuery we can async load other scripts using jQuery -->
     <script>
@@ -156,7 +168,7 @@
       console.log("URI load failed.");
     });
 
-    // Load URI.js
+    // Load Search.js
     $.getScript("../assets/js/lunr/jquery.lunr.search.js")
     .done(function(script, textStatus) {
       console.log("jquery.lunr.search loaded.");
@@ -170,7 +182,7 @@
 
 <script>
       $(document).ready(function() {
-        // Have to use timeout to wait for everything to load ;(
+        // Have to use timeout to wait for everything to load - sucks ;(
         setTimeout(
           function()
           {

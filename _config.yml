@@ -15,7 +15,7 @@ permalink:      pretty  # pretty/date
 
 # Server
 destination:    ./_site
-exclude:        ["LICENSE", ".editorconfig", ".gitignore", "Gruntfile.js", "s3_website.yml", "package.json", "node_modules", "README.md", "TODO.md", "copy_bs.sh", "bootstrap", "less", "validation-report.json", "validation-status.json", "example_s3_website.yml", "example_config.yml"]
+exclude:        ["LICENSE", ".editorconfig", ".gitignore", "Gruntfile.js", "s3_website.yml", "package.json", "node_modules", "README.md", "TODO.md", "copy_bs.sh", "bootstrap", "less", "validation-report.json", "validation-status.json"]
 timezone:       America/Los_Angeles
 port:           8080
 pygments:       true
@@ -88,6 +88,6 @@ google_plus_hidden:  false
 # ----------------------- #
 
 lunr_search:
-  excludes: [rss.xml, atom.xml, index.html, error.html, search.html, robots.txt]
+  excludes: [rss.xml, atom.xml, index.html, error.html, search.html, robots.txt, search.json, sitemap.xml, stopwords.txt]
   stopwords: "stopwords.txt"
   min_length: 3
