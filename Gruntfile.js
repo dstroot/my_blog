@@ -100,7 +100,6 @@ module.exports = function(grunt) {
           //'bootstrap/js/scrollspy.js',
           //'bootstrap/js/tab.js',
           'bootstrap/js/affix.js'
-          //'assets/js/totop/jquery.ui.totop.js'
         ],
         dest: 'assets/js/<%= pkg.name %>.js'
       },
@@ -111,7 +110,7 @@ module.exports = function(grunt) {
         },
         src: [
           'assets/css/<%= pkg.name %>.css',                     // Main CSS file built from main.less
-          'assets/fonts/font-awesome/css/font-awesome.min.css', // Font Awesome
+          //'assets/fonts/font-awesome/css/font-awesome.min.css', // Font Awesome
           'assets/css/syntax.css',                              // Code syntax highlighting
           'assets/fonts/ss-social-circle/ss-social-circle.css'  // Social Icons
         ],

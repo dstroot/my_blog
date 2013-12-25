@@ -111,14 +111,11 @@
           console.log("myblog load failed.");
         });
 
-        // Load ui.totop.js
-        $.getScript("/assets/js/totop/jquery.ui.totop.js")
+        // Load toTop.js
+        $.getScript("/assets/js/toTop.min.js")
         .done(function(script, textStatus) {
           console.log("ToTop loaded.");
-          $().UItoTop({
-            scrollSpeed: 250,
-            easingType: 'swing'   //swing or linear
-          });
+          $().toTop();
         })
         .fail(function(jqxhr, settings, exception) {
           console.log("ToTop load failed.");
@@ -126,7 +123,6 @@
 
       });
     </script>
-
 
 {% if page.title == "Search" %}
 <script>
