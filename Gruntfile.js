@@ -253,26 +253,38 @@ module.exports = function(grunt) {
         files: ['less/<%= pkg.name %>.less', 'bootstrap/less/*.less'],
         tasks: ['recess']
       }
-    }
+    },
+
+
+    // -----------------------------------
+    //
+    // TASK: exec           [Upload to S3]
+    // exec runs commands
+    // -----------------------------------
+      exec: {
+        list_files: {
+          cmd: 'ls -l **'
+        },
+        echo_grunt_version: {
+          cmd: function() { return 'echo ' + this.version; }
+        },
+        s3: {
+          cmd: 's3_website push',
+          stdout: true,
+          stderr: true
+        }
+      }
 
 
   });
 
-
-  // These plugins provide necessary tasks.
-  //---------------------------------------
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-html-validation');
-  grunt.loadNpmTasks('grunt-css');
-  grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-recess');
-
+ /*
+  *  This section is where we require the necessary plugins.
+  *
+  *  Let's be elegant and just tell Grunt
+  *  to read our package.json devDependencies:
+  */
+  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
   // Docs HTML validation task
   grunt.registerTask('validate-docs', ['jekyll', 'validation']);
