@@ -10,7 +10,8 @@ tags:
 
 <div class="row">
   <div class="col-md-5">
-    <img class="img-rounded img-responsive" alt="Steve Jobs" src="https://dl.dropboxusercontent.com/u/300203/blog-images/SteveJobsCloseUp.jpg">
+    <!-- <img class="img-rounded img-responsive" alt="Steve Jobs" src="https://dl.dropboxusercontent.com/u/300203/blog-images/SteveJobsCloseUp.jpg"> -->
+    <img class="lazy img-rounded img-responsive" alt="Steve Jobs" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/SteveJobsCloseUp.jpg">
   </div>
   <div class="col-md-7">
     <blockquote>

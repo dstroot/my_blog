@@ -8,7 +8,8 @@ categories:
 tags:
 ---
 
-<img class="img-rounded img-responsive" alt="Haiti" src="https://dl.dropboxusercontent.com/u/300203/blog-images/haiti.jpg">
+<!-- <img class="img-rounded img-responsive" alt="Haiti" src="https://dl.dropboxusercontent.com/u/300203/blog-images/haiti.jpg"> -->
+<img class="lazy img-rounded img-responsive" alt="Haiti" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/haiti.jpg">
 
 My assistant Kathy told me today about donating to Haitian relief efforts by simply sending a text message from my cellphone.  The Red Cross, via a company called mGive, has got the major U.S. carriers on board to allow people to very easily donate $10 to the Red Cross via a simple SMS text message.
 

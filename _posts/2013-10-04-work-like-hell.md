@@ -8,7 +8,8 @@ categories:
 tags:
 ---
 
-<img class="img-rounded img-responsive" alt="Elon Musk" src="https://dl.dropboxusercontent.com/u/300203/blog-images/elon-musk.jpg">
+<!-- <img class="img-rounded img-responsive" alt="Elon Musk" src="https://dl.dropboxusercontent.com/u/300203/blog-images/elon-musk.jpg"> -->
+<img class="lazy img-rounded img-responsive" alt="Elon Musk" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/elon-musk.jpg">
 
 > "If other people are putting in 40-hour workweeks, and you're
 > putting in 100-hour workweeks, then, even if you're doing the same

@@ -90,7 +90,7 @@
         // Load Boostrap
         $.getScript("/assets/js/myblog.min.js")
         .done(function(script, textStatus) {
-          console.log("myblog loaded.");
+          //console.log("myblog loaded.");
           // lets use affix bootstrap component to affix sidebar
           $('#sidebar').affix({
             offset: {
@@ -98,7 +98,7 @@
               top: function () {
                 var offsetTop      = $('#sidebar').offset().top                              // How far are we from top in total?
                 var bodyPaddingTop = parseInt($(document.body).css("padding-top"), 10) || 0  // Account for body padding
-                return (this.top = offsetTop - bodyPaddingTop)
+                return (this.top = offsetTop - bodyPaddingTop - 1) // removing one pixel to turn on affix immediately
               }
             , bottom: function () {
                 var footerOuterHeight = $('footer').outerHeight(true) || 0                   // Account for footer
@@ -114,11 +114,24 @@
         // Load toTop.js
         $.getScript("/assets/js/toTop.min.js")
         .done(function(script, textStatus) {
-          console.log("ToTop loaded.");
+          //console.log("ToTop loaded.");
           $().toTop();
         })
         .fail(function(jqxhr, settings, exception) {
           console.log("ToTop load failed.");
+        });
+
+        // Load jquery.lazyload.min.js
+        $.getScript("/assets/js/jquery.lazyload.min.js")
+        .done(function(script, textStatus) {
+          //console.log("Lazyload loaded.");
+          $("img.lazy").lazyload({
+            threshold : 300,  // images load 100 pixels before visible
+            effect : "fadeIn"
+          });
+        })
+        .fail(function(jqxhr, settings, exception) {
+          console.log("Lazyload load failed.");
         });
 
       });

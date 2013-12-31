@@ -302,7 +302,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-css', ['recess', 'concat:css', 'cssmin']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin', 'imagemin']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);

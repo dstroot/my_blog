@@ -8,7 +8,8 @@ categories:
 tags:
 ---
 
-<img class="img-rounded img-responsive" alt="Apple's Campus" src="https://dl.dropboxusercontent.com/u/300203/blog-images/ispaceship.jpg">
+<!-- <img class="img-rounded img-responsive" alt="Apple's Campus" src="https://dl.dropboxusercontent.com/u/300203/blog-images/ispaceship.jpg"> -->
+<img class="lazy img-rounded img-responsive" alt="Apple's Campus" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/ispaceship.jpg">
 
 Apple’s most recent 10-K filing with the U.S. Securities and Exchange Commission shows the company has budgeted **$11 billion in capital expenditures for fiscal 2014**.
 
