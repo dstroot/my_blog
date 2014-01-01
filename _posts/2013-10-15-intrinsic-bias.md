@@ -7,26 +7,26 @@ published: true
 categories:
 tags:
 ---
-<!-- <img class="img-rounded img-responsive" alt="Bias" src="https://dl.dropboxusercontent.com/u/300203/blog-images/bias.jpg"> -->
+
 <img class="lazy img-rounded img-responsive" alt="Bias" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/bias.jpg">
 
 As a CIO in a large, publicly owned financial services company I held the responsibility of keeping our client's (and our organization’s) data safe and secure.  As the economics of cloud services became compelling the largest hurdle to adoption was "potential security risks", by a large measure.
 
 Let me explain what I mean by "potential security risks".   Recently Ben Fried, Google's CIO, made a [remark about Dropbox](http://allthingsd.com/20131010/google-cio-ben-fried-on-how-google-works/):
 
-> “The important thing to understand about Dropbox,” Fried said, “is
-> that when your users use it in a corporate context, **your corporate
-> data is being held in someone else’s data center.**”
->
+> “The important thing to understand about Dropbox,” Fried said, “is 
+> that when your users use it in a corporate context, **your corporate 
+> data is being held in someone else’s data center.**” 
+> 
 > _(Emphasis added)_
 <!-- more -->
 ### How Ironic
 
 It's a problem just because your data is in someone else's data center?  That doesn't sound good for Google's business model. Fried and Google now say that he misspoke. Fried says he meant that the real concern about Dropbox is [more around security](http://allthingsd.com/20131015/google-cio-ben-fried-clarifies-remarks-on-dropbox/):
 
->“Any third-party cloud providers that our employees use must pass
->our thorough security review and agree under contract to maintain
->certain security levels,”
+> “Any third-party cloud providers that our employees use must pass 
+> our thorough security review and agree under contract to maintain 
+> certain security levels,”
 
 ### Reading Between the Lines
 

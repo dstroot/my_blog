@@ -7,6 +7,7 @@ published: false
 categories:
 tags:
 ---
+
 Blogs need a core concept that will engage your audience.  Placing a post how to install Python on Windows, along with a picture of your favorite band and an assessment of Apple's business strategy all in the same place means you probably won't appeal to anyone in particular.  However a blog called "Ant Farm" that has *every* post focused on raising healthy and happy ants - well that will build an audience for sure.  So if you have, or want, seperate audiences you will need seperate blogs.
 <!-- more -->
 ## My Audiences
@@ -26,16 +27,17 @@ Blogs need a core concept that will engage your audience.  Placing a post how to
 
 [Dropbox][2]. This is where I will store my raw posts as well as my blog image files. This way they are accessible across all platforms and devices.
 
-> **PROTIP:**
-> You can serve your blog images directly from Dropbox no matter where your posts
-> actually end up being published (and the links don't change). The caveat is
-> they must be in your Dropbox "public" folder somewhere.  I created a "blog-images"
-> sub-folder and just drop the images there.  Then you just right click the file on
-> Dropbox and select "copy public link".  Dropbox even has a URL shortening service
-> so they can also give you a shortened link.
+> **PROTIP:** 
+> You can serve your blog images directly from Dropbox no matter where 
+> your posts actually end up being published (and the links don't change). 
+> The caveat is they must be in your Dropbox "public" folder somewhere. 
+> 
+> I created a "blog-images" sub-folder and just drop the images there. 
+> Then you just right click the file on Dropbox and select "copy public 
+> link".  Dropbox even has a URL shortening service so they can also 
+> give you a shortened link.
 
 <!-- more -->
-
 ### Blogging Engines
 
 1. Wordpress.  The grandaddy.  The OG.  Tons of addins, plugins and whatnot.

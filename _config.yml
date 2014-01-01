@@ -14,8 +14,28 @@ pagination_dir: blog    # Directory base for pagination URLs eg. /blog/page/2/
 permalink:      pretty  # pretty/date
 
 # Server
-destination:    ./_site
-exclude:        ["LICENSE", ".editorconfig", ".gitignore", "Gruntfile.js", "s3_website.yml", "package.json", "node_modules", "README.md", "TODO.md", "copy_bs.sh", "bootstrap", "less", "validation-report.json", "validation-status.json"]
+#destination:    ./_site
+safe:           false    # disables plugins
+exclude:
+- "vendor"
+- "LICENSE"
+- ".editorconfig"
+- ".gitignore"
+- "Gruntfile.js"
+- "s3_website.yml"
+- "package.json"
+- "node_modules"
+- "README.md"
+- "TODO.md"
+- "copy_bs.sh"
+- "bootstrap"
+- "less"
+- "validation-report.json"
+- "validation-status.json"
+- ".listen.less"            # seems to fix infinite regeration
+
+include:        [""]
+
 timezone:       America/Los_Angeles
 port:           8080
 pygments:       true

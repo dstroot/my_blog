@@ -13,10 +13,10 @@ Recently I have started using [Jekyll][1].  Some of the Jekyll frameworks like O
 I use both a Windows machine and an OSX machine to develop with so I was happy that everything seemed to work "out of the box" on OSX  but Windows was different story.
 <!-- more -->
 
-> **PROTIP:**
-> If Jekyll is giving you an error about /bin/sh on Windows
-> set `pygments: false` in the `_config.yml` file to at
-> least get it to run and build your site.
+> **PROTIP:** 
+> If Jekyll is giving you an error about /bin/sh on Windows 
+> set `pygments: false` in the `_config.yml` file to at 
+> least get it to run and build your site. 
 
 I am not experienced with Python and this is my first time installing it on Windows. That said, here are the steps I used to install Python and Pygments. This is officially the first Python egg I’ve ever hatched.
 

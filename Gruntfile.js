@@ -153,14 +153,13 @@ module.exports = function(grunt) {
     // TASK: recess  [Compile/minify LESS/CSS]
     //
     // -----------------------------------
-    recess: {
-      options: {
-        compile: true
-      },
-      bootstrap: {
-        //src: ['bootstrap/less/bootstrap.less'],
-        src: ['less/<%= pkg.name %>.less'],
-        dest: 'assets/css/<%= pkg.name %>.css'
+    // recess: {
+    //   options: {
+    //     compile: true
+    //   },
+    //   bootstrap: {
+    //     src: ['less/<%= pkg.name %>.less'],
+    //     dest: 'assets/css/<%= pkg.name %>.css'
       // },
       // Since we are adding additional css snippets with
       // the concat step after recess compiles the less
@@ -175,6 +174,35 @@ module.exports = function(grunt) {
       //   //src: ['bootstrap/less/bootstrap.less'],
       //   src: ['less/main.less'],
       //   dest: 'assets/css/<%= pkg.name %>.min.css'
+    //   }
+    // },
+
+    // -----------------------------------
+    //
+    // TASK: less [Compile/minify LESS/CSS]
+    //
+    // -----------------------------------
+    less: {
+      compileCore: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>.css.map',
+          sourceMapFilename: 'assets/css/<%= pkg.name %>.css.map'
+        },
+        files: {
+          'assets/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
+        }
+      },
+      minify: {
+        options: {
+          cleancss: true,
+          report: 'min'
+        },
+        files: {
+          'assets/css/<%= pkg.name %>.min.css': 'assets/css/<%= pkg.name %>.css'
+        }
       }
     },
 
@@ -196,11 +224,17 @@ module.exports = function(grunt) {
     // -----------------------------------
     validation: {
       options: {
+        charset: 'utf-8',
+        doctype: 'HTML5',
+        failHard: true,
         reset: true,
+        relaxerror: [
+          'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
+          'Element img is missing required attribute src.'
+        ]
       },
       files: {
-        expand: true,    // expands the items below to a list
-        src: ["_site/**/*.html"]
+        src: ['_site/**/*.html']
       }
     },
 
@@ -299,7 +333,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-js', ['concat:js', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['recess', 'concat:css', 'cssmin']);
+  grunt.registerTask('dist-css', ['less', 'concat:css', 'cssmin']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);

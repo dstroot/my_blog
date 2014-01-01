@@ -8,7 +8,6 @@ categories:
 tags:
 ---
 
-<!-- <img class="img-rounded img-responsive" alt="Haiti" src="https://dl.dropboxusercontent.com/u/300203/blog-images/haiti.jpg"> -->
 <img class="lazy img-rounded img-responsive" alt="Haiti" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/haiti.jpg">
 
 My assistant Kathy told me today about donating to Haitian relief efforts by simply sending a text message from my cellphone.  The Red Cross, via a company called mGive, has got the major U.S. carriers on board to allow people to very easily donate $10 to the Red Cross via a simple SMS text message.
@@ -19,7 +18,7 @@ I had been watching the news about Haiti and was heartbroken at what they are go
 <!-- more -->
 **Wanting to donate** and **actually donating** are two different things.  Deciding the amount, finding my checkbook, writing a check, finding an envelope and stamp, addressing the envelope, mailing it – well frankly it was exhausting just typing all those steps.  Not only that but it's hard to imagine finding 10 minutes in my day to actually do it!  This new process cut that time down to less than 30 seconds!
 
-> **NOTE:** If you want to donate simply text HAITI to the number
+> **NOTE:** If you want to donate simply text HAITI to the number 
 > 90999. A $10 charge will be added to your next cellphone bill.
 
 One of the reasons text messaging is so popular is because it’s so simple. Anyone with just about any kind of mobile device can do it. And that’s precisely why it is ingenious to use this mechanism for donations.

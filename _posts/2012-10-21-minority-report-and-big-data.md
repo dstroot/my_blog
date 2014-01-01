@@ -7,26 +7,26 @@ published: true
 categories:
 tags:
 ---
-<!-- <img class="img-rounded img-responsive" alt="Minority Report" src="https://dl.dropboxusercontent.com/u/300203/blog-images/minorityreport.jpg"> -->
+
 <img class="lazy img-rounded img-responsive" alt="Minority Report" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/minorityreport.jpg">
 
-> The United Arab Emirates holds the largest biometric database in
-> the world, the Emirates Identity Authority has announced. The
-> population register of Emirates ID has over **103 million digital
-> fingerprints and over 15 million digital facial recognition
-> records**, which includes multiple records of each UAE resident,
-> and digital signatures as of October 11, senior officials said.
->
-> Dr. Ali Al Khoury, Director General of Emirates ID, said the
-> authority has submitted an official application to the World
-> Record Academy to recognize this record. Asked about the
-> confirmation of the authority’s claims about the world record, an
-> official spokesman of the authority told Gulf News on Sunday: "We
-> have made worldwide surveys and inquiries with the similar
-> official authorities and agencies of the world governments holding
-> such databases and confirmed that our database is the largest. The
-> World Record Academy also confirmed to us that no other government
-> or authority has made a similar claim for such a record." 1
+> The United Arab Emirates holds the largest biometric database in 
+> the world, the Emirates Identity Authority has announced. The 
+> population register of Emirates ID has over **103 million digital 
+> fingerprints and over 15 million digital facial recognition 
+> records**, which includes multiple records of each UAE resident, 
+> and digital signatures as of October 11, senior officials said. 
+> 
+> Dr. Ali Al Khoury, Director General of Emirates ID, said the 
+> authority has submitted an official application to the World 
+> Record Academy to recognize this record. Asked about the 
+> confirmation of the authority’s claims about the world record, an 
+> official spokesman of the authority told Gulf News on Sunday: "We 
+> have made worldwide surveys and inquiries with the similar 
+> official authorities and agencies of the world governments holding 
+> such databases and confirmed that our database is the largest. The 
+> World Record Academy also confirmed to us that no other government 
+> or authority has made a similar claim for such a record." 1 
 <!-- more -->
 
 The question you should be asking yourself right now is “for what purpose?” Collecting and storing all that data costs millions. What is the value of having it? Who has access to it? Why make it so publicly known?

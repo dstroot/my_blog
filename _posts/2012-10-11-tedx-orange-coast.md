@@ -7,7 +7,7 @@ published: true
 categories:
 tags:
 ---
-<!-- <img class="img-rounded img-responsive" alt="TEDx" src="https://dl.dropboxusercontent.com/u/300203/blog-images/TEDx-logo.jpg"> -->
+
 <img class="lazy img-rounded img-responsive" alt="TEDx" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/TEDx-logo.jpg">
 
 Yesterday I had the pleasure of mental stimulation.  The theme of the TEDx OC conference was relevance.  Specifically how do you stay relevant in today’s world?
@@ -18,7 +18,8 @@ Rick Warren was the host in the late afternoon.  Rick Warren is the founder of S
 
 It’s obvious in hindsight that Rick must know some things about growing and nurturing an organization.  When he spoke of relevance it was startlingly relevant!  I took away two really great points and I thought I’d share them here.  The first point is relevant to both you as a person, as well as organizations.  Rick’s quote:
 
-> “When the pace of change around you is faster than the pace of change inside you, you become irrelevant.”
+> “When the pace of change around you is faster than the pace of change 
+> inside you, you become irrelevant.”
 
 The pace of change in the world is relentless and moving ever faster.  In order to stay relevant you need to move at the same pace or better.  If not, you fall behind.  If you are a cyclist then you aren’t in the peloton anymore.
 
@@ -28,11 +29,16 @@ One idea I loved was the point Rick made to “develop a lab mentality”.  Neve
 
 Today, many companies (if not all) are trying to be more innovative.  But how?  There are many great examples in the wild.  For example in advertising you are starting to see “labs” emerge as a new nomenclature.  Olgivy and BBH have created labs and I’ll use BBH’s as an example.  Here is their mission and vision:
 
-> Labs is BBH’s global innovation unit. We’re tasked with pioneering new outputs and approaches: exploring emerging platforms and behaviours on behalf of brands, and developing new agency models along the way. Our overall ambition is to save the world find ways in which marketing innovation can be a powerful force for good (more effective, more engaging, more sustainable, more exciting). We’re particularly interested in:
+> Labs is BBH’s global innovation unit. We’re tasked with pioneering 
+> new outputs and approaches: exploring emerging platforms and behaviours 
+> on behalf of brands, and developing new agency models along the way. 
+> Our overall ambition is to find ways in which marketing innovation can 
+> be a powerful force for good (more effective, more engaging, more 
+> sustainable, more exciting). 
 
 The concept of adopting a lab mentality is in my view the only way for large organizations to become more innovative.  Why?
 
-* A **dedicated lab** is necessary. The reason they need to be dedicated is that in an environment where the pace of change is so fast, it’s hard for people to adequately deal with the present, while at the same time imagining and developing a near future.
+* A **dedicated lab** is necessary. The reason they need to be dedicated is that in an environment where the pace of change is so fast, it’s hard for people to adequately deal with the _present_, while at the same time imagining and developing the future.
 * The people and skills required to invent the future are **different** from “line” jobs in the organization.
 
 The other key takeaway from Rick was his thoughts on grief.  Yes, grief.  Rick said something like this:
