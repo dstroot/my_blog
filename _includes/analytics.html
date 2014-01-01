@@ -126,8 +126,9 @@
         .done(function(script, textStatus) {
           //console.log("Lazyload loaded.");
           $("img.lazy").lazyload({
-            threshold : 350,  // images load 350 pixels before visible
-            effect : "fadeIn"
+            threshold : 400,        // images load 400 pixels before visible
+            effect : "fadeIn",
+            skip_invisible : false  // works with img tags without sizes
           });
         })
         .fail(function(jqxhr, settings, exception) {

@@ -285,7 +285,7 @@ module.exports = function(grunt) {
     watch: {
       recess: {
         files: ['less/<%= pkg.name %>.less', 'bootstrap/less/*.less'],
-        tasks: ['recess']
+        tasks: ['less']
       }
     },
 
@@ -320,6 +320,9 @@ module.exports = function(grunt) {
   */
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
+
+
+
   // Docs HTML validation task
   grunt.registerTask('validate-docs', ['jekyll', 'validation']);
 
@@ -339,7 +342,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);
 
   // Default task.
-  grunt.registerTask('default', ['test', 'dist']);
+  grunt.registerTask('default', ['test', 'dist', 'exec']);
 
 
 };
