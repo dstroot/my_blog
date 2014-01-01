@@ -342,7 +342,9 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);
 
   // Default task.
-  grunt.registerTask('default', ['test', 'dist', 'exec']);
+  grunt.registerTask('default', ['test', 'dist']);
 
+  // Full Monte
+  grunt.registerTask('full', ['test', 'dist', 'exec']);
 
 };
