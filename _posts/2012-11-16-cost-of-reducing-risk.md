@@ -16,15 +16,17 @@ From Joel Spolsky’s [Camels and Rubber Duckies](http://www.joelonsoftware.com/
 
 > Software is priced three ways: free, cheap, and dear. 
 > 
-> * **Free.** Open source, etc. Many big companies are still 
+> **Free:** Open source, etc. Many big companies are still 
 > apprehensive about open source.  They want someone responsible 
 > with deep pockets who will take their call when something goes 
 > south. Open source feels risky because there is no one else to 
 > blame. 
-> * **Cheap.** $10 – $1,000, sold to a very large number of 
+> 
+> **Cheap:** $10 – $1,000, sold to a very large number of 
 > people at a low price without a salesforce. Most shrinkwrapped 
 > consumer and small business software falls into this category. 
-> * **Dear.** $75,000 – $1,000,000+, sold to a few big companies 
+> 
+> **Dear:** $75,000 – $1,000,000+, sold to a few big companies 
 > using a team of slick salespeople that do six months of PowerPoint 
 > meetings just to get one sale. The Oracle model. 
 > 

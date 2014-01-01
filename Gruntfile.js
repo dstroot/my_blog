@@ -277,15 +277,49 @@ module.exports = function(grunt) {
     },
 
 
+
     // -----------------------------------
     //
-    // TASK: watch  [Rebuild the CSS as needed]
+    // TASK: connect       [static server]
+    //
+    // -----------------------------------
+    // https://github.com/gruntjs/grunt-contrib-connect
+    connect: {
+      server: {
+        options: {
+          port: 3000,
+          base: '_site'
+        }
+      }
+    },
+
+
+    // -----------------------------------
+    //
+    // TASK: watch
     //
     // -----------------------------------
     watch: {
-      recess: {
-        files: ['less/<%= pkg.name %>.less', 'bootstrap/less/*.less'],
-        tasks: ['less']
+      js: {
+        files: ['bootstrap/js/*.js'],   //'assets/**/*.js'
+        tasks: ['dist-js'],
+        options: {
+          livereload: true,
+        }
+      },
+      css: {
+        files: ['less/*.less', 'less/bootstrap/*.less'],
+        tasks: ['dist-css'],
+        options: {
+          livereload: true,
+        }
+      },
+      html: {
+        files: ['*.html', '_includes', '_layouts', '_posts'],
+        tasks: ['jekyll'],
+        options: {
+          livereload: true,
+        }
       }
     },
 
@@ -293,7 +327,7 @@ module.exports = function(grunt) {
     // -----------------------------------
     //
     // TASK: exec           [Upload to S3]
-    // exec runs commands
+    // `exec` runs commands
     // -----------------------------------
       exec: {
         list_files: {
@@ -322,6 +356,8 @@ module.exports = function(grunt) {
 
 
 
+  // Docs HTML validation task
+  grunt.registerTask('develop', ['connect', 'watch']);
 
   // Docs HTML validation task
   grunt.registerTask('validate-docs', ['jekyll', 'validation']);
