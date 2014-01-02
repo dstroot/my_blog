@@ -315,7 +315,7 @@ module.exports = function(grunt) {
         }
       },
       html: {
-        files: ['*.html', '_includes', '_layouts', '_posts'],
+        files: ['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*.md'],
         tasks: ['jekyll'],
         options: {
           livereload: true,
@@ -329,19 +329,16 @@ module.exports = function(grunt) {
     // TASK: exec           [Upload to S3]
     // `exec` runs commands
     // -----------------------------------
-      exec: {
-        list_files: {
-          cmd: 'ls -l **'
-        },
-        echo_grunt_version: {
-          cmd: function() { return 'echo ' + this.version; }
-        },
-        s3: {
-          cmd: 's3_website push',
-          stdout: true,
-          stderr: true
-        }
+    exec: {
+      echo_grunt_version: {
+        cmd: function() { return 'echo ' + this.version; }
+      },
+      s3: {
+        cmd: 's3_website push --headless',
+        stdout: true,
+        stderr: true
       }
+    }
 
 
   });
@@ -357,7 +354,7 @@ module.exports = function(grunt) {
 
 
   // Docs HTML validation task
-  grunt.registerTask('develop', ['connect', 'watch']);
+  grunt.registerTask('develop', ['test', 'dist', 'connect', 'watch']);
 
   // Docs HTML validation task
   grunt.registerTask('validate-docs', ['jekyll', 'validation']);
