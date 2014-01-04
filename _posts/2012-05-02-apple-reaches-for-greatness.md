@@ -9,10 +9,10 @@ tags:
 ---
 
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-6">
     <img class="lazy img-rounded img-responsive" alt="Steve Jobs" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/SteveJobsCloseUp.jpg">
   </div>
-  <div class="col-md-7">
+  <div class="col-md-6">
     <blockquote>
       <p>I haven’t got any sort of odd chip on my shoulder about proving anything to myself or anybody else.  And remember, though the outside world looks at success from a numerical point of view, my yardstick might be quite different than that.  My yardstick may be how every computer that’s designed from here on out will have to be at least as good as a Macintosh.</p>
       <p>– <a href="http://www.newsweek.com/1985/09/30/jobs-talks-about-his-rise-and-fall.print.html">Steve Jobs, 1985</a></p>
