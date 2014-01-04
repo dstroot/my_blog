@@ -403,7 +403,6 @@ footer p {
 // ---------------------------------------------------
 #sidebar {
   padding-top: 10px;
-  padding-right: 15px;
   text-align: center;
 }
 #sidebar p {
@@ -439,9 +438,20 @@ footer p {
   position: static;  // Default - Elements render in order as they appear in the document flow
 }
 
+// iPhone Tall
+@media screen and (max-width: 768px) {
+  #sidebar h1 {
+    margin-top: 10px;
+    font-size: 24px;
+  }
+  .hr-sidebar {
+    margin-top: 10px;
+  }
+}
+
+// point at which we see the sidebar as a sidebar
 // Apply the affixed behavior in large views
 @media screen and (min-width: 992px) {
-
   body {
     padding-top: 30px;  // Needed for fixed navbar or personal site
   }
@@ -460,7 +470,9 @@ footer p {
     position: absolute;
     width: 230px;   // stop it from growing - anyone know how to fix this?
   }
-
+  #sidebar {
+    padding-right: 15px;
+  }
 }
 
 // Large desktops and up
@@ -672,19 +684,13 @@ hr.hr-sidebar {
 }
 
 @media screen and (min-width: 992px) {
-  // tighten spacing
   hr.soften {
     margin: 55px 0px 55px 0px;  // top right bottom left
   }
 }
 
 @media screen and (min-width: 1200px) {
-  // tighten spacing
   hr.soften {
     margin: 65px 0px 65px 0px;  // top right bottom left
   }
 }
-
-// Finally bring in syntax highlighting
-// -------------------------------------------------------
-//@import "../assets/css/syntax.less"
