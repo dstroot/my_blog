@@ -27,9 +27,30 @@ When people first started using the term mobile-first I think some meant that in
 
 I believe in the mobile-first progressive enhancement approach but I'd still rather say we doing responsive design over mobile-first because to me it says we are going make our site work great everywhere, for everyone.
 
-<div class="hidden-xs hidden-sm">
-  <h3>See for yourself:</h3>
-  <div style="background-image:url('https://dl.dropboxusercontent.com/u/300203/blog-images/iphone5.png');background-repeat:no-repeat;margin: 0px 0px 0px 0px;padding: 145px 0px 0px 27px;width:375px;height:820px">
-    <iframe src="http://danstroot.com" width="320" height="550"></iframe>
-  </div>
-</div>
+<script>
+
+  var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+  };
+
+  if( !(isMobile.any()) ) {
+    document.write('<div class="hidden-xs hidden-sm"><h3>See for yourself:</h3><div style="background-image:url(&#39;https://dl.dropboxusercontent.com/u/300203/blog-images/iphone5.png&#39;);background-repeat:no-repeat;margin: 0px 0px 0px 0px;padding: 145px 0px 0px 27px;width:375px;height:820px"><iframe src="http://danstroot.com" width="320" height="550"></iframe></div></div>');
+  }
+</script>
