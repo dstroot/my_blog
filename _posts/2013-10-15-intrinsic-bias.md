@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" alt="Bias" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/bias.jpg">
+<img class="lazy img-rounded img-responsive" alt="Bias" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/bias.jpg" width="750" height="300">
 
 As a CIO in a large, publicly owned financial services company I held the responsibility of keeping our client's (and our organization’s) data safe and secure.  As the economics of cloud services became compelling the largest hurdle to adoption was "potential security risks", by a large measure.
 

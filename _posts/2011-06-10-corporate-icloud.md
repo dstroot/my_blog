@@ -10,7 +10,7 @@ tags:
 
 <div class="row">
   <div class="col-md-5">
-    <img class="lazy img-rounded img-responsive" alt="iCloud" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/icloud2.jpg">
+    <img class="lazy img-rounded img-responsive" alt="iCloud" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/icloud2.jpg" width="750" height="300">
   </div>
   <div class="col-md-7">
       <br>

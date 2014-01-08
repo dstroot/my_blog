@@ -1,0 +1,25 @@
+{
+  "name": "danstroot.com",
+  "version": "0.0.1",
+  "authors": [
+    "Dan Stroot <dan.stroot@gmail.com>"
+  ],
+  "description": "Dan Stroot Personal Blog",
+  "main": "index.html",
+  "keywords": [
+    "Dan Stroot"
+  ],
+  "license": "MIT",
+  "homepage": "http://danstroot.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "lazyload": "~2.1.0",
+    "jquery.lazyload": "~1.9.1"
+  }
+}

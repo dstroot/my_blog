@@ -14,13 +14,17 @@ pagination_dir: blog    # Directory base for pagination URLs eg. /blog/page/2/
 permalink:      pretty  # pretty/date
 
 # Server
-#destination:    ./_site
+destination:    ./_site
 safe:           false    # disables plugins
 exclude:
 - "vendor"
 - "LICENSE"
 - ".editorconfig"
 - ".gitignore"
+- ".jscs.json"
+- ".jshintrc"
+- "bower.json"
+- "bower_components"
 - "Gruntfile.js"
 - "s3_website.yml"
 - "package.json"

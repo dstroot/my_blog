@@ -105,6 +105,11 @@
                 return (this.bottom = footerOuterHeight)
               }
             }
+          });
+          $("img.lazy").lazyload({
+            threshold : 400,        // images load 400 pixels before visible
+            effect : "fadeIn"
+            //skip_invisible : false  // works with img tags without sizes
           })
         })
         .fail(function(jqxhr, settings, exception) {
@@ -122,18 +127,18 @@
         });
 
         // Load jquery.lazyload.min.js
-        $.getScript("/assets/js/jquery.lazyload.min.js")
-        .done(function(script, textStatus) {
-          //console.log("Lazyload loaded.");
-          $("img.lazy").lazyload({
-            threshold : 400,        // images load 400 pixels before visible
-            effect : "fadeIn",
-            skip_invisible : false  // works with img tags without sizes
-          });
-        })
-        .fail(function(jqxhr, settings, exception) {
-          console.log("Lazyload load failed.");
-        });
+        // $.getScript("/assets/js/jquery.lazyload.min.js")
+        // .done(function(script, textStatus) {
+        //   //console.log("Lazyload loaded.");
+        //   $("img.lazy").lazyload({
+        //     threshold : 400,        // images load 400 pixels before visible
+        //     effect : "fadeIn",
+        //     skip_invisible : false  // works with img tags without sizes
+        //   });
+        // })
+        // .fail(function(jqxhr, settings, exception) {
+        //   console.log("Lazyload load failed.");
+        // });
 
       });
     </script>

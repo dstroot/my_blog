@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" alt="Earth's Weather" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/earth_wind_map.jpg">
+<img class="lazy img-rounded img-responsive" alt="Earth's Weather" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/earth_wind_map.jpg" width="750" height="300">
 
 This is a pretty amazing technology demonstration of what is possible using the currently available open source tooling, open source data, and using cloud service providers for hosting and content delivery.  It was written by Cameron Beccario (@cambecc). Check it out below.
 <!-- more -->

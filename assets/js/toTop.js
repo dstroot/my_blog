@@ -24,40 +24,12 @@
  * THE SOFTWARE.
  * ========================================================================
  *
- * Requirements:
+ * Prerequisites:
  *
- * - jQuery      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
- * - FontAwesome <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" media="screen">
- * - CSS:
- *
- *     #toTop {
- *       position: fixed;
- *       bottom: 5px;
- *       right: 25px;
- *       font-size: 4em;
- *       color: #ccc;
- *       cursor: pointer;
- *       display: none;
- *     }
- *     #toTop:hover {
- *       color: #666;
- *     }
-
- *  Asynch load pattern:
- *
- *  <script>
- *    $(document).ready(function() {
- *      // Async Load
- *      $.getScript("toTop.js")
- *      .done(function(script, textStatus) {
- *        console.log("ToTop loaded.");
- *        $().toTop();
- *      })
- *      .fail(function(jqxhr, settings, exception) {
- *        console.log("ToTop load failed.");
- *      });
- *    });
- *  </script>
+ * - jQuery:
+ *     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ * - FontAwesome:
+ *     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" media="screen">
  *
  * ======================================================================== */
 
@@ -69,7 +41,6 @@
     $.fn.toTop = function( options ) {
 
         var settings = $.extend({
-        // var settings = {
 
             // These are the defaults:
             containerId:        'toTop',
@@ -86,22 +57,18 @@
             // slightly slower at the beginning and end of the animation
             // than it does in the middle of the animation.
 
-            // jQuery UI provides several additional easing functions,
-            // ranging from variations on the swing behavior to customized
-            // effects such as bouncing.  http://api.jqueryui.com/easings/
-
-        //};
         }, options );
 
         var containerIdHash = '#' + settings.containerId;
 
-        // First let's add the DOM element
-        $( 'body' ).append( '<a id="'+settings.containerId+'"><i class="fa '+settings.fontAwesomeIcon+' fa-4x"></i></a>' );
+        // First add the DOM element
+        $( 'body' ).append( '<a id="' + settings.containerId + '"><i class="fa ' + settings.fontAwesomeIcon + ' fa-4x"></i></a>' );
 
         // Now append the styles
         $( 'head' ).append( '<style>#toTop { position: fixed; bottom: 10px; right: 20px; font-size: 1em; color: #ccc; cursor: pointer; display: none; } #toTop:hover { color: #666; }</style>' );
 
         $(window).scroll(function () {
+
             // Show the icon if the window has been scrolled down more than the minimum distance
             if ($(this).scrollTop() > settings.minDistanceFromTop) {
                 $(containerIdHash).fadeIn(settings.fadeInDelay);
@@ -122,10 +89,5 @@
 
         });
     };
-
-    /* Force initial check if images should appear. */
-    // $(document).ready(function() {
-    //     toTop();
-    // });
 
 }( jQuery, window, document );

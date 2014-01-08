@@ -1,7 +1,7 @@
 /* jshint node: true */
 
 module.exports = function(grunt) {
-  "use strict";
+  'use strict';
 
   // Project configuration.
   grunt.initConfig({
@@ -9,10 +9,10 @@ module.exports = function(grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/**\n' +
-              '* <%= pkg.name %>.js v<%= pkg.version %>\n' +
-              '* Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-              '* <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
-              '*/\n',
+            '* <%= pkg.name %>.js v<%= pkg.version %>\n' +
+            '* Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+            '* <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
+            '*/\n',
     jqueryCheck: 'if (!jQuery) { throw new Error(\"<%= pkg.name %> requires jQuery\") }\n\n',
 
 
@@ -22,11 +22,13 @@ module.exports = function(grunt) {
     //
     // -----------------------------------
     clean: {
-      dist: [
-         'assets/css/<%= pkg.name %>.css'
-       , 'assets/css/<%= pkg.name %>.min.css'
-       , 'assets/js/<%= pkg.name %>.js'
-       , 'assets/js/<%= pkg.name %>.min.js'
+      css: [
+        'assets/css/<%= pkg.name %>.css',
+        'assets/css/<%= pkg.name %>.min.css'
+      ],
+      js: [
+        'assets/js/<%= pkg.name %>.js',
+        'assets/js/<%= pkg.name %>.min.js'
       ]
     },
 
@@ -38,17 +40,35 @@ module.exports = function(grunt) {
     // -----------------------------------
     jshint: {
       // define the files to lint
-      files: ['gruntfile.js', 'bootstrap/js/*.js', 'assets/js/totop/*.js'],   //'assets/**/*.js'
+      files: ['gruntfile.js', 'bower_components/bootstrap/js/*.js', 'assets/js/toTop/*.js'],   //'assets/**/*.js'
       // configure JSHint (documented at http://www.jshint.com/docs/)
       options: {
         // override JSHint defaults
-        jshintrc: 'bootstrap/js/.jshintrc',
+        jshintrc: '.jshintrc',
         // A directive for telling JSHint about global variables that are defined elsewhere.
         globals: {
           jQuery: true,
           console: true,
           module: true
         }
+      }
+    },
+
+
+    // -----------------------------------
+    //
+    // TASK: jscs      [.js style checker]
+    //
+    // -----------------------------------
+    jscs: {
+      options: {
+        config: '.jscs.json',
+      },
+      gruntfile: {
+        src: ['Gruntfile.js']
+      },
+      src: {
+        src: ['assets/js/toTop.js']
       }
     },
 
@@ -88,18 +108,24 @@ module.exports = function(grunt) {
           stripBanners: false
         },
         src: [
-          'bootstrap/js/transition.js',
-          'bootstrap/js/alert.js',
-          'bootstrap/js/button.js',
-          //'bootstrap/js/carousel.js',
-          //'bootstrap/js/collapse.js',
-          //'bootstrap/js/dropdown.js',
-          'bootstrap/js/modal.js',
-          //'bootstrap/js/tooltip.js',
-          //'bootstrap/js/popover.js',
-          //'bootstrap/js/scrollspy.js',
-          //'bootstrap/js/tab.js',
-          'bootstrap/js/affix.js'
+
+          // Bootstrap
+          'bower_components/bootstrap/js/transition.js',
+          'bower_components/bootstrap/js/alert.js',
+          'bower_components/bootstrap/js/button.js',
+          //'bower_components/bootstrap/js/carousel.js',
+          //'bower_components/bootstrap/js/collapse.js',
+          //'bower_components/bootstrap/js/dropdown.js',
+          'bower_components/bootstrap/js/modal.js',
+          //'bower_components/bootstrap/js/tooltip.js',
+          //'bower_components/bootstrap/js/popover.js',
+          //'bower_components/bootstrap/js/scrollspy.js',
+          //'bower_components/bootstrap/js/tab.js',
+          'bower_components/bootstrap/js/affix.js',
+
+          // Lazy Load
+          'bower_components/jquery.lazyload/jquery.lazyload.js'
+
         ],
         dest: 'assets/js/<%= pkg.name %>.js'
       },
@@ -109,10 +135,9 @@ module.exports = function(grunt) {
           stripBanners: true
         },
         src: [
-          'assets/css/<%= pkg.name %>.css',                     // Main CSS file built from main.less
-          //'assets/fonts/font-awesome/css/font-awesome.min.css', // Font Awesome
-          'assets/css/syntax.css',                              // Code syntax highlighting
-          'assets/fonts/ss-social-circle/ss-social-circle.css'  // Social Icons
+          'assets/css/<%= pkg.name %>.css',      // Main CSS file built from main.less
+          'assets/css/pygments-manni.css'        // Code syntax highlighting
+          //'assets/css/syntax.css'                // Code syntax highlighting
         ],
         dest: 'assets/css/<%= pkg.name %>.css'
       }
@@ -141,41 +166,12 @@ module.exports = function(grunt) {
     //
     // -----------------------------------
     cssmin: {
-      css:{
+      css: {
         src: 'assets/css/<%= pkg.name %>.css',
         dest: 'assets/css/<%= pkg.name %>.min.css'
       }
     },
 
-
-    // -----------------------------------
-    //
-    // TASK: recess  [Compile/minify LESS/CSS]
-    //
-    // -----------------------------------
-    // recess: {
-    //   options: {
-    //     compile: true
-    //   },
-    //   bootstrap: {
-    //     src: ['less/<%= pkg.name %>.less'],
-    //     dest: 'assets/css/<%= pkg.name %>.css'
-      // },
-      // Since we are adding additional css snippets with
-      // the concat step after recess compiles the less
-      // code we will then use  cssmin to minify the final
-      // result.  Hence no need to create a minified version
-      // here.
-      // ------------
-      // min: {
-      //   options: {
-      //     compress: true
-      //   },
-      //   //src: ['bootstrap/less/bootstrap.less'],
-      //   src: ['less/main.less'],
-      //   dest: 'assets/css/<%= pkg.name %>.min.css'
-    //   }
-    // },
 
     // -----------------------------------
     //
@@ -352,27 +348,30 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
 
+ /*
+  *  Grunt task configuration
+  */
 
-  // Docs HTML validation task
-  grunt.registerTask('develop', ['test', 'dist', 'connect', 'watch']);
+  // Setup for development with Watch, supporting Live Reload
+  grunt.registerTask('develop', ['test', 'dist', 'jekyll', 'connect', 'watch']);
 
-  // Docs HTML validation task
+  // HTML validation task
   grunt.registerTask('validate-docs', ['jekyll', 'validation']);
 
-  // Lint the .js and test for HTML5 validity
-  grunt.registerTask('test', ['jshint', 'validate-docs']);
+  // Validate the .js and HTML5
+  grunt.registerTask('test', ['jscs', 'jshint', 'validate-docs']);
 
   // Optimize all images
   grunt.registerTask('opt-images', ['imagemin']);
 
   // JS distribution task.
-  grunt.registerTask('dist-js', ['concat:js', 'uglify']);
+  grunt.registerTask('dist-js', ['clean:js', 'concat:js', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['less', 'concat:css', 'cssmin']);
+  grunt.registerTask('dist-css', ['clean:css', 'less', 'concat:css', 'cssmin']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'htmlmin']);
+  grunt.registerTask('dist', ['dist-css', 'dist-js', 'htmlmin']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);
