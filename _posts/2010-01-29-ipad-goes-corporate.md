@@ -8,8 +8,6 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" alt="iPad" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/minorityreport.jpg" width="750" height="300">
-
 Like many people in the Technology world I watched Apple's iPad announcement this week with intense interest.  Unlike most people I am interested not in the consumer space  - but rather how could this device be used for business.  How could a new category like this be used?
 <!-- more -->
 ### Opportunities for the iPad in financial services:

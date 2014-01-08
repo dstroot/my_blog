@@ -19,6 +19,8 @@
   ],
   "dependencies": {
     "bootstrap": "~3.0.3",
-    "jquery.lazyload": "~1.9.1"
+    "jquery.lazyload": "~1.9.1",
+    "date.format": "~1.2.3",
+    "uri.js": "~1.11.2"
   }
 }
