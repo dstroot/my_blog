@@ -117,10 +117,10 @@
         });
 
         // Load toTop.js
-        $.getScript("/assets/js/toTop.min.js")
+        $.getScript("/assets/js/totop.min.js")
         .done(function(script, textStatus) {
           //console.log("ToTop loaded.");
-          $().toTop();
+          $().totop();
         })
         .fail(function(jqxhr, settings, exception) {
           console.log("ToTop load failed.");

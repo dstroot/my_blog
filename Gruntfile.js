@@ -111,12 +111,12 @@ module.exports = function(grunt) {
 
           // Bootstrap
           'bower_components/bootstrap/js/transition.js',
-          'bower_components/bootstrap/js/alert.js',
+          //'bower_components/bootstrap/js/alert.js',
           'bower_components/bootstrap/js/button.js',
           //'bower_components/bootstrap/js/carousel.js',
           //'bower_components/bootstrap/js/collapse.js',
           //'bower_components/bootstrap/js/dropdown.js',
-          'bower_components/bootstrap/js/modal.js',
+          //'bower_components/bootstrap/js/modal.js',
           //'bower_components/bootstrap/js/tooltip.js',
           //'bower_components/bootstrap/js/popover.js',
           //'bower_components/bootstrap/js/scrollspy.js',
@@ -147,15 +147,19 @@ module.exports = function(grunt) {
     // -----------------------------------
     //
     // TASK: uglify           [Minify .js]
-    //
+    // https://github.com/gruntjs/grunt-contrib-uglify
     // -----------------------------------
     uglify: {
       options: {
-        banner: '<%= banner %>'
+        banner: '<%= banner %>',
+        mangle: false,
+        report: 'min'
       },
       js: {
-        src: ['<%= concat.js.dest %>'],
-        dest: 'assets/js/<%= pkg.name %>.min.js'
+        files: {
+          'assets/js/<%= pkg.name %>.min.js': ['<%= concat.js.dest %>'],
+          'assets/js/totop.min.js': ['assets/js/totop.js']
+        }
       }
     },
 
