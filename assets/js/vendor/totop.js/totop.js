@@ -1,5 +1,5 @@
 /* ========================================================================
- * totop.js v0.0.1
+ * totop.js v0.0.3
  * ========================================================================
  * Adds a styled button (from font-awesome) to scroll the window to the
  * top.  All html and css is encapsulated here so all you really have to
@@ -7,10 +7,9 @@
  * ========================================================================
  * Prerequisites:
  *
- * - jQuery:
- *     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
- * - FontAwesome:
- *     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" media="screen">
+ * - jQuery: <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ * - FontAwesome: <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" media="screen">
+ *
  * ========================================================================
  * The MIT License (MIT)
  *

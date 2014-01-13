@@ -4,7 +4,7 @@
     "./totop.js",
     "./totop.min.js"
   ],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/dstroot/totop.js",
   "authors": [
     "Dan Stroot <dan.stroot@gmail.com>"
@@ -25,13 +25,13 @@
     "test",
     "tests"
   ],
-  "_release": "0.0.2",
+  "_release": "0.0.3",
   "_resolution": {
     "type": "version",
-    "tag": "v0.0.2",
-    "commit": "0aff157ca979e14458ad581cd5b628038ac8ec40"
+    "tag": "v0.0.3",
+    "commit": "3061c913007f67c41860e67d4ee7aa77dda26731"
   },
   "_source": "git://github.com/dstroot/totop.js.git",
-  "_target": "~0.0.2",
+  "_target": "~0.0.3",
   "_originalSource": "totop.js"
 }
