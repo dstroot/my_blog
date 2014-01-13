@@ -1,5 +1,5 @@
 /* ========================================================================
- * totop.js v0.0.3
+ * totop.js v0.0.4
  * ========================================================================
  * Adds a styled button (from font-awesome) to scroll the window to the
  * top.  All html and css is encapsulated here so all you really have to

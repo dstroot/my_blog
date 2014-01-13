@@ -1,5 +1,5 @@
 ---
-title: "Only Usian Bolt Looks at the Clock"
+title: "Only Usain Bolt Looks at the Clock"
 date: "2013-08-01 10:00:00 −08:00"
 author: dan
 layout: post

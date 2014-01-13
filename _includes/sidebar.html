@@ -14,33 +14,66 @@
             <ul class="social list-inline hidden-xs hidden-sm">
               {% if site.twitter_id %}
               <li>
-                <a href="http://twitter.com/#!/{{ site.twitter_id }}" target="_blank"><i class="fa fa-twitter-square"></i></a>
+                <a href="http://twitter.com/#!/{{ site.twitter_id }}" target="_blank"><!-- <i class="fa fa-twitter-square"></i> -->
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
               </li>
               {% endif %}
               {% if site.facebook_id %}
               <li>
-                <a href="https://www.facebook.com/{{ site.facebook_id }}" target="_blank"><i class="fa fa-facebook-square"></i></a>
+                <a href="https://www.facebook.com/{{ site.facebook_id }}" target="_blank"><!-- <i class="fa fa-facebook-square"></i> -->
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
               </li>
               {% endif %}
               {% if site.linkedin_id %}
               <li>
-                <a href="https://www.linkedin.com/in/{{ site.linkedin_id }}" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                <a href="https://www.linkedin.com/in/{{ site.linkedin_id }}" target="_blank"><!-- <i class="fa fa-linkedin-square"></i> -->
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
               </li>
               {% endif %}
               {% if site.google_plus_id %}
               <li>
-                <a href="https://plus.google.com/u/0/{{ site.google_plus_id }}/posts" target="_blank"><i class="fa fa-google-plus-square"></i></a>
+                <a href="https://plus.google.com/u/0/{{ site.google_plus_id }}/posts" target="_blank"><!-- <i class="fa fa-google-plus-square"></i> -->
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
               </li>
               {% endif %}
               {% if site.github_id %}
               <li>
-                <a href="https://github.com/{{ site.github_id }}" target="_blank"><i class="fa fa-github-square"></i></a>
+                <a href="https://github.com/{{ site.github_id }}" target="_blank"><!-- <i class="fa fa-github-square"></i> -->
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
               </li>
               {% endif %}
               {% if site.rss %}
               <li>
-                <a href="{{ site.rss }}" target="_blank"><i class="fa fa-rss-square"></i></a>
+                <a href="{{ site.rss }}" target="_blank"><!-- <i class="fa fa-rss-square"></i> -->
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
               </li>
               {% endif %}
             </ul>
           </div><!-- sidebar -->
+
+
+
