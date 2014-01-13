@@ -20,6 +20,19 @@ Check out [http://danstroot.com](http://danstroot.com)
 * You need Python and Pygments for code highlighting
 * You need Grunt installed
 
+#### Build Tooling
+
+* [Sublime Text](http://www.sublimetext.com/)
+* [Nodejs](http://nodejs.org/)
+* [Gruntjs](http://gruntjs.com/)
+* [Bower](http://bower.io/)
+
+Bower has one minor quirk that you need to be aware of – it will install components into a “bower_components” directory by default, which unfortunately is not under the public directory. I suggest you create a directory called “vendor” under “public/js.” You can do this by running the command `mkdir public/js/vendor.` Next, in the app directory, create a plain text file called “.bowerrc” that contains:
+
+`{ "directory" : "public/js/vendor" }`
+
+This configuration file will tell Bower to install tools into the “public/javascripts/vendor” directory.
+
 ### Steps to build and deploy
 1. Run `npm install`
 2. Copy the latest Bootstrap .js and .less source into `bootstrap/js` and `bootstrap/less`.

@@ -87,7 +87,7 @@
     <script>
       $(document).ready(function() {
 
-        // Load Boostrap
+        // Load js
         $.getScript("/assets/js/myblog.min.js")
         .done(function(script, textStatus) {
           //console.log("myblog loaded.");
@@ -110,21 +110,22 @@
             threshold : 400,        // images load 400 pixels before visible
             effect : "fadeIn"
             //skip_invisible : false  // works with img tags without sizes
-          })
+          });
+          $().totop();
         })
         .fail(function(jqxhr, settings, exception) {
           console.log("myblog load failed.");
         });
 
         // Load toTop.js
-        $.getScript("/assets/js/totop.min.js")
-        .done(function(script, textStatus) {
-          //console.log("ToTop loaded.");
-          $().totop();
-        })
-        .fail(function(jqxhr, settings, exception) {
-          console.log("ToTop load failed.");
-        });
+        // $.getScript("/assets/js/totop.min.js")
+        // .done(function(script, textStatus) {
+        //   //console.log("ToTop loaded.");
+        //   $().totop();
+        // })
+        // .fail(function(jqxhr, settings, exception) {
+        //   console.log("ToTop load failed.");
+        // });
 
         // Load jquery.lazyload.min.js
         // $.getScript("/assets/js/jquery.lazyload.min.js")
@@ -166,7 +167,7 @@
     });
 
     // Load date.format.js
-    $.getScript("../assets/js/lunr/date.format.js")
+    $.getScript("../assets/js/vendor/date.format/date.format.js")
     .done(function(script, textStatus) {
       console.log("date.format loaded.");
     })
@@ -175,7 +176,7 @@
     });
 
     // Load URI.js
-    $.getScript("../assets/js/lunr/URI.js")
+    $.getScript("../assets/js/vendor/uri.js/src/URI.js")
     .done(function(script, textStatus) {
       console.log("URI loaded.");
     })
