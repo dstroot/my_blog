@@ -24,7 +24,8 @@ module.exports = function(grunt) {
     clean: {
       css: [
         'assets/css/<%= pkg.name %>.css',
-        'assets/css/<%= pkg.name %>.min.css'
+        'assets/css/<%= pkg.name %>.min.css',
+        'assets/css/<%= pkg.name %>.css.map'
       ],
       js: [
         'assets/js/<%= pkg.name %>.js',
@@ -131,7 +132,7 @@ module.exports = function(grunt) {
       },
       css: {
         options: {     // "css" target options may go here, overriding task-level options.
-          banner: '/* <%= pkg.name %>.css v<%= pkg.version %> */\n',
+          banner: '/*! <%= pkg.name %>.css v<%= pkg.version %> */\n',
           stripBanners: true
         },
         src: [
@@ -222,12 +223,18 @@ module.exports = function(grunt) {
     // TASK: validation[Validate the html]
     //
     // -----------------------------------
+
+    // reset: grunt.option('reset') || false,
+    // stoponerror: false,
+
     validation: {
       options: {
         charset: 'utf-8',
         doctype: 'HTML5',
         failHard: true,
-        reset: true,
+        //reset: true,
+        reset: grunt.option('reset') || false,
+        stoponerror: false,
         relaxerror: [
           'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
           'Element img is missing required attribute src.'
@@ -372,7 +379,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-js', ['clean:js', 'concat:js', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['clean:css', 'less', 'concat:css', 'cssmin']);
+  grunt.registerTask('dist-css', ['clean:css', 'less:compileCore', 'less:minify', 'concat:css', 'cssmin']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['dist-css', 'dist-js', 'htmlmin']);
