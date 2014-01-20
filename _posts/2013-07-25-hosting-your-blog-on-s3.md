@@ -89,7 +89,7 @@ s3_website cfg apply
 The S3 bucket will be automatically created for you by this command. The command will also ask if you want to use Amazon's CloudFront CDN.  I said "y".
 
 In hindsight I would have kept it simple and made sure everything was working properly from S3 first.  If you do enable it there are some additional steps you have to do on Amazon:
-* You have to tell CloudFront what CNAME(s) you will be using.  So Login, edit your new CloudFront distribution and fill in the "Alternate Domain Names (CNAMEs)" field. Since I was creating a blog I used "blog.website.com" with my own domain of course. <img class="img-rounded img-responsive" alt="image of Amazon management console" src="https://dl.dropboxusercontent.com/u/300203/blog-images/CloudFront_Management_Console.png">
+* You have to tell CloudFront what CNAME(s) you will be using.  So Login, edit your new CloudFront distribution and fill in the "Alternate Domain Names (CNAMEs)" field. Since I was creating a blog I used "blog.website.com" with my own domain of course. <img class="img-rounded img-responsive" alt="image of Amazon management console" src="/assets/img/CloudFront_Management_Console.png">
 * You also need to tweak the origin per the link in the references - you need a **custom origin*** pointing to your S3 bucket.
 
 Now, deploying your website is as simple as running:

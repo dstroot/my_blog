@@ -169,6 +169,12 @@ a:hover {
 
 }
 
+// Ease in lazy loaded images
+// --------------------------------------------------
+img.lazy {
+  opacity: 0;
+  transition: opacity .3s ease-in;
+}
 
 
 // Posts
@@ -504,7 +510,7 @@ footer p {
   margin: 0px;
 }
 .entries article {
-  padding:1em 0 1em;
+padding-top: 5px;
   position:relative;
 }
 .entries article:last-child {
@@ -519,8 +525,8 @@ footer p {
   margin-bottom: 10.5px;
 }
 .entries h1 a {
-  font-size: 24px;
-  margin-left: 115px;
+  font-size: 20px;
+  //margin-left: 115px;
   display:inline-block;
   border-bottom: 1px dotted @text-color;  // from the link style on http://www.briangardner.com/
 }
@@ -529,8 +535,9 @@ footer p {
 }
 .entries time{
   font-size: 18px;
-  line-height:1.2em;
+  line-height: 1.2em;
   color: @gray-light;
+  display: none;
 }
 .entries time .month,.entries time .day {
   display:inline-block;
@@ -549,6 +556,16 @@ footer p {
 }
 
 @media screen and (min-width: 550px) {
+  .entries article {
+    padding:1em 0 1em;
+    position:relative;
+  }
+  .entries h1 a {
+    font-size: 24px;
+    margin-left: 115px;
+    display:inline-block;
+    border-bottom: 1px dotted @text-color;  // from the link style on http://www.briangardner.com/
+  }
   .entries h2 {
     margin-bottom:.3em;
     font-size: 38px;
@@ -562,6 +579,7 @@ footer p {
     position:absolute;
     text-align:right;
     top:40px;
+    display: inline-block;
   }
   .entries a.category {
     line-height:1.1em

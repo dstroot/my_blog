@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Google Docs" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/google_docs.jpg" width="400" height="371">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Google Docs" data-src="/assets/img/google_docs.jpg">
 
 [UC Berkeley just did a great assessment of Office 365 vs. Google Apps](http://bconnected-project.berkeley.edu/about/email-calendar-platform-comparison).  What I really like is how they were able to make the results easy to understand for their constituency.
 

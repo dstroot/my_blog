@@ -10,7 +10,7 @@ tags:
 
 <div class="row">
   <div class="col-md-6">
-    <img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Steve Jobs" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/SteveJobsCloseUp.jpg" width="750" height="563">
+    <img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Steve Jobs" data-src="/assets/img/SteveJobsCloseUp.jpg">
   </div>
   <div class="col-md-6">
     <blockquote>

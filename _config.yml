@@ -33,8 +33,8 @@ exclude:
 - "TODO.md"
 - "bootstrap"              # Not needed in _site/assets
 - "jquery"                 # Not needed in _site/assets
-- "jquery.lazyload"        # Not needed in _site/assets
 - "totop.js"               # Not needed in _site/assets
+- "unveil"                 # Not needed in _site/assets
 - "less"
 - "validation-report.json"
 - "validation-status.json"

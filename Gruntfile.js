@@ -122,7 +122,10 @@ module.exports = function(grunt) {
           'assets/js/vendor/bootstrap/js/affix.js',
 
           // Lazy Load
-          'assets/js/vendor/jquery.lazyload/jquery.lazyload.js',
+          //'assets/js/vendor/jquery.lazyload/jquery.lazyload.js',
+
+          // Unveil http://luis-almeida.github.io/unveil/
+          'assets/js/vendor/unveil/jquery.unveil.js',
 
           // To Top
           'assets/js/vendor/totop.js/totop.js'
@@ -198,11 +201,12 @@ module.exports = function(grunt) {
       },
       minify: {
         options: {
+          strictMath: true,
           cleancss: true,
           report: 'min'
         },
         files: {
-          'assets/css/<%= pkg.name %>.min.css': 'assets/css/<%= pkg.name %>.css'
+          'assets/css/<%= pkg.name %>.min.css': 'less/<%= pkg.name %>.less'
         }
       }
     },
@@ -333,6 +337,20 @@ module.exports = function(grunt) {
 
     // -----------------------------------
     //
+    // TASK: bower
+    //
+    // -----------------------------------
+    bower: {
+      install: {
+        options: {
+          copy: false
+        }
+      }
+    },
+
+
+    // -----------------------------------
+    //
     // TASK: exec           [Upload to S3]
     // `exec` runs commands
     // -----------------------------------
@@ -379,7 +397,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-js', ['clean:js', 'concat:js', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['clean:css', 'less:compileCore', 'less:minify', 'concat:css', 'cssmin']);
+  grunt.registerTask('dist-css', ['clean:css', 'less:compileCore', 'concat:css', 'cssmin']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['dist-css', 'dist-js', 'htmlmin']);

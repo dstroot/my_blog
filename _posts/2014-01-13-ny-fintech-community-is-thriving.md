@@ -9,7 +9,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="FX Trading UI" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/new-ui.jpg" width="750" height="360">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="FX Trading UI" data-src="/assets/img/new-ui.jpg">
 
 I was reading up on the "MEAN" stack: Mongo, Express, Angular and Node and came across a blog post from [Francesca Krihely](http://francescak.me/blog/2013/04/09/fintech-hackathon-recap/) about the FinTech hackathon in NY from back in April, 2013.  
 

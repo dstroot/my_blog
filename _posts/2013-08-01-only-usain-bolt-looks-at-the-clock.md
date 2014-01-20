@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Usain Bolt" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/Usain-Bolt-Opt.jpg" width="750" height="512">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Usain Bolt" data-src="/assets/img/Usain-Bolt-Opt.jpg">
 
 If you watch someone run the 100 meters, they sneak glances around. Sprinters watch each other while they run.  They want to know where are in the pack and what place they might get.  I noticed that only Usain Bolt looks at the clock.
 <!-- more -->

@@ -16,11 +16,13 @@ cloudfront_distribution_config:
 #cloudfront_invalidate_root: true
 
 max_age:
+  "*": <%= 60 * 60 * 24 %>
   "assets/*": <%= 60 * 60 * 24 %>
   "assets/css/*": <%= 60 * 60 * 24 %>
   "assets/js/*": <%= 60 * 60 * 24 * 7%>
   "assets/fonts/*": <%= 60 * 60 * 24 * 7%>
-  "*": <%= 60 * 60 * 24 %>
+  "_site/assets/img/*": <%= 60 * 60 * 24 * 7%>
+
 
 exclude_from_upload:
   - .DS_Store

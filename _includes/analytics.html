@@ -90,7 +90,7 @@
         // Load js
         $.getScript("/assets/js/myblog.min.js")
         .done(function(script, textStatus) {
-          //console.log("myblog loaded.");
+          console.log("myblog loaded.");
           // lets use affix bootstrap component to affix sidebar
           $('#sidebar').affix({
             offset: {
@@ -106,11 +106,13 @@
               }
             }
           });
-          $("img.lazy").lazyload({
-            threshold : 400,        // images load 400 pixels before visible
-            effect : "fadeIn"
-            //skip_invisible : false  // works with img tags without sizes
+          // Fire up image lazyloading
+          $("img.lazy").unveil(500, function() {
+            $(this).load(function() {
+              this.style.opacity = 1;
+            });
           });
+          // fire up top navigation
           $().totop();
         })
         .fail(function(jqxhr, settings, exception) {

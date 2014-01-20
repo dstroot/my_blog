@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Earth's Weather" data-original="https://dl.dropboxusercontent.com/u/300203/blog-images/adoption_curve.jpg" width="750" height="264">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Earth's Weather" data-src="/assets/img/adoption_curve.jpg">
 
 Asymco has done a fascinating piece of research mapping technology adoption curves, technology refresh rates, and human lifespan, to predict technology lifetime ownership.
 
