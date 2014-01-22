@@ -18,7 +18,7 @@ Quicken Loans and Warren Buffet annouced a billion dollar prize for a perfect NC
 ## OMG Why?
 
 My first reaction when I heard this is "where is the value?".  Companies award prizes all time and we know the reason this occurs is basic economics - which teaches us that the "cost" of the prize is less than the "value" the company derives from offering the prize.  So what amount marketing, exposure or publicity is worth **one billion dollars?**
-
+<!-- more -->
 The details of the prize are actually $25 million dollars for 40 years. So we can reframe the question as "What amount of addional loan volume must Quicken Loans generate to produce more than $25 million of additional profit annually?"  To get there we need to know the average revenue per loan and Quicken's profit margin.  For example if we assume $1,500 revenue per loan and a $10% profit margin this means Quicken Loans would earn a profit of $150 per loan.  So $25,000,000 / $150 = 166,667 loans (rounding up).
 
 ## This All May be Moot
