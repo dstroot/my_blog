@@ -232,8 +232,8 @@ module.exports = function(grunt) {
         charset: 'utf-8',
         doctype: 'HTML5',
         failHard: true,
-        //reset: true,
-        reset: grunt.option('reset') || false,
+        reset: true,
+        //reset: grunt.option('reset') || false,
         stoponerror: false,
         relaxerror: [
           'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
