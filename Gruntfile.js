@@ -121,9 +121,6 @@ module.exports = function(grunt) {
           //'assets/js/vendor/bootstrap/js/tab.js',
           'assets/js/vendor/bootstrap/js/affix.js',
 
-          // Lazy Load
-          //'assets/js/vendor/jquery.lazyload/jquery.lazyload.js',
-
           // Unveil http://luis-almeida.github.io/unveil/
           'assets/js/vendor/unveil/jquery.unveil.js',
 
@@ -162,7 +159,6 @@ module.exports = function(grunt) {
       js: {
         files: {
           'assets/js/<%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
-          // 'assets/js/totop.min.js': ['assets/js/totop.js']
         }
       }
     },
@@ -280,7 +276,7 @@ module.exports = function(grunt) {
       dynamic: {                         // Another target
         files: [{
           expand: true,                  // Enable dynamic expansion
-          cwd: '/Users/Dan/Dropbox/public/blog-images/',  // Src matches are relative to this path
+          cwd: 'assets/img/',            // Src matches are relative to this path
           src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
           dest: '/Users/Dan/Dropbox/public/blog-images/'  // Destination path prefix
         }]
@@ -359,6 +355,7 @@ module.exports = function(grunt) {
         cmd: function() { return 'echo ' + this.version; }
       },
       s3: {
+        //cmd: function() { return 's3_website push --headless'; }
         cmd: 's3_website push --headless',
         stdout: true,
         stderr: true
@@ -368,21 +365,22 @@ module.exports = function(grunt) {
 
   });
 
- /*
+ /**
   *  This section is where we require the necessary plugins.
-  *
-  *  Let's be elegant and just tell Grunt
-  *  to read our package.json devDependencies:
+  *  Let's just tell Grunt to read our package.json devDependencies:
   */
+
+
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
 
- /*
+ /**
   *  Grunt task configuration
   */
 
+
   // Setup for development with Watch, supporting Live Reload
-  grunt.registerTask('develop', ['test', 'dist', 'jekyll', 'connect', 'watch']);
+  grunt.registerTask('develop', ['jekyll', 'connect', 'watch']);
 
   // HTML validation task
   grunt.registerTask('validate-docs', ['jekyll', 'validation']);
@@ -390,17 +388,20 @@ module.exports = function(grunt) {
   // Validate the .js and HTML5
   grunt.registerTask('test', ['jscs', 'jshint', 'validate-docs']);
 
-  // Optimize all images
-  grunt.registerTask('opt-images', ['imagemin']);
+  // Image preparation task
+  grunt.registerTask('prep-images', ['imagemin']);
 
-  // JS distribution task.
-  grunt.registerTask('dist-js', ['clean:js', 'concat:js', 'uglify']);
+  // JS preparation task.
+  grunt.registerTask('prep-js', ['clean:js', 'concat:js', 'uglify']);
 
-  // CSS distribution task.
-  grunt.registerTask('dist-css', ['clean:css', 'less:compileCore', 'concat:css', 'cssmin']);
+  // CSS preparation task.
+  grunt.registerTask('prep-css', ['clean:css', 'less:compileCore', 'concat:css', 'cssmin']);
+
+  // HTML preparation task.
+  grunt.registerTask('prep-html', ['jekyll', 'htmlmin']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['dist-css', 'dist-js', 'htmlmin']);
+  grunt.registerTask('dist', ['prep-css', 'prep-js', 'prep-images', 'prep-html']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);
