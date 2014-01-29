@@ -115,6 +115,10 @@
           });
           // fire up top navigation
           $().totop();
+
+          // Fit Videos
+          $(".posts").fitVids();
+
         })
         .fail(function(jqxhr, settings, exception) {
           console.log("myblog load failed.");

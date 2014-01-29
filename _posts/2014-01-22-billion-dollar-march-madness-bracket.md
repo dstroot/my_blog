@@ -15,7 +15,7 @@ Quicken Loans and Warren Buffet annouced a billion dollar prize for a perfect NC
 
 >You read that right: one billion. Not one million. Not one hundred million. Not five hundred million. One billion U.S. dollars.
 
-## OMG Why?
+## Why Give Away a Billion Dollars?
 
 My first reaction when I heard this is "where is the value?".  Companies award prizes all time and we know the reason this occurs is basic economics - which teaches us that the "cost" of the prize is less than the "value" the company derives from offering the prize.  So what amount marketing, exposure or publicity is worth **one billion dollars?**
 <!-- more -->
@@ -40,7 +40,7 @@ Get schooled by DePaul math professor Jay Bergen:
 
 Using 1 in 128 billion odds, if everyone in the United States filled out a bracket, we'd see a perfect one **every 400 years**!  ESPN which has run a tournament challenge for the past 16 years has **never had a perfect bracket in over 30 million entries** according to the network.  I assume that many of the people filling those out are pretty smart.
 
-## Genius!!
+## True Genius!
 
 So the true genius of this is the prize will almost certainly not be awarded thus the marketing, exposure and publicity is free!  I initially puzzled over why Warren Buffet was involved but as a long time insurance executive he must have some sense of the actuarial odds on this. Brilliant!
 

@@ -9,6 +9,6 @@ categories:
 tags:
 ---
 
-Last night Bill Gates was a guest on Late Night with Jimmy Fallon to talk about his charitable foundation. The segment takes an awkward turn when Bill starts eying Jimmy’s MacBook at the of his desk corner. This made me laugh...it's about 1:35 into the video:
+Last night Bill Gates was a guest on Late Night with Jimmy Fallon to talk about his charitable work. The man has **eliminated polio in India!**  However the segment takes an awkward turn when Bill starts eying Jimmy’s MacBook. This made me laugh...it's about 1:35 into the video:
 
 <p><iframe width="750" height="422" src="//www.youtube.com/embed/Qk7pPutimCM" allowfullscreen></iframe></p>

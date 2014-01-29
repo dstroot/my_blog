@@ -125,7 +125,10 @@ module.exports = function(grunt) {
           'assets/js/vendor/unveil/jquery.unveil.js',
 
           // To Top
-          'assets/js/vendor/totop.js/totop.js'
+          'assets/js/vendor/totop.js/totop.js',
+
+          // Responsive Videos
+          'assets/js/vendor/fitvids/jquery.fitvids.js'
 
         ],
         dest: 'assets/js/<%= pkg.name %>.js'

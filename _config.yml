@@ -35,6 +35,7 @@ exclude:
 - "jquery"                 # Not needed in _site/assets
 - "totop.js"               # Not needed in _site/assets
 - "unveil"                 # Not needed in _site/assets
+- "fitvids"                # Not needed in _site/assets
 - "less"
 - "validation-report.json"
 - "validation-status.json"
