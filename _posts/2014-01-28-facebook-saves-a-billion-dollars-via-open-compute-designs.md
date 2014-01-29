@@ -25,6 +25,10 @@ Now, nearly three years later, the project lets Facebook crowdsource improvement
 
 Today at the Open Compute Summit, CEO Mark Zuckerberg said that "In the last three years alone, Facebook has saved more than **a billion dollars** in building out our infrastructure using Open Compute designs."
 
+> A Million Dollars Isn't Cool. You Know What's Cool? A Billion Dollars.
+> 
+>   _- Sean Parker in "The Social Network"_
+
 Zuckerberg also noted that "In just the last year we’ve saved the equivalent amount of energy of 40,000 homes in a year, and saved the amount of emissions equivalent to taking 50,000 cars off the road for a year."
 
 ### Next Up - Network Gear
@@ -35,9 +39,9 @@ Today however merchant silicon has surpassed custom Applications Specific Integr
 
 What becomes critical is the software layer to manage and operate the network. Google was an early driver of software defined networking on top of bare metal commodity hardware.  They helped define OpenFlow and breathe life into this technology.
 
-This area is rapidly maturing and today we see examples like Dell hoping to sell hardware and services through a partnership with Silicon Valley startup Cumulus Networks.  
+This area is rapidly maturing and today we see examples like Dell hoping to sell hardware and services through a partnership with Silicon Valley startup [Cumulus Networks](http://cumulusnetworks.com/).  
 
-So what is going to happen to Cisco?
+So what is going to happen to Cisco?  Wonder why they were [downgraded](http://www.valuewalk.com/2014/01/cisco-systems-inc-csco-downgraded-by-jpmorgan/) today by J.P. Morgan?
 
 ### Trickle Down Effect
 
@@ -51,7 +55,6 @@ _Sources:_
 * [Open VSwitch](http://openvswitch.org/)
 * [Wired: Google’s Secret Switch](http://www.wired.com/wiredenterprise/2012/04/going-with-the-flow-google/)
 * [Open Networking](https://www.opennetworking.org/)
-* [Cumulus Networks](http://cumulusnetworks.com/)
 
 
 
