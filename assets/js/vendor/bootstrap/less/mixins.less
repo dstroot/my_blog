@@ -115,6 +115,10 @@
 }
 
 // Drop shadows
+//
+// Note: Deprecated `.box-shadow()` as of v3.1.0 since all of Bootstrap's
+//   supported browsers that have box shadow capabilities now support the
+//   standard `box-shadow` property.
 .box-shadow(@shadow) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
           box-shadow: @shadow;
@@ -375,12 +379,13 @@
 
 
 // Responsive image
+//
 // Keep images from scaling beyond the width of their parents.
 
 .img-responsive(@display: block) {
   display: @display;
   max-width: 100%; // Part 1: Set a maximum relative to the parent
-  height: auto;    // Part 2: Scale the height according to the width, otherwise you get stretching
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 }
 
 
@@ -573,6 +578,24 @@
     &:focus {
       background-color: darken(@color, 10%);
     }
+  }
+}
+
+// Contextual backgrounds
+// -------------------------
+.bg-variant(@color) {
+  background-color: @color;
+  a&:hover {
+    background-color: darken(@color, 10%);
+  }
+}
+
+// Typography
+// -------------------------
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&:hover {
+    color: darken(@color, 10%);
   }
 }
 
@@ -896,7 +919,8 @@
     line-height: @input-height;
   }
 
-  textarea& {
+  textarea&,
+  select[multiple]& {
     height: auto;
   }
 }
