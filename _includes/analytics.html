@@ -71,19 +71,7 @@
 
     <!-- JavaScript
     ================================================== -->
-    <!-- Note: This was to defer loading of the CSS
-    Did not work because it does not overide inline CSS
-    Changed to just loading a minimal CSS file first
-    <script>
-      var l = document.createElement('link');
-      l.rel='stylesheet';
-      l.href='/assets/css/myblog.min.css';
-      l.media='defer';
-      l.addEventListener('load', function() { l.media=''; }, false);
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(l, s);
-    </script>
-    -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <!-- Once we have jQuery we can async load other scripts using jQuery -->
     <script>
       $(document).ready(function() {
@@ -107,14 +95,16 @@
               }
             }
           });
+
           // Fire up image lazyloading
           $("img.lazy").unveil(500, function() {
             $(this).load(function() {
               this.style.opacity = 1;
             });
           });
+
           // fire up top navigation
-          $().totop();
+          $().totop({fontAwesomeIcon: 'fa-arrow-circle-up'});
 
           // Fit Videos
           $(".posts").fitVids();

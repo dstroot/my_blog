@@ -126,6 +126,7 @@ a:hover {
 }
 
 // Responsive iframe
+// ---------------------------------------------------
 iframe, object, embed {
   max-width: 100%;
   background-color: transparent;
@@ -133,6 +134,7 @@ iframe, object, embed {
   padding: 0px;
   overflow: hidden;
 }
+
 
 // Responsive variations
 // --------------------------------------------------
@@ -410,6 +412,44 @@ footer p {
     padding: 8px;
     margin-top: 30px;
   }
+}
+
+
+// My Face!!  ;)
+// -------------------------------------
+#sidebar > .myface > a {
+  border-bottom: none;
+}
+.myface {
+  position: relative;
+  display: block;
+}
+.myface img {
+  // display: block;
+  transition: opacity .2s linear;
+}
+.myface:hover img {
+  opacity: .65;
+}
+.myface i {
+  position: absolute;
+  display: block;
+  text-align: center;
+  top: 50%;
+  left: 0;
+  right: 0;
+  font-size: 6rem;
+  color: #fff;
+  text-shadow: 0 0 3rem rgba(0,0,0,.15);
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  transition: opacity .2s linear;
+  transition-delay: .05s;
+}
+.myface:hover i {
+  opacity: 1;
 }
 
 

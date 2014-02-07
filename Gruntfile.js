@@ -1,5 +1,3 @@
-/* jshint node: true */
-
 module.exports = function(grunt) {
   'use strict';
 
@@ -32,6 +30,78 @@ module.exports = function(grunt) {
         'assets/js/<%= pkg.name %>.min.js'
       ]
     },
+
+
+/*  -------------------------------------------------------------
+    |
+    |  CSS Steps
+    |   - Compile Less
+    |   - Concatenate the Pygments CSS
+    |   - Sort the CSS using CSS Comb
+    |   - Lint the CSS using CSSLint
+    |   - Minify the CSS
+    |
+    --------------------------------------------------------------- */
+
+    // TASK: Compile LESS
+    // Minify step is not used since we have to concatenate other CSS
+    less: {
+      compileCore: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>.css.map',
+          sourceMapFilename: 'assets/css/<%= pkg.name %>.css.map'
+        },
+        files: {
+          'assets/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
+        }
+      }
+      // minify: {
+      //   options: {
+      //     strictMath: true,
+      //     cleancss: true,
+      //     report: 'min'
+      //   },
+      //   files: {
+      //     'assets/css/<%= pkg.name %>.min.css': 'less/<%= pkg.name %>.less'
+      //   }
+      // }
+    },
+
+    // TASK: sort CSS
+    csscomb: {
+      sort: {
+        options: {
+          config: 'less/.csscomb.json'
+        },
+        files: {
+          'assets/css/<%= pkg.name %>.css': 'assets/css/<%= pkg.name %>.css',
+        }
+      }
+    },
+
+    // TASK: Lint CSS
+    csslint: {
+      options: {
+        csslintrc: 'less/.csslintrc'
+      },
+      src: [
+        'assets/css/pygments.css'
+        // 'assets/css/<%= pkg.name %>.css'
+      ]
+    },
+
+    // TASK: Minify the CSS
+    cssmin: {
+      css: {
+        src: 'assets/css/<%= pkg.name %>.css',
+        dest: 'assets/css/<%= pkg.name %>.min.css'
+      }
+    },
+
+
 
 
     // -----------------------------------
@@ -107,6 +177,9 @@ module.exports = function(grunt) {
         },
         src: [
 
+          // jQuery
+          // 'assets/js/vendor/jquery/jquery.js',
+
           // Bootstrap
           'assets/js/vendor/bootstrap/js/transition.js',
           //'assets/js/vendor/bootstrap/js/alert.js',
@@ -140,6 +213,7 @@ module.exports = function(grunt) {
         },
         src: [
           'assets/css/<%= pkg.name %>.css',      // Main CSS file built from main.less
+          'assets/css/font-awesome.css',         // Font Awesome Fonts
           'assets/css/pygments-manni.css'        // Code syntax highlighting
           //'assets/css/syntax.css'                // Code syntax highlighting
         ],
@@ -167,76 +241,30 @@ module.exports = function(grunt) {
     },
 
 
-    // -----------------------------------
-    //
-    // TASK: cssmin          [Minify .css]
-    //
-    // -----------------------------------
-    cssmin: {
-      css: {
-        src: 'assets/css/<%= pkg.name %>.css',
-        dest: 'assets/css/<%= pkg.name %>.min.css'
-      }
-    },
 
+/*  -------------------------------------------------------------
+    |
+    |  HTML Steps
+    |   - Built the HTML using Jekyll
+    |   - Validate the HTML
+    |   - Minify the HTML
+    |
+    --------------------------------------------------------------- */
 
-    // -----------------------------------
-    //
-    // TASK: less [Compile/minify LESS/CSS]
-    //
-    // -----------------------------------
-    less: {
-      compileCore: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'assets/css/<%= pkg.name %>.css.map'
-        },
-        files: {
-          'assets/css/<%= pkg.name %>.css': 'less/<%= pkg.name %>.less'
-        }
-      },
-      minify: {
-        options: {
-          strictMath: true,
-          cleancss: true,
-          report: 'min'
-        },
-        files: {
-          'assets/css/<%= pkg.name %>.min.css': 'less/<%= pkg.name %>.less'
-        }
-      }
-    },
-
-
-    // -----------------------------------
-    //
-    // TASK: jekyll       [Build the html]
-    //
-    // -----------------------------------
+    /**
+     * Build the HTML with Jekyll
+     */
     jekyll: {
       docs: {}
     },
 
-
-    // -----------------------------------
-    //
     // TASK: validation[Validate the html]
-    //
-    // -----------------------------------
-
-    // reset: grunt.option('reset') || false,
-    // stoponerror: false,
-
     validation: {
       options: {
         charset: 'utf-8',
         doctype: 'HTML5',
         failHard: true,
-        reset: true,
-        //reset: grunt.option('reset') || false,
+        reset: grunt.option('reset') || true,
         stoponerror: false,
         relaxerror: [
           'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
@@ -248,12 +276,7 @@ module.exports = function(grunt) {
       }
     },
 
-
-    // -----------------------------------
-    //
     // TASK: htmlmin     [Minify the HTML]
-    //
-    // -----------------------------------
     htmlmin: {                          // Task
       dist: {                           // Target
         options: {                      // Target options
@@ -370,17 +393,14 @@ module.exports = function(grunt) {
 
  /**
   *  This section is where we require the necessary plugins.
-  *  Let's just tell Grunt to read our package.json devDependencies:
+  *  (Let's just tell Grunt to read our package.json devDependencies)
   */
-
-
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
 
  /**
   *  Grunt task configuration
   */
-
 
   // Setup for development with Watch, supporting Live Reload
   grunt.registerTask('develop', ['jekyll', 'connect', 'watch']);
@@ -398,7 +418,7 @@ module.exports = function(grunt) {
   grunt.registerTask('prep-js', ['clean:js', 'concat:js', 'uglify']);
 
   // CSS preparation task.
-  grunt.registerTask('prep-css', ['clean:css', 'less:compileCore', 'concat:css', 'cssmin']);
+  grunt.registerTask('prep-css', ['clean:css', 'less:compileCore', 'concat:css', 'csscomb', 'cssmin']);
 
   // HTML preparation task.
   grunt.registerTask('prep-html', ['jekyll', 'htmlmin']);

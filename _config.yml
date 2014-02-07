@@ -36,6 +36,11 @@ exclude:
 - "totop.js"               # Not needed in _site/assets
 - "unveil"                 # Not needed in _site/assets
 - "fitvids"                # Not needed in _site/assets
+- "font-awesome.css"       # Not needed in _site/assets
+- "pygments.css"           # Not needed in _site/assets
+- "pygments-manni.css"     # Not needed in _site/assets
+- "syntax.css"             # Not needed in _site/assets
+- "main.js"
 - "less"
 - "validation-report.json"
 - "validation-status.json"
