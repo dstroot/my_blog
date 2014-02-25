@@ -1,6 +1,6 @@
 // Bring in bootstrap
 // --------------------------------------------------
-@import "./assets/js/vendor/bootstrap/less/bootstrap.less";
+@import "bootstrap.less";
 
 // Now add bootstrap overrides
 // --------------------------------------------------
@@ -135,6 +135,13 @@ iframe, object, embed {
   overflow: hidden;
 }
 
+// Octocard!
+// --------------------------------------------------
+#octocard {
+  a {
+    border-bottom: none;
+  }
+}
 
 // Responsive variations
 // --------------------------------------------------
@@ -246,6 +253,7 @@ blockquote p {
 }
 blockquote {
   border-left: 5px solid @accent-color;
+  background-color: #f5f5f5;
 }
 
 
@@ -358,7 +366,7 @@ width: 0;
 // Disqus Comments Section                 [complete]
 // --------------------------------------------------
 #disqus_thread {
-  background-color: @accent-color-lightest; //#D3E2EB; //#D7990C; //@accent-color-lightest; //#f7f5f2;
+  background-color: #f5f5f5; //#D3E2EB; //#D7990C; //@accent-color-lightest; //#f7f5f2;
   padding: 40px;
   margin-top: 50px;
 }

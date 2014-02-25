@@ -1,5 +1,16 @@
+// # Globbing
+// for performance reasons we're only matching one level down:
+// 'test/spec/{,*/}*.js'
+// use this if you want to recursively match all subfolders:
+// 'test/spec/**/*.js'
+
 module.exports = function(grunt) {
-  'use strict';
+
+  // Load grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
+
+  // Time how long tasks take. Can help when optimizing build times
+  require('time-grunt')(grunt);
 
   // Project configuration.
   grunt.initConfig({
@@ -203,6 +214,9 @@ module.exports = function(grunt) {
           // Responsive Videos
           'assets/js/vendor/fitvids/jquery.fitvids.js'
 
+          // Instant Click
+          // 'assets/js/vendor/instantclick/instantclick.js'
+
         ],
         dest: 'assets/js/<%= pkg.name %>.js'
       },
@@ -279,9 +293,12 @@ module.exports = function(grunt) {
     // TASK: htmlmin     [Minify the HTML]
     htmlmin: {                          // Task
       dist: {                           // Target
-        options: {                      // Target options
+        options: {
+          collapseWhitespace: true,
+          collapseBooleanAttributes: true,
+          removeCommentsFromCDATA: true,
+          removeOptionalTags: true,
           removeComments: true,
-          collapseWhitespace: true
         },
         files: [{
           expand : true,
@@ -300,15 +317,20 @@ module.exports = function(grunt) {
     // -----------------------------------
     imagemin: {                          // Task
       dynamic: {                         // Another target
+        options: {                       // Target options
+          cache: false,
+          optimizationLevel: 3,
+          progressive: true,
+          interlaced: true
+        },
         files: [{
           expand: true,                  // Enable dynamic expansion
           cwd: 'assets/img/',            // Src matches are relative to this path
           src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-          dest: '/Users/Dan/Dropbox/public/blog-images/'  // Destination path prefix
+          dest: 'assets/img/'            // Destination path prefix
         }]
       }
     },
-
 
 
     // -----------------------------------
@@ -392,13 +414,6 @@ module.exports = function(grunt) {
   });
 
  /**
-  *  This section is where we require the necessary plugins.
-  *  (Let's just tell Grunt to read our package.json devDependencies)
-  */
-  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
-
-
- /**
   *  Grunt task configuration
   */
 
@@ -412,7 +427,8 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jscs', 'jshint', 'validate-docs']);
 
   // Image preparation task
-  grunt.registerTask('prep-images', ['imagemin']);
+  // grunt.registerTask('prep-images', ['imagemin']);
+  grunt.registerTask('prep-images', ['newer:imagemin']);
 
   // JS preparation task.
   grunt.registerTask('prep-js', ['clean:js', 'concat:js', 'uglify']);

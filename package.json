@@ -1,41 +1,50 @@
 {
-    "name": "myblog"
-  , "description": "My Personal Blog"
-  , "version": "0.0.1"
-  , "keywords": ["Dan Stroot", "blog"]
-  , "homepage": "http://danstroot.com/"
-  , "author": "Dan Stroot"
-  , "readme": "README.md"
-  , "scripts": { "test": "grunt test" }
-  , "repository": {
-      "type": "git"
-    , "url": "https://github.com/dstroot/my_blog"
-  }
-  , "licenses": [
+  "name": "myblog",
+  "description": "My Personal Blog",
+  "version": "0.0.1",
+  "keywords": [
+    "Dan Stroot",
+    "blog"
+  ],
+  "homepage": "http://danstroot.com/",
+  "author": "Dan Stroot",
+  "readme": "README.md",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dstroot/my_blog"
+  },
+  "licenses": [
     {
-        "type": "MIT"
-      , "url": "http://choosealicense.com/licenses/mit/"
+      "type": "MIT",
+      "url": "http://choosealicense.com/licenses/mit/"
     }
-  ]
-  , "devDependencies": {
-    "grunt": "0.4.x"
-    , "grunt-contrib-clean": "0.5.x"
-    , "grunt-contrib-concat": "0.3.x"
-    , "grunt-contrib-connect": "0.6.x"
-    , "grunt-bower-task": "0.3.x"
-    , "grunt-contrib-htmlmin": "0.1.x"
-    , "grunt-contrib-jshint": "0.8.x"
-    , "grunt-contrib-csslint": "~0.2.x"
-    , "grunt-contrib-uglify": "0.3.x"
-    , "grunt-contrib-watch": "0.5.x"
-    , "grunt-html-validation": "0.1.x"
-    , "grunt-contrib-imagemin": "0.5.x"
-    , "grunt-contrib-less": "0.9.x"
-    , "grunt-jscs-checker": "~0.3.0"
-    , "grunt-css": "~0.5.4"
-    , "grunt-csscomb": "~2.0.x"
-    , "grunt-jekyll": "~0.4.0"
-    , "grunt-exec": "0.4.x"
-    , "load-grunt-tasks": "0.3.x"
+  ],
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-clean": "0.5.x",
+    "grunt-contrib-concat": "0.3.x",
+    "grunt-contrib-connect": "0.7.x",
+    "grunt-bower-task": "0.3.x",
+    "grunt-contrib-htmlmin": "0.2.x",
+    "grunt-contrib-jshint": "0.8.x",
+    "grunt-contrib-csslint": "~0.2.x",
+    "grunt-contrib-uglify": "0.3.x",
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-html-validation": "0.1.x",
+    "grunt-contrib-imagemin": "0.5.x",
+    "grunt-contrib-less": "0.9.x",
+    "grunt-jscs-checker": "~0.3.0",
+    "time-grunt": "^0.2.9",
+    "grunt-newer": "^0.6.1",
+    "grunt-css": "~0.5.4",
+    "grunt-csscomb": "~2.0.x",
+    "grunt-jekyll": "~0.4.0",
+    "grunt-exec": "0.4.x",
+    "load-grunt-tasks": "0.3.x"
+  },
+  "dependencies": {
   }
 }
