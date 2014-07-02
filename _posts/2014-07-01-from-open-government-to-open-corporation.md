@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "How Open is Your Company?"
-date: "2014-06-29 10:00:00 −08:00"
+title:  "From 'Open Government' to 'Open Corporation'"
+date: "2014-07-01 10:00:00 −08:00"
 author: dan
 published: true
 categories:
@@ -68,7 +68,7 @@ Open Data is fast becoming a defining theme for business.
 
 But how many companies today are committed to truly openly sharing data across the enterprise? Many organizations still behave as if data is a by-product of the systems that generate and use it and nothing more.  The data stays locked into those systems and is inaccessible to those without a seat license.  Many organizations are "shy" about sharing actual business performance data openly with their employees. This breeds mistrust of course.  Departments may not like openly sharing their data and metrics. People like to keep data "under wraps" or hoard it, giving them power in the organization.
  
-The idea that unlocking value requires open data, and open data deserves deliberate investment, resources, headcount, and technology – just like a company’s other corporate assets – is starting to sound like common sense. 
+The idea that unlocking value requires open data, and open data deserves deliberate investment, resources, headcount, and technology support – just like a company’s other corporate assets – is starting to sound like common sense. 
 
 ### Leaders are more trusted
 
@@ -87,6 +87,12 @@ Too many organizations create grandiose plans and goals that make wonderful slid
 * Using open data, such as customer discussions on social media, companies can refine product requirements and create new products and services. 
 * Companies can even consider ways in which to monetize the value of their data. 
 
+### A few words about information security
+
+Yes, "Open Data" sounds like it runs counter to everything we have been taught about information security and the principle of "least priviledge". To be clear, there is information in an organization addressed by privacy laws, HIPAA, PCI and various and sundry other laws and regulations. This data must of course be protected as prescribed - even so, having a record of the datasets involved and who "owns" them is actually useful for both open data purposes (because it makes the fact we have the data, and who owns it, visible even if the dataset itself is not exposed) as well as information security requirements (because security begins with information ownership and knowing who can grant/revoke access to sensitive information).
+
+Lets also keep things in perspective - the vast majority of data in most organizations is simply "internal data" and is not confidential or sensitive. Yet it is information that people need to perform their jobs and often they struggle to find it, or use stale data, because they just don't know where to go or who to contact for the information - sand in the gears of daily operations.  
+
 ## Summary
 
 Think about how open data could apply to your business:
@@ -98,6 +104,7 @@ Think about how open data could apply to your business:
 * Do you know who is _responsible_ for the data (i.e. the data owner or steward)? 
 * How accessible is the data? 
 * Can data be explicitly shared, and when shared, can the dataset owner/publisher specify the role for each grantee - editor, viewer, etc.?
+* If data cannot be shared do we at least know who "owns" or is responsible for it?
 * Is it available for download in any reasonable format needed?  
 * Is it accessible via an API so your internal developers can work with it?
 * Can your organization consume open data from outside sources easily and make it available across the company?
