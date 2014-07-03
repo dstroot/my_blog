@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CoreOS: manage thousands of machines and millions of Docker containers... no hypervisor needed."
+title:  "CoreOS: thousands of machines and millions of Docker containers... no hypervisor needed."
 date: "2014-06-29 10:00:00 −08:00"
 author: dan
 published: true

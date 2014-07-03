@@ -4,7 +4,7 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
           config: 'less/.csscomb.json'
         },
         files: {
-          'assets/css/<%= pkg.name %>.css': 'assets/css/<%= pkg.name %>.css',
+          'assets/css/<%= pkg.name %>.css': 'assets/css/<%= pkg.name %>.css'
         }
       }
     },
@@ -144,7 +144,7 @@ module.exports = function(grunt) {
     // -----------------------------------
     jscs: {
       options: {
-        config: '.jscs.json',
+        config: '.jscs.json'
       },
       gruntfile: {
         src: ['Gruntfile.js']
@@ -193,16 +193,16 @@ module.exports = function(grunt) {
 
           // Bootstrap
           'assets/js/vendor/bootstrap/js/transition.js',
-          //'assets/js/vendor/bootstrap/js/alert.js',
+          // 'assets/js/vendor/bootstrap/js/alert.js',
           'assets/js/vendor/bootstrap/js/button.js',
-          //'assets/js/vendor/bootstrap/js/carousel.js',
-          //'assets/js/vendor/bootstrap/js/collapse.js',
-          //'assets/js/vendor/bootstrap/js/dropdown.js',
-          //'assets/js/vendor/bootstrap/js/modal.js',
-          //'assets/js/vendor/bootstrap/js/tooltip.js',
-          //'assets/js/vendor/bootstrap/js/popover.js',
-          //'assets/js/vendor/bootstrap/js/scrollspy.js',
-          //'assets/js/vendor/bootstrap/js/tab.js',
+          // 'assets/js/vendor/bootstrap/js/carousel.js',
+          // 'assets/js/vendor/bootstrap/js/collapse.js',
+          // 'assets/js/vendor/bootstrap/js/dropdown.js',
+          // 'assets/js/vendor/bootstrap/js/modal.js',
+          // 'assets/js/vendor/bootstrap/js/tooltip.js',
+          // 'assets/js/vendor/bootstrap/js/popover.js',
+          // 'assets/js/vendor/bootstrap/js/scrollspy.js',
+          // 'assets/js/vendor/bootstrap/js/tab.js',
           'assets/js/vendor/bootstrap/js/affix.js',
 
           // Unveil http://luis-almeida.github.io/unveil/
@@ -229,7 +229,7 @@ module.exports = function(grunt) {
           'assets/css/<%= pkg.name %>.css',      // Main CSS file built from main.less
           'assets/css/font-awesome.css',         // Font Awesome Fonts
           'assets/css/pygments-manni.css'        // Code syntax highlighting
-          //'assets/css/syntax.css'                // Code syntax highlighting
+          // 'assets/css/syntax.css'                // Code syntax highlighting
         ],
         dest: 'assets/css/<%= pkg.name %>.css'
       }
@@ -277,16 +277,17 @@ module.exports = function(grunt) {
       options: {
         charset: 'utf-8',
         doctype: 'HTML5',
-        failHard: true,
+        failHard: false,
         reset: grunt.option('reset') || true,
         stoponerror: false,
         relaxerror: [
           'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
-          'Element img is missing required attribute src.'
+          'Element img is missing required attribute src.',
+          'Consider using the h1 element as a top-level heading only (all h1 elements are treated as top-level headings by many screen readers and other tools).'
         ]
       },
       files: {
-        src: ['_site/**/*.html']
+        src: ['_site/**/*.html', '!_site/assets/**/*.html']
       }
     },
 
@@ -298,11 +299,11 @@ module.exports = function(grunt) {
           collapseBooleanAttributes: true,
           removeCommentsFromCDATA: true,
           removeOptionalTags: true,
-          removeComments: true,
+          removeComments: true
         },
         files: [{
           expand : true,
-          cwd    : '_site/',            //cwd: All src matches are relative to (but don't include) this path.
+          cwd    : '_site/',            // cwd: All src matches are relative to (but don't include) this path.
           src    : '**/*.html',
           dest   : '_site/'
         }]
@@ -356,24 +357,24 @@ module.exports = function(grunt) {
     // -----------------------------------
     watch: {
       js: {
-        files: ['bootstrap/js/*.js'],   //'assets/**/*.js'
+        files: ['bootstrap/js/*.js'],   // 'assets/**/*.js'
         tasks: ['dist-js'],
         options: {
-          livereload: true,
+          livereload: true
         }
       },
       css: {
         files: ['less/*.less', 'less/bootstrap/*.less'],
         tasks: ['dist-css'],
         options: {
-          livereload: true,
+          livereload: true
         }
       },
       html: {
         files: ['*.html', '_includes/*.html', '_layouts/*.html', '_posts/*.md'],
         tasks: ['jekyll'],
         options: {
-          livereload: true,
+          livereload: true
         }
       }
     },
@@ -400,10 +401,10 @@ module.exports = function(grunt) {
     // -----------------------------------
     exec: {
       echo_grunt_version: {
-        cmd: function() { return 'echo ' + this.version; }
+        cmd: function () { return 'echo ' + this.version; }
       },
       s3: {
-        //cmd: function() { return 's3_website push --headless'; }
+        // cmd: function() { return 's3_website push --headless'; }
         cmd: 's3_website push --headless',
         stdout: true,
         stderr: true
