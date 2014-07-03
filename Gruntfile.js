@@ -283,7 +283,7 @@ module.exports = function (grunt) {
         relaxerror: [
           'Bad value X-UA-Compatible for attribute http-equiv on element meta.',
           'Element img is missing required attribute src.',
-          'Consider using the h1 element as a top-level heading only (all h1 elements are treated as top-level headings by many screen readers and other tools).'
+          'Consider using the h1 element as a top-level heading only'
         ]
       },
       files: {
