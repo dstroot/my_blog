@@ -38,12 +38,17 @@ Have a custom video player? We now have a `customSelector` option where you can 
 
 _Note:_ This will be the quickest way to add your own custom vendor as well as test your player's compatibility with FitVids.
 
+## Known issues
+
+* Vimeo Autoplay API is not compatible with FitVids in IE11. You must manually wrap videos you want to autoplay.
+
+
 ## Changelog
-* _08.16.13 - v1.1 - 2.779k_
+* _08.16.13 - v1.0.3 - 2.779k_
   * Optionally works with Zepto
-* _09.02.11 - v1 - 2.376kb_
+* _09.02.11 - v1.0.2 - 2.376kb_
   * Added `customSelector` option
-* _09.02.11 - v1 - 2.135kb_
+* _09.02.11 - v1.0.0 - 2.135kb_
 	* Initial release
 	* Vimeo,YouTube, Blip.tv, Viddler, Kickstarter
 

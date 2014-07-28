@@ -71,14 +71,18 @@
 
     <!-- JavaScript
     ================================================== -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- Once we have jQuery we can async load other scripts using jQuery -->
     <script>
       $(document).ready(function() {
 
         // Load js
-        $.getScript("/assets/js/myblog.min.js")
-        .done(function(script, textStatus) {
+        $.ajax({
+          type: 'GET',
+          url: '/assets/js/myblog.min.js',
+          dataType: 'script',
+          cache: true
+        }).done(function(script, textStatus) {
           console.log("myblog loaded.");
           // lets use affix bootstrap component to affix sidebar
           $('#sidebar').affix({
@@ -121,48 +125,63 @@
 <script>
   $(document).ready(function() {
 
-    // Load lunr.js
-    $.getScript("//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.3.3/lunr.min.js")
-    .done(function(script, textStatus) {
+    // Load lunr.js  // was 0.3.3 // latest 0.5.4
+    $.ajax({
+      type: 'GET',
+      url: '//cdnjs.cloudflare.com/ajax/libs/lunr.js/0.5.4/lunr.min.js',
+      dataType: 'script',
+      cache: true
+    }).done(function(script, textStatus) {
       console.log("Lunr loaded.");
-    })
-    .fail(function(jqxhr, settings, exception) {
+    }).fail(function(jqxhr, settings, exception) {
       console.log("Lunr load failed.");
     });
 
-    // Load mustache.js
-    $.getScript("//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js")
-    .done(function(script, textStatus) {
+    // Load mustache.js  // was 0.7.2
+    $.ajax({
+      type: 'GET',
+      url: '//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js',
+      dataType: 'script',
+      cache: true
+    }).done(function(script, textStatus) {
       console.log("Mustache loaded.");
-    })
-    .fail(function(jqxhr, settings, exception) {
+    }).fail(function(jqxhr, settings, exception) {
       console.log("Mustache load failed.");
     });
 
     // Load date.format.js
-    $.getScript("../assets/js/vendor/date.format/date.format.js")
-    .done(function(script, textStatus) {
+    $.ajax({
+      type: 'GET',
+      url: '../assets/js/vendor/date.format/date.format.js',
+      dataType: 'script',
+      cache: true
+    }).done(function(script, textStatus) {
       console.log("date.format loaded.");
-    })
-    .fail(function(jqxhr, settings, exception) {
+    }).fail(function(jqxhr, settings, exception) {
       console.log("date.format load failed.");
     });
 
     // Load URI.js
-    $.getScript("../assets/js/vendor/uri.js/src/URI.js")
-    .done(function(script, textStatus) {
+    $.ajax({
+      type: 'GET',
+      url: '../assets/js/vendor/uri.js/src/URI.js',
+      dataType: 'script',
+      cache: true
+    }).done(function(script, textStatus) {
       console.log("URI loaded.");
-    })
-    .fail(function(jqxhr, settings, exception) {
+    }).fail(function(jqxhr, settings, exception) {
       console.log("URI load failed.");
     });
 
     // Load Search.js
-    $.getScript("../assets/js/lunr/jquery.lunr.search.js")
-    .done(function(script, textStatus) {
+    $.ajax({
+      type: 'GET',
+      url: '../assets/js/lunr/jquery.lunr.search.js',
+      dataType: 'script',
+      cache: true
+    }).done(function(script, textStatus) {
       console.log("jquery.lunr.search loaded.");
-    })
-    .fail(function(jqxhr, settings, exception) {
+    }).fail(function(jqxhr, settings, exception) {
       console.log("jquery.lunr.search load failed.");
     });
 
