@@ -1,10 +1,10 @@
-(function($) {
+(function ($) {
 
-  var debounce = function(fn) {
+  var debounce = function (fn) {
     var timeout;
     var slice = Array.prototype.slice;
 
-    return function() {
+    return function () {
       var args = slice.call(arguments),
           ctx = this;
 
@@ -17,12 +17,12 @@
   };
 
   // parse a date in yyyy-mm-dd format
-  var parseDate = function(input) {
+  var parseDate = function (input) {
     var parts = input.match(/(\d+)/g);
-    return new Date(parts[0], parts[1]-1, parts[2]); // months are 0-based
+    return new Date(parts[0], parts[1] - 1, parts[2]); // months are 0-based
   }
 
-  var LunrSearch = (function() {
+  var LunrSearch = (function () {
     function LunrSearch(elem, options) {
       this.$elem = elem;
       this.$results = $(options.results),
@@ -32,12 +32,12 @@
       this.template = this.compileTemplate($(options.template));
 
       this.initialize();
-    };
+    }
 
-    LunrSearch.prototype.initialize = function() {
+    LunrSearch.prototype.initialize = function () {
       var self = this;
 
-      this.loadIndexData(function(data) {
+      this.loadIndexData(function (data) {
         self.populateIndex(data);
         self.populateSearchFromQuery();
         self.bindKeypress();
@@ -45,8 +45,8 @@
     };
 
     // create lunr.js search index specifying that we want to index the title and body fields of documents.
-    LunrSearch.prototype.createIndex = function() {
-      return lunr(function() {
+    LunrSearch.prototype.createIndex = function () {
+      return lunr(function () {
         this.field('title', { boost: 10 });
         this.field('body');
         this.ref('id');
@@ -54,27 +54,27 @@
     };
 
     // compile search results template
-    LunrSearch.prototype.compileTemplate = function($template) {
+    LunrSearch.prototype.compileTemplate = function ($template) {
       return Mustache.compile($template.text());
     };
 
     // load the search index data
-    LunrSearch.prototype.loadIndexData = function(callback) {
+    LunrSearch.prototype.loadIndexData = function (callback) {
       $.getJSON(this.indexDataUrl, callback);
     };
 
-    LunrSearch.prototype.populateIndex = function(data) {
+    LunrSearch.prototype.populateIndex = function (data) {
       var index = this.index;
 
       // format the raw json into a form that is simpler to work with
       this.entries = $.map(data.entries, this.createEntry);
 
-      $.each(this.entries, function(idx, entry) {
+      $.each(this.entries, function (idx, entry) {
         index.add(entry);
       });
     };
 
-    LunrSearch.prototype.createEntry = function(raw, index) {
+    LunrSearch.prototype.createEntry = function (raw, index) {
       var entry = $.extend({
         id: index + 1
       }, raw);
@@ -83,11 +83,11 @@
       if (raw.date) {
         $.extend(entry, {
           date: parseDate(raw.date),
-          pubdate: function() {
+          pubdate: function () {
             // HTML5 pubdate
             return dateFormat(parseDate(raw.date), 'yyyy-mm-dd')
           },
-          displaydate: function() {
+          displaydate: function () {
             // only for posts (e.g. Oct 12, 2012)
             return dateFormat(parseDate(raw.date), 'mmm dd, yyyy');
           }
@@ -97,29 +97,29 @@
       return entry;
     };
 
-    LunrSearch.prototype.bindKeypress = function() {
+    LunrSearch.prototype.bindKeypress = function () {
       var self = this;
 
-      this.$elem.bind('keyup', debounce(function() {
+      this.$elem.bind('keyup', debounce(function () {
         self.search($(this).val());
       }));
     };
 
-    LunrSearch.prototype.search = function(query) {
+    LunrSearch.prototype.search = function (query) {
       var entries = this.entries;
 
       if (query.length <= 2) {
         this.$results.hide();
         this.$entries.empty();
       } else {
-        var results = $.map(this.index.search(query), function(result) {
-          return $.grep(entries, function(entry) { return entry.id === parseInt(result.ref, 10) })[0];
+        var results = $.map(this.index.search(query), function (result) {
+          return $.grep(entries, function (entry) { return entry.id === parseInt(result.ref, 10) })[0];
         });
         this.displayResults(results);
       }
     };
 
-    LunrSearch.prototype.displayResults = function(entries) {
+    LunrSearch.prototype.displayResults = function (entries) {
       var $entries = this.$entries,
           $results = this.$results;
 
@@ -128,13 +128,13 @@
       if (entries.length === 0) {
         $entries.append('<p>Nothing found.</p>')
       } else {
-        $entries.append(this.template({entries: entries}));
+        $entries.append(this.template({ entries: entries }));
       }
-      $results.show();
+      $results.fadeIn(200);  // $results.show();
     };
 
     // Populate the search input with 'q' querystring parameter if set
-    LunrSearch.prototype.populateSearchFromQuery = function() {
+    LunrSearch.prototype.populateSearchFromQuery = function () {
       var uri = new URI(window.location.search.toString());
       var queryString = uri.search(true);
 
@@ -147,7 +147,7 @@
     return LunrSearch;
   })();
 
-  $.fn.lunrSearch = function(options) {
+  $.fn.lunrSearch = function (options) {
 
     // apply default options
     options = $.extend({}, $.fn.lunrSearch.defaults, options);

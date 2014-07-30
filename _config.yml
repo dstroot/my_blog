@@ -26,6 +26,7 @@ exclude:
 - "bower.json"
 - "bower_components"
 - "Gruntfile.js"
+- "gulpfile.js"
 - "s3_website.yml"
 - "package.json"
 - "node_modules"
@@ -36,10 +37,9 @@ exclude:
 - "totop.js"               # Not needed in _site/assets
 - "unveil"                 # Not needed in _site/assets
 - "fitvids"                # Not needed in _site/assets
-- "font-awesome.css"       # Not needed in _site/assets
-- "pygments.css"           # Not needed in _site/assets
-- "pygments-manni.css"     # Not needed in _site/assets
-- "syntax.css"             # Not needed in _site/assets
+- "assets/css/pygments.css"           # Not needed in _site/assets
+- "assets/css/pygments-manni.css"     # Not needed in _site/assets
+- "assets/css/syntax.css"             # Not needed in _site/assets
 - "main.js"
 - "less"
 - "validation-report.json"

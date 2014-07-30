@@ -406,7 +406,7 @@ module.exports = function (grunt) {
       },
       s3: {
         // cmd: function() { return 's3_website push --headless'; }
-        cmd: 's3_website push --headless',
+        cmd: 's3_website push',
         stdout: true,
         stderr: true
       }

@@ -10,8 +10,10 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({ lazy: true });
 var runSequence = require('run-sequence');
+var pngcrush = require('imagemin-pngcrush');
 var terminus = require('terminus');
 var pagespeed = require('psi');
+var exec = require('child_process').exec;
 
 /**
  * Banner
@@ -34,43 +36,53 @@ var banner = [
 
 var paths = {
   clean: [
-    '!public/js/main.js',            // ! not
-    '!public/js/socket.io-1.0.6.js', // ! not
-    'public/js/**/*.js',
-    'public/js/**/*.map',
-    'public/js/**/*.min.js',
-    'public/css/**/*.css',
-    'public/css/**/*.min.css'
+    'assets/js/myblog*.js',
+    'assets/css/myblog*.css',
+    'assets/css/myblog*.map',
+    '_site'
   ],
   js: [
-    // ============= Bootstrap  ================
-    // Enable/disable as needed but only turn on
-    // .js that is needed on *every* page. No bloat!
-    // =========================================
-    'public/lib/bootstrap/js/transition.js',
-    'public/lib/bootstrap/js/alert.js',
-    // 'public/lib/bootstrap/js/button.js',
-    // 'public/lib/bootstrap/js/carousel.js',
-    'public/lib/bootstrap/js/collapse.js',
-    'public/lib/bootstrap/js/dropdown.js',
-    // 'public/lib/bootstrap/js/modal.js',
-    // 'public/lib/bootstrap/js/tooltip.js',
-    // 'public/lib/bootstrap/js/popover.js',
-    // 'public/lib/bootstrap/js/scrollspy.js',
-    // 'public/lib/bootstrap/js/tab.js',
-    // 'public/lib/bootstrap/js/affix.js'
-    // =========================================
-    'public/lib/fastclick/lib/fastclick.js',
-    'public/js/main.js'
+    // jQuery
+    // 'assets/js/vendor/jquery/jquery.js',
+
+    // Bootstrap
+    'assets/js/vendor/bootstrap/js/transition.js',
+    // 'assets/js/vendor/bootstrap/js/alert.js',
+    'assets/js/vendor/bootstrap/js/button.js',
+    // 'assets/js/vendor/bootstrap/js/carousel.js',
+    // 'assets/js/vendor/bootstrap/js/collapse.js',
+    // 'assets/js/vendor/bootstrap/js/dropdown.js',
+    // 'assets/js/vendor/bootstrap/js/modal.js',
+    // 'assets/js/vendor/bootstrap/js/tooltip.js',
+    // 'assets/js/vendor/bootstrap/js/popover.js',
+    // 'assets/js/vendor/bootstrap/js/scrollspy.js',
+    // 'assets/js/vendor/bootstrap/js/tab.js',
+    'assets/js/vendor/bootstrap/js/affix.js',
+
+    // Unveil http://luis-almeida.github.io/unveil/
+    'assets/js/vendor/unveil/jquery.unveil.js',
+
+    // To Top
+    'assets/js/vendor/totop.js/totop.js',
+
+    // Responsive Videos
+    'assets/js/vendor/fitvids/jquery.fitvids.js'
+
+    // Instant Click
+    // 'assets/js/vendor/instantclick/instantclick.js'
   ],
   lint: [
-    'config/**/*.js',
-    'test/**/*.js',
-    'controllers/**/*.js',
-    'models/**/*.js',
-    'app.js',
-    'app_cluster.js',
+    'assets/js/lunr/*.js',
     'gulpfile.js'
+  ],
+  html: [
+    '_site/**/*.html'
+  ],
+  css: [
+    'assets/css/myblog.css',               // Main CSS file built from main.less
+    'assets/css/font-awesome.css',         // Font Awesome Fonts
+    'assets/css/pygments-manni.css'        // Code syntax highlighting
+    // 'assets/css/syntax.css'                // Code syntax highlighting
   ],
   less: [
     'less/**/*.less'
@@ -94,7 +106,7 @@ gulp.task('clean', function () {
  */
 
 gulp.task('styles', function () {
-  return gulp.src('./less/main.less')       // Read in Less file
+  return gulp.src('./less/myblog.less')     // Read in Less file
     .pipe($.sourcemaps.init())              // Initialize gulp-sourcemaps
     .pipe($.less({ strictMath: true }))     // Compile Less files
     .pipe($.autoprefixer([                  // Autoprefix for target browsers
@@ -103,17 +115,17 @@ gulp.task('styles', function () {
       'Firefox ESR',
       'Opera 12.1'
     ], { cascade: true }))
-    .pipe($.csscomb())                      // Coding style formatter for CSS
+    // .pipe($.csscomb())                      // Coding style formatter for CSS
     .pipe($.csslint('.csslintrc'))          // Lint CSS
     .pipe($.csslint.reporter())             // Report issues
     .pipe($.rename(pkg.name + '.css'))      // Rename to "packagename.css"
     .pipe($.sourcemaps.write())             // Write sourcemap
-    .pipe(gulp.dest('./public/css'))        // Save CSS here
+    .pipe(gulp.dest('./assets/css'))        // Save CSS here
     .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
     .pipe($.csso())                         // Minify CSS
     .pipe($.header(banner, { pkg : pkg }))  // Add banner
     .pipe($.size({ title: 'CSS:' }))        // What size are we at?
-    .pipe(gulp.dest('./public/css'))        // Save minified CSS
+    .pipe(gulp.dest('./assets/css'))        // Save minified CSS
     .pipe($.livereload());                  // Initiate a reload
 });
 
@@ -124,12 +136,12 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
   return gulp.src(paths.js)                 // Read .js files
     .pipe($.concat(pkg.name + '.js'))       // Concatenate .js files
-    .pipe(gulp.dest('./public/js'))         // Save main.js here
+    .pipe(gulp.dest('./assets/js'))         // Save main.js here
     .pipe($.rename({ suffix: '.min' }))     // Add .min suffix
     .pipe($.uglify({ outSourceMap: true })) // Minify the .js
     .pipe($.header(banner, { pkg : pkg }))  // Add banner
     .pipe($.size({ title: 'JS:' }))         // What size are we at?
-    .pipe(gulp.dest('./public/js'))         // Save minified .js
+    .pipe(gulp.dest('./assets/js'))         // Save minified .js
     .pipe($.livereload());                  // Initiate a reload
 });
 
@@ -138,14 +150,16 @@ gulp.task('scripts', function () {
  */
 
 gulp.task('images', function () {
-  return gulp.src('public/img/**/*')        // Read images
-    .pipe($.changed('./public/img'))        // Only process new/changed
+  return gulp.src('assets/img/*.{png,jpg,gif}')
+    .pipe($.changed('./assets/img'))        // Only process new/changed
     .pipe($.imagemin({                      // Compress images
-      optimizationLevel: 5,
-      progressive: true,
-      interlaced: true
+      progressive: true,   // JPG
+      interlaced: true,    // GIF
+      svgoPlugins: [{ removeViewBox: false }],  // SVG
+      use: [pngcrush()]    // PNG
     }))
-    .pipe(gulp.dest('./public/img'));      // Write processed images
+    .on('error', console.error)
+    .pipe(gulp.dest('./assets/img'));      // Write processed images
 });
 
 /**
@@ -176,89 +190,77 @@ gulp.task('jscs', function () {
  * Jekyll
  */
 
-// Run a command in a shell
-var exec = require('child_process').exec;
-gulp.task('jekyll', function(cb) {
-  // Build Jekyl
-  exec('jekyll build', function(err) {
-    if (err) return cb(err); //return error
-    cb(); // finished task
+gulp.task('jekyll', function (cb) {
+  exec('jekyll build', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);  // finished task
   });
 });
 
 /**
- * Build Task
- *   - Build all the things...
+ * Upload to S3
  */
+
+gulp.task('s3', function (cb) {
+  exec('s3_website push', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);  // finished task
+  });
+})
+
+// var exec = require('child_process').exec;
+// gulp.task('s3', function (cb) {
+//   // Upload to S3
+//   exec('s3_website push', function (err) {
+//     if (err) {
+//       return cb(err);
+//     }
+//     cb(); // finished task
+//   });
+// });
+
+/**
+ * HTML Minify
+ */
+
+gulp.task('htmlminify', function () {
+  return gulp.src(paths.html)
+    .pipe($.htmlmin({
+      collapseWhitespace: true,
+      collapseBooleanAttributes: true,
+      removeCommentsFromCDATA: true,
+      removeOptionalTags: true,
+      removeComments: true,
+      minifyJS: true
+    }))
+    .pipe(gulp.dest('./_site'))
+});
+
+// /**
+//  * Build Task
+//  *   - Build all the things...
+//  */
 
 gulp.task('build', function (cb) {
   runSequence(
-    'clean',                                // first clean
-    ['lint', 'jscs'],                       // then lint and jscs in parallel
-    ['styles', 'scripts', 'images'],        // etc.
+    'clean',
+    ['styles', 'scripts', 'images'],
+    'jekyll',
+    'htmlminify',
+    's3',
     cb);
-});
-
-/**
- * Nodemon Task
- */
-
-gulp.task('nodemon', ['build'], function (cb) {
-  $.livereload.listen();
-  var called = false;
-  $.nodemon({
-    script: 'app.js',
-    verbose: false,
-    env: { 'NODE_ENV': 'development', 'DEBUG': 'skeleton' },
-    // nodeArgs: ['--debug'],
-    ext: 'js',
-    ignore: [
-      'gulpfile.js',
-      'public/',
-      'views/',
-      'less/',
-      'node_modules/'
-    ]
-  })
-  .on('start', function () {
-    setTimeout(function () {
-      if (!called) {
-        called = true;
-        cb();
-      }
-    }, 3000);  // wait for start
-  })
-  .on('restart', function () {
-    setTimeout(function () {
-      $.livereload.changed('/');
-    }, 3000);  // wait for restart
-  });
-});
-
-/**
- * Open the browser
- */
-
-gulp.task('open', ['nodemon'], function () {
-  var options = {
-    url: 'http://localhost:3000/'
-  };
-  // A file must be specified or gulp will skip the task
-  // Doesn't matter which file since we set the URL above
-  // Weird, I know...
-  gulp.src('./public/humans.txt')
-  .pipe($.open('', options));
 });
 
 /**
  * Default Task
  */
 
-gulp.task('default', ['open'], function () {
+gulp.task('default', ['build'], function () {
   gulp.watch(paths.less, ['styles']);
   gulp.watch(paths.js, ['scripts']);
-  gulp.watch(paths.lint, ['lint', 'jscs']);
-  gulp.watch('views/**/*.jade').on('change', $.livereload.changed);
+  gulp.watch('assets/img/**/*', ['images']);
 });
 
 /**
@@ -271,6 +273,6 @@ gulp.task('default', ['open'], function () {
 // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
 
 gulp.task('pagespeed', pagespeed.bind(null, {
-  url: 'https://skeleton-app.jit.su',
+  url: 'http://danstroot.com',  // http://danstroot.com.s3-website-us-east-1.amazonaws.com/
   strategy: 'desktop'
 }));
