@@ -3,6 +3,7 @@ node_js:
   - 0.10
 before_script:
   - gem install jekyll
+  - gem install rouge
   - gem install rdiscount
   - gem install json
   - gem install nokogiri
