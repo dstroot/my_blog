@@ -101,7 +101,7 @@
           });
 
           // Fire up image lazyloading
-          $("img.lazy").unveil(500, function() {
+          $("img.lazy").unveil(600, function() {
             $(this).load(function() {
               this.style.opacity = 1;
             });
@@ -152,7 +152,7 @@
     // Load date.format.js
     $.ajax({
       type: 'GET',
-      url: '../assets/js/vendor/date.format/date.format.js',
+      url: '../assets/lib/date.format/date.format.js',
       dataType: 'script',
       cache: true
     }).done(function(script, textStatus) {
@@ -164,7 +164,7 @@
     // Load URI.js
     $.ajax({
       type: 'GET',
-      url: '../assets/js/vendor/uri.js/src/URI.js',
+      url: '../assets/lib/uri.js/src/URI.js',
       dataType: 'script',
       cache: true
     }).done(function(script, textStatus) {
@@ -176,7 +176,7 @@
     // Load Search.js
     $.ajax({
       type: 'GET',
-      url: '../assets/js/lunr/jquery.lunr.search.js',
+      url: '../assets/js/jquery.lunr.search.js',
       dataType: 'script',
       cache: true
     }).done(function(script, textStatus) {

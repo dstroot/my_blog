@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="CoreOS" data-src="/assets/img/coreos-logo.png" width='594'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="CoreOS" data-src="/assets/img/coreos-logo.png" width="594">
 
 I have been playing around with CoreOS to get a sense of how everything works. The vision of this project is incredible. 
 
@@ -48,7 +48,7 @@ CoreOS displaces hypervisors and machine virtualization in favor of Docker and L
 
 So now we have a hive of self-updating Linux hosts with a single, distributed init system (systemd and fleet) and a single shared brain (etcd).  It looks something like this:
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="CoreOS in Action" data-src="/assets/img/coreos-action.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="CoreOS in Action" data-src="/assets/img/coreos-action.png" width="750">
 
 This depicts eight containers (two load balancers and six api servers) being managed by "fleet" to run in various CoreOS hosts in the cluster, with shared access to etcd.
  

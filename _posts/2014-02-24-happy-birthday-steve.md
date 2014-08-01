@@ -10,7 +10,7 @@ tags:
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Steve Jobs" data-src="/assets/img/SteveJobsCloseUp-lg.jpg" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Steve Jobs" data-src="/assets/img/SteveJobsCloseUp-lg.jpg" width="750">
 
 <div class="row">
   <div class="col-md-6">

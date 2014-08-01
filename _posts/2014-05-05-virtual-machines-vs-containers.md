@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Docker" data-src="/assets/img/docker.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Docker" data-src="/assets/img/docker.png" width="750">
 
 Three driving forces of infrastructure efficiency in a large, distributed environment were:
 
@@ -26,7 +26,7 @@ LXC provides operating system-level virtualization, but instead of creating a fu
 
 This work was started by engineers at Google and in late 2007 it was merged into kernel version 2.6.24. LXC also relies on other kinds of namespace-isolation functionality, which have been developed and integrated into the mainline Linux kernel since then. It looks something like this:
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="LXC vs. Virtual Machines" data-src="/assets/img/dockervsvm.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="LXC vs. Virtual Machines" data-src="/assets/img/dockervsvm.png" width="750">
 
 ##Is LXC Technology Really Better?
 

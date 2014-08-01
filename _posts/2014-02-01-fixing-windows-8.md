@@ -9,7 +9,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Windows Start Menu" data-src="/assets/img/windows8.jpg">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Windows Start Menu" data-src="/assets/img/windows8.jpg" width="750">
 
 I just saw [this piece](http://jaymachalani.com/blog/2013/12/12/fixing-windows-8) by Jay Machalani about restructuring the UI/UX of Windows 8.  It's a brilliant piece of work!
 

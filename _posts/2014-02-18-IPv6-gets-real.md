@@ -9,7 +9,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="IPv6 at Google" data-src="/assets/img/IPv6-google.jpg">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="IPv6 at Google" data-src="/assets/img/IPv6-google.jpg" width="750">
 
 Google’s IPv6 measurements crossed the 3% milestone just under five months from when the 2% milestone was crossed.  Prior to that it had taken 11 months to go from 1% to 2%.  
 <!-- more -->

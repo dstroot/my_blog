@@ -1,8 +1,8 @@
 // Bring in bootstrap
 // --------------------------------------------------
 @import "bootstrap.less";
-@import "../assets/js/vendor/font-awesome/less/font-awesome.less";
-@fa-font-path: "../js/vendor/font-awesome/fonts";
+@import "../assets/lib/font-awesome/less/font-awesome.less";
+@fa-font-path: "/assets/lib/font-awesome/fonts";
 @import (less) "../assets/css/pygments-manni.css";
 
 // Now add bootstrap overrides
@@ -128,15 +128,17 @@ a:hover {
   //border-bottom: 1px dotted @text-color;  // from the link style on http://www.briangardner.com/
 }
 
-// Responsive iframe
-// ---------------------------------------------------
-iframe, object, embed {
-  max-width: 100%;
-  background-color: transparent;
-  border: 0px none transparent;
-  padding: 0px;
-  overflow: hidden;
-}
+/* used to be needed for fitvids.js
+   now using standard bootstrap */
+// // Responsive iframe
+// // ---------------------------------------------------
+// iframe, object, embed {
+//   max-width: 100%;
+//   background-color: transparent;
+//   border: 0px none transparent;
+//   padding: 0px;
+//   overflow: hidden;
+// }
 
 // Octocard!
 // --------------------------------------------------
@@ -191,15 +193,15 @@ iframe, object, embed {
 
 // Ease in lazy loaded images
 // --------------------------------------------------
-img.lazy {
+.lazy {
   opacity: 0;
-  transition: opacity .3s ease-in;
+  transition: opacity .1s ease-in;
 }
 
 
 // Posts
 // --------------------------------------------------
-ul.post-index {
+.post-index {
   list-style-type: none;
   margin-bottom: 2em;
   padding: 0px;
@@ -244,7 +246,7 @@ ul.post-index {
 .post ul, .post ol {
   margin-left: 15px;
 }
-p.words {
+.words {
   font-size: 14px;
 }
 
@@ -282,7 +284,7 @@ blockquote {
 
 // http://stackoverflow.com/questions/5070751/anchor-links-and-margins
 // ---------------------------------------------------
-a.top {
+.top {
 position: relative;
 top: -0px;
 display: block;
@@ -293,14 +295,14 @@ width: 0;
 
 // Newsletter Section
 // ---------------------------------------------------
-#newsletter {
+.newsletter {
   text-align: center;
 }
-#newsletter p {
+.newsletter p {
   font-size: 18px;
   margin-bottom: 15px;
 }
-#newsletter h4 {
+.newsletter h4 {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: bolder;
@@ -428,7 +430,7 @@ footer p {
 
 // My Face!!  ;)
 // -------------------------------------
-#sidebar > .myface > a {
+.sidebar > .myface > a {
   border-bottom: none;
 }
 .myface {
@@ -466,46 +468,46 @@ footer p {
 
 // Sidebar Section
 // ---------------------------------------------------
-#sidebar {
+.sidebar {
   padding-top: 10px;
   text-align: center;
 }
-#sidebar p {
+.sidebar p {
   margin-bottom: 15px;
 }
-#sidebar h1 {
+.sidebar h1 {
   margin-bottom: 0px;
 }
-#sidebar a {
+.sidebar a {
   font-size: 17px;
   border-bottom: 1px dotted @text-color;
   //font-weight: bolder;
 }
-#sidebar ul {
+.sidebar ul {
   margin-top: 8px;
   margin-bottom: 18px;
 }
-#sidebar li {
+.sidebar li {
   margin: 3px 2px 3px 2px; /* top right bottom left */
   padding: 0px;
 }
-#sidebar .social a {
+.sidebar .social a {
   font-size: 24px;  // was 62 for two rows, 30px for one
   line-height: 1;
   border-bottom: none;
   //margin: 0px 3px 0px 3px; /* top right bottom left */
 }
-#sidebar .social a:hover {
+.sidebar .social a:hover {
   //border-bottom: none;
 }
 // Undo the affixed behavior in mobile views
-#sidebar.affix {
+.sidebar.affix {
   position: static;  // Default - Elements render in order as they appear in the document flow
 }
 
 // iPhone Tall
 @media screen and (max-width: 768px) {
-  #sidebar h1 {
+  .sidebar h1 {
     margin-top: 10px;
     font-size: 24px;
   }
@@ -521,21 +523,21 @@ footer p {
     padding-top: 30px;  // Needed for fixed navbar or personal site
   }
   // affix-top: The affix-top class should be inline to the page.
-  #sidebar.affix-top {
+  .sidebar.affix-top {
     width: 230px;   // stop it from growing - anyone know how to fix this?
   }
   // affix: The affix class should be fixed to the page.
-  #sidebar.affix {
+  .sidebar.affix {
     position: fixed;
     top: 30px;      // same as body padding or outer navbar height
     width: 230px;   // stop it from growing - anyone know how to fix this?
   }
   // affix bottom: The affix-bottom class should be positioned absolute.
-  #sidebar.affix-bottom {
+  .sidebar.affix-bottom {
     position: absolute;
     width: 230px;   // stop it from growing - anyone know how to fix this?
   }
-  #sidebar {
+  .sidebar {
     padding-right: 15px;
   }
 }
@@ -546,17 +548,17 @@ footer p {
     padding-top: 70px;  // Needed for fixed navbar or personal site
   }
   // affix-top: The affix-top class should be inline to the page.
-  #sidebar.affix-top {
+  .sidebar.affix-top {
     width: 260px;   // stop it from growing - anyone know how to fix this?
   }
   // affix: The affix class should be fixed to the page.
-  #sidebar.affix {
+  .sidebar.affix {
     position: fixed;
     top: 70px;      // same as body padding or outer navbar height
     width: 260px;   // stop it from growing - anyone know how to fix this?
   }
   // affix bottom: The affix-bottom class should be positioned absolute.
-  #sidebar.affix-bottom {
+  .sidebar.affix-bottom {
     position: absolute;
     width: 260px;   // stop it from growing - anyone know how to fix this?
   }
@@ -632,7 +634,7 @@ padding-top: 5px;
     display:inline-block;
     position:relative;
     top:-1px;
-    float:left;
+    // float:left;
   }
   .entries time {
     position:absolute;
@@ -647,72 +649,72 @@ padding-top: 5px;
 
 // Blog Archives
 // --------------------------------------------------
-#blog-archives article {
+.blog-archives article {
   padding:1em 0 1em;
   position:relative;
   background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x;
 }
-#blog-archives article:last-child {
+.blog-archives article:last-child {
   background:none;
 }
-#blog-archives article footer {
+.blog-archives article footer {
   padding:0;
   margin:0;
 }
-#blog-archives h1 {
+.blog-archives h1 {
   margin-top: 10.5px;
   margin-bottom: 10.5px;
 }
-#blog-archives h1 a {
+.blog-archives h1 a {
   font-size: 26px;
   margin-left: 15px;
   display:inline-block;
 }
-#blog-archives .entry-content {
+.blog-archives .entry-content {
   display:none;
 }
-#blog-archives time{
+.blog-archives time{
   font-size: 18px;
   line-height:1.2em;
   color: @gray-light;
 }
-#blog-archives time .month,#blog-archives time .day {
+.blog-archives time .month,.blog-archives time .day {
   display:inline-block;
 }
-#blog-archives time .month {
+.blog-archives time .month {
   text-transform:uppercase;
 }
-#blog-archives .year {
+.blog-archives .year {
     display:none;
 }
-#blog-archives h2 {
+.blog-archives h2 {
   color: @gray-light;
 }
-#blog-archives p {
+.blog-archives p {
   margin-bottom:1em;
 }
 
 @media screen and (min-width: 550px) {
-  #blog-archives article {
+  .blog-archives article {
     margin-left:5em;
     padding-left:4.5em;
   }
-  #blog-archives h2 {
+  .blog-archives h2 {
     margin-bottom:.3em;
     font-size: 38px;
     font-weight:normal;
     display:inline-block;
     position:relative;
     top:-1px;
-    float:left;
+    // float:left;
   }
-  #blog-archives time {
+  .blog-archives time {
     position:absolute;
     text-align:right;
     left: 9px;
     top:40px;
   }
-  #blog-archives a.category {
+  .blog-archives a.category {
     line-height:1.1em
   }
 }

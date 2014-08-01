@@ -9,7 +9,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Facebook Server" data-src="/assets/img/fb-server.jpg">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Facebook Server" data-src="/assets/img/fb-server.jpg" width="750">
 
 Last week, IBM announced that it was selling its low-end server business to Chinese hardware manufacturer Lenovo. The deal has been widely viewed as the logical result of the commoditization of x86-based servers, in much the same way PCs were commoditized a decade ago.
 

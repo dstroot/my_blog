@@ -9,7 +9,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="FX Trading UI" data-src="/assets/img/ncaa-brackets.jpg">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="FX Trading UI" data-src="/assets/img/ncaa-brackets.jpg" width="750">
 
 Quicken Loans and Warren Buffet annouced a billion dollar prize for a perfect NCAA college bracket prediction. As Quicken Loans puts it:
 

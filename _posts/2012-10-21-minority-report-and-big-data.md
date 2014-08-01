@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Minority Report" data-src="/assets/img/minorityreport.jpg">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Minority Report" data-src="/assets/img/minorityreport.jpg" width="750">
 
 > The United Arab Emirates holds the largest biometric database in 
 > the world, the Emirates Identity Authority has announced. The 

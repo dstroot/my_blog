@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="TEDx" data-src="/assets/img/TEDx-logo.jpg">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="TEDx" data-src="/assets/img/TEDx-logo.jpg" width="750">
 
 Yesterday I had the pleasure of mental stimulation.  The theme of the TEDx OC conference was relevance.  Specifically how do you stay relevant in today’s world?
 

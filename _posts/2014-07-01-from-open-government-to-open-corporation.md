@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Open Data" data-src="/assets/img/data_gov.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Open Data" data-src="/assets/img/data_gov.png" width="750">
 
 ## Let's Talk About Open Government First
 
@@ -62,19 +62,19 @@ It's clear that that the concepts of open data benefit science, and the platform
 
 Goals, metrics and discoveries must be transparent.  Here are examples from city data:
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Goals" data-src="/assets/img/goals.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Goals" data-src="/assets/img/goals.png" width="750">
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Goals" data-src="/assets/img/goals_metric.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Goals" data-src="/assets/img/goals_metric.png" width="750">
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Open Data" data-src="/assets/img/open_data.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Open Data" data-src="/assets/img/open_data.png" width="750">
 
 Datasets supporting the goals, metrics and discoveries must be publicly available, along with other supporting data:
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Data Catalog" data-src="/assets/img/data_catalog.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Data Catalog" data-src="/assets/img/data_catalog.png" width="750">
 
 Platforms have sprung up to support the open government movement. [Socrata](http://www.socrata.com/) appears to have market leadership in this space and has a very complete vision of what an open data platform looks like:
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Socrata" data-src="/assets/img/socrata.png" width='750'>
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Socrata" data-src="/assets/img/socrata.png" width="750">
 
 ## The "Open Data" Corporation
 

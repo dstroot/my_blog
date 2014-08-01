@@ -14,6 +14,7 @@ var pngcrush = require('imagemin-pngcrush');
 var terminus = require('terminus');
 var pagespeed = require('psi');
 var exec = require('child_process').exec;
+var critical = require('critical');
 
 /**
  * Banner
@@ -42,47 +43,38 @@ var paths = {
     '_site'
   ],
   js: [
-    // jQuery
-    // 'assets/js/vendor/jquery/jquery.js',
-
     // Bootstrap
-    'assets/js/vendor/bootstrap/js/transition.js',
-    // 'assets/js/vendor/bootstrap/js/alert.js',
-    'assets/js/vendor/bootstrap/js/button.js',
-    // 'assets/js/vendor/bootstrap/js/carousel.js',
-    // 'assets/js/vendor/bootstrap/js/collapse.js',
-    // 'assets/js/vendor/bootstrap/js/dropdown.js',
-    // 'assets/js/vendor/bootstrap/js/modal.js',
-    // 'assets/js/vendor/bootstrap/js/tooltip.js',
-    // 'assets/js/vendor/bootstrap/js/popover.js',
-    // 'assets/js/vendor/bootstrap/js/scrollspy.js',
-    // 'assets/js/vendor/bootstrap/js/tab.js',
-    'assets/js/vendor/bootstrap/js/affix.js',
+    'assets/lib/bootstrap/js/transition.js',
+    // 'assets/lib/bootstrap/js/alert.js',
+    'assets/lib/bootstrap/js/button.js',
+    // 'assets/lib/bootstrap/js/carousel.js',
+    // 'assets/lib/bootstrap/js/collapse.js',
+    // 'assets/lib/bootstrap/js/dropdown.js',
+    // 'assets/lib/bootstrap/js/modal.js',
+    // 'assets/lib/bootstrap/js/tooltip.js',
+    // 'assets/lib/bootstrap/js/popover.js',
+    // 'assets/lib/bootstrap/js/scrollspy.js',
+    // 'assets/lib/bootstrap/js/tab.js',
+    'assets/lib/bootstrap/js/affix.js',
 
     // Unveil http://luis-almeida.github.io/unveil/
-    'assets/js/vendor/unveil/jquery.unveil.js',
+    'assets/lib/unveil/jquery.unveil.js',
 
     // To Top
-    'assets/js/vendor/totop.js/totop.js',
-
-    // Responsive Videos
-    'assets/js/vendor/fitvids/jquery.fitvids.js'
-
-    // Instant Click
-    // 'assets/js/vendor/instantclick/instantclick.js'
+    'assets/lib/totop.js/totop.js'
   ],
   lint: [
-    'assets/js/lunr/*.js',
+    'assets/js/*.js',
     'gulpfile.js'
   ],
   html: [
-    '_site/**/*.html'
+    '_site/**/*.html',
+    '!_site/assets/lib/**/*.html'   // ignore
   ],
   css: [
     'assets/css/myblog.css',               // Main CSS file built from main.less
     'assets/css/font-awesome.css',         // Font Awesome Fonts
     'assets/css/pygments-manni.css'        // Code syntax highlighting
-    // 'assets/css/syntax.css'                // Code syntax highlighting
   ],
   less: [
     'less/**/*.less'
@@ -115,7 +107,7 @@ gulp.task('styles', function () {
       'Firefox ESR',
       'Opera 12.1'
     ], { cascade: true }))
-    // .pipe($.csscomb())                      // Coding style formatter for CSS
+    .pipe($.csscomb())                      // Coding style formatter for CSS
     .pipe($.csslint('.csslintrc'))          // Lint CSS
     .pipe($.csslint.reporter())             // Report issues
     .pipe($.rename(pkg.name + '.css'))      // Rename to "packagename.css"
@@ -199,6 +191,42 @@ gulp.task('jekyll', function (cb) {
 });
 
 /**
+ * Validate HTML
+ */
+
+gulp.task('htmlhint', function () {
+  return gulp.src(paths.html)
+    .pipe($.htmlhint())
+    .pipe($.htmlhint.reporter())
+});
+
+
+/**
+ * Inline Critical CSS
+ */
+
+gulp.task('copystyles', function () {
+  return gulp.src(['assets/css/myblog.css'])
+    .pipe($.rename({
+      basename: "site" // site.css
+    }))
+    .pipe(gulp.dest('./assets/css'));
+});
+
+gulp.task('critical', ['copystyles'], function () {
+    critical.generateInline({
+        base: '_site/',
+        src: 'index.html',
+        // css: ['_site/assets/css/myblog.css'],
+        styleTarget: 'assets/css/main.css',
+        htmlTarget: 'index.html',
+        width: 1000,
+        height: 1000,
+        minify: true
+    });
+});
+
+/**
  * Upload to S3
  */
 
@@ -209,17 +237,6 @@ gulp.task('s3', function (cb) {
     cb(err);  // finished task
   });
 })
-
-// var exec = require('child_process').exec;
-// gulp.task('s3', function (cb) {
-//   // Upload to S3
-//   exec('s3_website push', function (err) {
-//     if (err) {
-//       return cb(err);
-//     }
-//     cb(); // finished task
-//   });
-// });
 
 /**
  * HTML Minify
@@ -238,18 +255,18 @@ gulp.task('htmlminify', function () {
     .pipe(gulp.dest('./_site'))
 });
 
-// /**
-//  * Build Task
-//  *   - Build all the things...
-//  */
+/**
+ * Build Task
+ *   - Build all the things...
+ */
 
 gulp.task('build', function (cb) {
   runSequence(
     'clean',
     ['styles', 'scripts', 'images'],
     'jekyll',
+    'htmlhint',
     'htmlminify',
-    's3',
     cb);
 });
 

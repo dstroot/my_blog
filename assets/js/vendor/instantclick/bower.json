@@ -1,7 +1,0 @@
-{
-  "name": "instantclick",
-  "version": "2.1",
-  "main": [
-    "./instantclick.js"
-  ]
-}

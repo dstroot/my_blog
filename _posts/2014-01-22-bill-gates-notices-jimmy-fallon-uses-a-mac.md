@@ -11,4 +11,8 @@ tags:
 
 Last night Bill Gates was a guest on Late Night with Jimmy Fallon to talk about his charitable work. The man has **eliminated polio in India!**  However the segment takes an awkward turn when Bill starts eying Jimmy’s MacBook. This made me laugh...it's about 1:35 into the video:
 
-<p><iframe width="750" height="422" src="//www.youtube.com/embed/Qk7pPutimCM" allowfullscreen></iframe></p>
+<!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Qk7pPutimCM"></iframe>
+</div>
+

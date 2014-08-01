@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Thomas Edison" data-src="/assets/img/edison.jpg">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Thomas Edison" data-src="/assets/img/edison.jpg" width="750">
 
 Many large organizations work exceptionally hard minimize "risk".   Ironically, by working so diligently to reduce risk they may be paying for it anyway, and reducing innovation at the same time.
 <!-- more -->

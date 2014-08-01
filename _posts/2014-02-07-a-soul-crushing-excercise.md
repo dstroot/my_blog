@@ -9,7 +9,7 @@ categories:
 tags:
 ---
 
-<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Soul Crushing" data-src="/assets/img/soulcrushing.jpg">
+<img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="Soul Crushing" data-src="/assets/img/soulcrushing.jpg" width="750">
 
 This morning I saw a post on LinkedIn by Bob Sutton who is a Stanford Professor and Co-author of Scaling up Excellence.  He discusses Adobe's move to abolish it's employee stack ranking system.  After the system was eliminated, one Adobe employee noted that a feeling of relief spread throughout the company because the old annual review system was **“a soul-less and soul crushing exercise.”**
 <!-- more -->
