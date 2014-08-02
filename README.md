@@ -1,4 +1,4 @@
-## About this Blog  [![Build Status](https://secure.travis-ci.org/dstroot/my_blog.png)](http://travis-ci.org/dstroot/my_blog) [![devDependency Status](https://david-dm.org/dstroot/my_blog/dev-status.png?theme=shields.io)](https://david-dm.org/dstroot/my_blog#info=devDependencies)
+## About this Blog  [![devDependency Status](https://david-dm.org/dstroot/my_blog/dev-status.png?theme=shields.io)](https://david-dm.org/dstroot/my_blog#info=devDependencies)
 
 Check out [http://danstroot.com](http://danstroot.com)
 
