@@ -1,4 +1,4 @@
-## About this Blog  [![Build Status](https://secure.travis-ci.org/dstroot/my_blog.png)](http://travis-ci.org/dstroot/my_blog) [![devDependency Status](https://david-dm.org/dstroot/my_blog/dev-status.png?theme=shields.io)](https://david-dm.org/dstroot/my_blog#info=devDependencies)
+## About this Blog  [![devDependency Status](https://david-dm.org/dstroot/my_blog/dev-status.png?theme=shields.io)](https://david-dm.org/dstroot/my_blog#info=devDependencies)
 
 Check out [http://danstroot.com](http://danstroot.com)
 
@@ -9,86 +9,32 @@ Check out [http://danstroot.com](http://danstroot.com)
   > to install Ruby/Ruby Gems to use Jekyll but _sigh_ oh well...
 
 2. It uses the [Bootstrap](http://getbootstrap.com/) front-end framework for layout and design.
- * You can copy the latest Bootstrap .js and .less source into `bootstrap/js` and `bootstrap/less`.  Grunt will compile everything for you (see below)
-3. It uses [Grunt](http://gruntjs.com/) to manage the assets.  I went to the trouble of doing this so I could select exactly what parts of Bootstrap I wanted to use.  An easier and more direct route might be to use the [Bootstrap customizer](http://getbootstrap.com/customize/).
+3. It uses [gulp](http://gulpjs.com/) to manage the assets.  I went to the trouble of doing this so I could select exactly what parts of Bootstrap I wanted to use.  An easier and more direct route might be to use the [Bootstrap customizer](http://getbootstrap.com/customize/).
 
 ### Technical Dependencies
 * You need Nodejs installed mainly because we need to use NPM to install things.
 * You need Ruby and RubyGems so you can install Jekyll and S3_website
   * `Gem install jekyll`
   * `Gem install s3_website`
-* You need Python and Pygments for code highlighting
-* You need Grunt installed
+* You need gulp installed `npm install -g gulp`
 
 #### Build Tooling
 
 * [Sublime Text](http://www.sublimetext.com/)
 * [Nodejs](http://nodejs.org/)
-* [Gruntjs](http://gruntjs.com/)
+* [gulpjs](http://gulpjs.com/)
 * [Bower](http://bower.io/)
 
-Bower has one minor quirk that you need to be aware of – it will install components into a “bower_components” directory by default, which unfortunately is not under the public directory. I suggest you create a directory called “vendor” under “public/js.” You can do this by running the command `mkdir public/js/vendor.` Next, in the app directory, create a plain text file called “.bowerrc” that contains:
+Bower has one minor quirk that you need to be aware of – it will install components into a “bower_components” directory by default, which unfortunately is not under the public directory. I suggest you create a directory called “lib” under “public” You can do this by running the command `mkdir public/lib` Next, in the app directory, create a plain text file called “.bowerrc” that contains:
 
-`{ "directory" : "public/js/vendor" }`
+`{ "directory" : "public/lib" }`
 
-This configuration file will tell Bower to install tools into the “public/javascripts/vendor” directory.
+This configuration file will tell Bower to install tools into the “public/lib” directory.
 
 ### Steps to build and deploy
 1. Run `npm install`
-2. Copy the latest Bootstrap .js and .less source into `bootstrap/js` and `bootstrap/less`.
-3. Tweaks to Bootstrap - Turn off stuff in bootstrap.less:
-    ```
-    // Core variables and mixins
-    @import "variables.less";
-    @import "mixins.less";
-
-    // Reset
-    @import "normalize.less";
-    //@import "print.less";
-
-    // Core CSS
-    @import "scaffolding.less";
-    @import "type.less";
-    @import "code.less";
-    @import "grid.less";
-    @import "tables.less";
-    @import "forms.less";
-    @import "buttons.less";
-
-    // Components
-    //@import "component-animations.less";
-    //@import "glyphicons.less";
-    //@import "dropdowns.less";
-    //@import "button-groups.less";
-    //@import "input-groups.less";
-    //@import "navs.less";
-    //@import "navbar.less";
-    //@import "breadcrumbs.less";
-    //@import "pagination.less";
-    //@import "pager.less";
-    //@import "labels.less";
-    //@import "badges.less";
-    //@import "jumbotron.less";
-    //@import "thumbnails.less";
-    //@import "alerts.less";
-    //@import "progress-bars.less";
-    //@import "media.less";
-    //@import "list-group.less";
-    //@import "panels.less";
-    //@import "wells.less";
-    //@import "close.less";
-
-    // Components w/ JavaScript
-    //@import "modals.less";
-    //@import "tooltip.less";
-    //@import "popovers.less";
-    //@import "carousel.less";
-
-    // Utility classes
-    @import "utilities.less";
-    @import "responsive-utilities.less";
-    ```
-4. Run `grunt`.  This does a lot of work:
+2. Run `bower install`
+4. Run `gulp`.  This does a lot of work:
    * Processes the .js
        * Runs [jshint](http://www.jshint.com/) on the .js source files
        * Concatenates the .js source files
@@ -117,7 +63,7 @@ There is actually quite a few things to do even for a simple site:
 ## License
 (The MIT License)
 
-Copyright © 2009-2013 Brandon Mathis
+Copyright © 2009-2014 Daniel J. Stroot
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‘Software’), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
