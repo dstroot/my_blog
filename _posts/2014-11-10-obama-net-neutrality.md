@@ -20,13 +20,14 @@ Here are the four principles quoted directly:
 * **Increased transparency.** The connection between consumers and ISPs — the so-called “last mile” — is not the only place some sites might get special treatment. So, I am also asking the FCC to make full use of the transparency authorities the court recently upheld, and if necessary to apply net neutrality rules to points of interconnection between the ISP and the rest of the Internet.
 * **No paid prioritization.** Simply put: No service should be stuck in a “slow lane” because it does not pay a fee. That kind of gatekeeping would undermine the level playing field essential to the Internet’s growth. So, as I have before, I am asking for an explicit ban on paid prioritization and any other restriction that has a similar effect.
 
-It doesn't matter whether you are on the "red team" or the "blue team" - this is a noble goal and one I hope everyone who reads this supports. An open Internet benefits us all in a myriad of ways and allows freedom of speech across society. I'd urge you to read [The Greatest Gift We Ever Had](http://www.raptitude.com/2014/11/the-gift/).  Key quote:
+It doesn't matter whether you are on the "red team" or the "blue team" - this is a noble goal and one I hope everyone supports. An open Internet benefits us all in a myriad of ways and allows a free and open exchange of ideas across society. I'd urge you to read [The Greatest Gift We Ever Had](http://www.raptitude.com/2014/11/the-gift/).  Key quote:
 
 >...honest, inclusive conversation across a society will reliably lead to equality and higher quality of life, in any place it is allowed to happen.
 
-###Concerns:
+###My Thoughts:
+* There is one principle missing: **No Content Modification.** ISPs should not be allowed to modify any of the content they transport.  This prevents them from injecting beacons, tracking code, advertising, etc. into web content that they are entrusted to deliver.  This is happening and it needs to be stopped.
 * "Government Regulation" is known to increase costs, and potentially reduce growth and innovation.  All things being equal I am in favor of less regulation rather than more regulation so we need to tread carefully as we seek to increase regulation to protect openness (bit of an oxymoron isn't it?).
-* We have to think carefully about the paid access issue - perhaps as a consumer I would want the choice to buy Internet access from a "neutral" provider **and** from a provider that offers a service where I can pay extra to have more bandwidth allocated to Netflix?
+* We have to think carefully about the paid access issue. Does "no slow lanes" also mean "No Fast Lanes"?  What if I want an ISP to provide a service where I get premium access to YouTube content, or Netflix content?
 * It is not a requirement that ISPs block unlawful content, rather it is a prohibition on blocking lawful content. But a strong enough prohibition on blocking lawful content (e.g., one which provides consequences whenever lawful content is blocked, even if the intent was to block unlawful content and the lawful content just got caught up in the filter) actually reduces the incentive for ISPs to attempt to identify and block unlawful content, since attempting to do so but making a misidentification in the process can result in penalties.
 
 ###Here is President Obama's Video:
