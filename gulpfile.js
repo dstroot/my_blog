@@ -7,14 +7,15 @@
  * Dependencies
  */
 
-var gulp = require('gulp');
-var $ = require('gulp-load-plugins')({ lazy: true });
-var runSequence = require('run-sequence');
-var pngcrush = require('imagemin-pngcrush');
-var terminus = require('terminus');
-var pagespeed = require('psi');
-var exec = require('child_process').exec;
-var critical = require('critical');
+var gulp  = require('gulp');
+var $     = require('gulp-load-plugins')({ lazy: true });
+var del           = require('del');
+var runSequence   = require('run-sequence');
+var pngcrush      = require('imagemin-pngcrush');
+var terminus      = require('terminus');
+var pagespeed     = require('psi');
+var exec          = require('child_process').exec;
+var critical      = require('critical');
 
 /**
  * Banner
@@ -85,17 +86,17 @@ var paths = {
  * Clean
  */
 
-// Return the stream so that gulp knows the task is asynchronous
-// and waits for it to terminate before starting dependent tasks.
-
-gulp.task('clean', function () {
-  return gulp.src(paths.clean, { read: false })
-    .pipe($.rimraf());
+gulp.task('clean', function (cb) {
+  del(paths.clean, cb);
 });
+
 
 /**
  * Process CSS
  */
+
+// Return the stream so that gulp knows the task is asynchronous
+// and waits for it to terminate before starting dependent tasks.
 
 gulp.task('styles', function () {
   return gulp.src('./less/myblog.less')     // Read in Less file
@@ -237,6 +238,22 @@ gulp.task('s3', function (cb) {
     cb(err);  // finished task
   });
 })
+
+
+// var s3 = require('gulp-s3-upload')({
+//   key:       process.env.S3_ID,
+//   secret:    process.env.S3_SECRET
+// });
+//
+//
+// gulp.task('s3', function() {
+//   gulp.src('./_site/**/*.*')
+//   .pipe(s3({
+//     bucket: 'danstroot.com', //  Required
+//     acl:    'public-read'    //  Optional ACL permissions, defaults to public-read.
+//   }));
+// });
+
 
 /**
  * HTML Minify

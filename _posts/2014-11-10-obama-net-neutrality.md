@@ -26,9 +26,9 @@ It doesn't matter whether you are on the "red team" or the "blue team" - this is
 
 ###My Thoughts:
 * There is one principle missing: **No Content Modification.** ISPs should not be allowed to modify any of the content they transport.  This prevents them from injecting beacons, tracking code, advertising, etc. into web content that they are entrusted to deliver.  This is happening and it needs to be stopped.
-* "Government Regulation" is known to increase costs, and potentially reduce growth and innovation.  All things being equal I am in favor of less regulation rather than more regulation so we need to tread carefully as we seek to increase regulation to protect openness (bit of an oxymoron isn't it?).
-* We have to think carefully about the paid access issue. Does "no slow lanes" also mean "No Fast Lanes"?  What if I want an ISP to provide a service where I get premium access to YouTube content, or Netflix content?
-* It is not a requirement that ISPs block unlawful content, rather it is a prohibition on blocking lawful content. But a strong enough prohibition on blocking lawful content (e.g., one which provides consequences whenever lawful content is blocked, even if the intent was to block unlawful content and the lawful content just got caught up in the filter) actually reduces the incentive for ISPs to attempt to identify and block unlawful content, since attempting to do so but making a misidentification in the process can result in penalties.
+* "Government Regulation" is known to increase costs, and potentially reduce growth and innovation.  All things being equal I am in favor of less regulation rather than more regulation.  We need to tread carefully as we seek to increase regulation to protect openness (bit of an oxymoron isn't it?).
+* We have to think carefully about the paid access issue. Does "no slow lanes" also mean "No Fast Lanes"?  What if I want an ISP to provide a service where I get premium access to YouTube content, or Netflix content?  Should that be illegal?
+* It is not a requirement that ISPs block unlawful content, rather it is a prohibition on blocking lawful content. But a strong enough prohibition on blocking lawful content (e.g., one which provides consequences whenever lawful content is blocked, even if the intent was to block unlawful content and the lawful content just got caught up in the filter) actually reduces the incentive for ISPs to attempt to identify and block unlawful content, since attempting to do so but making a misidentification in the process can result in penalties.  In other words access to child pornography, terrorist information, and illicit drugs could actually increase as a result (i.e. "the law of unintended consequences").
 
 ###Here is President Obama's Video:
 
@@ -37,7 +37,17 @@ It doesn't matter whether you are on the "red team" or the "blue team" - this is
   <iframe class="embed-responsive-item" src="//www.youtube.com/embed/uKcjQPVwfDk"></iframe>
 </div>
 
-<br>
+###Update:
+
+As someone who considers himself a Republican It saddens me that this issue has become so polarized along party lines.
+
+<blockquote class="twitter-tweet" lang="en"><p>&quot;Net Neutrality&quot; is Obamacare for the Internet; the Internet should not operate at the speed of government.</p>&mdash; Senator Ted Cruz (@SenTedCruz) <a href="https://twitter.com/SenTedCruz/status/531834493922189313">November 10, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+The only similarity to the Affordable Care Act is that Obama supports it. There may be a rational, reasoned argument against Net Neutrality, but Republicans aren’t making it, and neither are the cable companies or cellular providers. 
+
+The main thrust seems to be "Government regulation of the Internet will be bad."  And yet, we seem to have no issues regulating banks, power utilities, telephone companies and other utilities.  The other argument seems to be the "slippery slope" argument - by introducing goverment regulation it is easy to envision that we will soon start regulating **content**.  However, with our country's foundation on free speech I find that argument quite a stretch and exactly the opposite of Obama's first principle: "No Blocking".
+
 _Sources:_
 
 * [White House - President Obama's Plan for a Free and Open Internet](http://www.whitehouse.gov/net-neutrality)
