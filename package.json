@@ -38,8 +38,8 @@
     "gulp-jscs": "^1.0.0",
     "gulp-jshint": "^1.8.2",
     "gulp-less": "^2.0.1",
-    "gulp-livereload": "^3.2.0",
-    "gulp-load-plugins": "^0.5.3",
+    "gulp-livereload": "^3.3.0",
+    "gulp-load-plugins": "^0.8.0",
     "gulp-rename": "^1.2.0",
     "gulp-rimraf": "^0.1.0",
     "gulp-size": "^1.0.0",
@@ -48,13 +48,13 @@
     "gulp-util": "^3.0.0",
     "imagemin-pngcrush": "^4.0.0",
     "jshint-stylish": "^1.0.0",
-    "psi": "^1.0.2",
+    "psi": "^1.0.3",
     "run-sequence": "^1.0.2",
     "terminus": "^1.0.10",
     "time-grunt": "^1.0.0"
   },
   "dependencies": {
     "del": "^1.1.1",
-    "gulp-s3-upload": "^0.8.7"
+    "gulp-s3-upload": "^1.0.0"
   }
 }
