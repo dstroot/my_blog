@@ -21,35 +21,37 @@ gems:
 destination:    ./_site
 safe:           false      # disables plugins
 exclude:
-- "LICENSE"
-- ".editorconfig"
-- ".gitignore"
-- ".jscs.json"
-- ".jshintrc"
-- "Gemfile"
-- ".bowerrc"
-- "bower.json"
-- "bower_components"
-- "Gruntfile.js"
-- "gulpfile.js"
-- "s3_website.yml"
-- "package.json"
-- "node_modules"
-- "README.md"
-- "TODO.md"
-- "bootstrap"              # Not needed in _site/assets
-- "jquery"                 # Not needed in _site/assets
-- "totop.js"               # Not needed in _site/assets
-- "unveil"                 # Not needed in _site/assets
-- "fitvids"                # Not needed in _site/assets
-- "assets/css/pygments.css"           # Not needed in _site/assets
-- "assets/css/pygments-manni.css"     # Not needed in _site/assets
-- "assets/css/syntax.css"             # Not needed in _site/assets
-- "main.js"
-- "less"
-- "validation-report.json"
-- "validation-status.json"
-- ".listen.less"           # seems to fix infinite regeration
+  - "LICENSE"
+  - ".editorconfig"
+  - ".gitignore"
+  - ".jscs.json"
+  - ".jshintrc"
+  - "Gemfile"
+  - ".bowerrc"
+  - "bower.json"
+  - "bower_components"
+  - "Gruntfile.js"
+  - "gulpfile.js"
+  - "s3_website.yml"
+  - "package.json"
+  - "node_modules"
+  - "README.md"
+  - "TODO.md"
+  - "bootstrap"              # Not needed in _site/assets
+  - "jquery"                 # Not needed in _site/assets
+  - "totop.js"               # Not needed in _site/assets
+  - "unveil"                 # Not needed in _site/assets
+  - "fitvids"                # Not needed in _site/assets
+  - "assets/css/pygments.css"           # Not needed in _site/assets
+  - "assets/css/pygments-manni.css"     # Not needed in _site/assets
+  - "assets/css/syntax.css"             # Not needed in _site/assets
+  - "main.js"
+  - "less"
+  - "validation-report.json"
+  - "validation-status.json"
+  - ".listen.less"           # seems to fix infinite regeration
+  - "Gemfile"
+  - "Gemfile.lock"
 
 include:        ["src"]
 
