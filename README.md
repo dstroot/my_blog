@@ -13,9 +13,8 @@ Check out [http://danstroot.com](http://danstroot.com)
 
 ### Technical Dependencies
 * You need Nodejs installed mainly because we need to use NPM to install things.
-* You need Ruby and RubyGems so you can install Jekyll and S3_website
-  * `Gem install jekyll`
-  * `Gem install s3_website`
+* You need Ruby and RubyGems
+  * `bundle install`
 * You need gulp installed `npm install -g gulp`
 
 #### Build Tooling
