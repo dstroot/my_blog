@@ -10,19 +10,21 @@ tags:
 
 <img class="lazy img-rounded img-responsive" src="data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACwAAAAAAQABAAACAkQBADs=" alt="FinTech" data-src="/assets/img/SmartCarLock.png" width="750">
 
->_Q_: Is it secure? <br>
->_A_: No it is not. Security is never binary.
->
->_Q_: OK, how secure is it? <br>
->_A_: It seems like you just asked that question.
->
->_Q_: No, the first question was if it's secure, the second question was how secure is it. <br>
->_A_: Well now that wasn't even a question at all.
+_Q_: Is it secure? <br>
+_A_: No it is not. Security is never binary.
+
+_Q_: OK, how secure is it? <br>
+_A_: It seems like you just asked that question.
+
+_Q_: No, the first question was if it's secure, the second question was how secure is it. <br>
+_A_: Well now that wasn't even a question at all.
 
 <!-- more -->
-People have a lot of trouble understanding that there is no such thing as perfect security.  Security is a scale – like mountain climbing. Everest was thought to be unclimbable until Sir Edmund Hillary did it.  In bank heist movies (like Ocean's Eleven) the vault is always impenetrable.  Until Danny Ocean and friends crack it of course.
+There is no such thing as perfect security, and most information security practitioners do a poor job explaining the relative nature of security.  Secure relative to what? A bot that looks for un-patched systems? A determined hacker? A nation-state?   
 
-Security should be thought of as a scale of difficulty.  Given enough time and resources **any** security can be defeated.  The main goal of security is to raise the time and resources to an unreasonable level.  But how do you really know how secure something is?
+Security is a scale – like mountain climbing. Everest was thought to be unclimbable until Sir Edmund Hillary did it.  Everest was finally tackled by a massive expedition with enormous resources. The 1953 expedition totaled over 400 people, including 362 porters, 20 Sherpa guides and 10,000 lbs of baggage.  It was analogous to a military assault.
+
+Security is also "a scale of difficulty".  Given enough time and resources **any** security can be defeated.  The main goal of security is to raise the time and resources required to an unreasonable level.  But how do you really know how secure something is?
 
 Like mountain climbing, security can and should be rated/evaluated based on actual experience. Also like mountain climbing there are initial conditions that indicate a “tough climb” or an easy one.
 

@@ -8,4 +8,4 @@ categories:
 tags:
 ---
 
->Ask a programmer to review 10 lines of code, they'll make 10 suggestions. Ask them to review 1,00 lines and they'll say it looks good.
+>Ask a programmer to review 10 lines of code, they'll make 10 suggestions. Ask them to review 1,000 lines of code and they'll say "it looks good!".
