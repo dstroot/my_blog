@@ -1,7 +1,8 @@
 language: node_js
 node_js:
   - 0.10
-before_script:
+install:
+  - npm install
   - gem install jekyll
   - gem install rouge
   - gem install rdiscount
